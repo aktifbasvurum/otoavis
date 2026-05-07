@@ -1,0 +1,1409 @@
+/* Genel Ayarlar */
+:root {
+    --primary: #FF6600;
+    --dark: #1F2937;
+    --light-gray: #F3F4F6;
+    --white: #fff;
+    --border: #E5E7EB;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Outfit', sans-serif;
+}
+
+html,
+body {
+    overflow-x: hidden;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--light-gray);
+    color: var(--dark);
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Header */
+header {
+    background: var(--white);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.navbar {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    height: 40px;
+}
+
+.menu-toggle {
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: none;
+}
+
+/* Hero Alanı */
+.hero {
+    position: relative;
+    min-height: 600px;
+    height: auto;
+    display: flex;
+    align-items: flex-end;
+    /* Arama kutusu altta */
+    justify-content: center;
+    padding-bottom: 4rem;
+    padding-top: 8rem;
+}
+
+.hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.hero-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Arama Widget */
+.search-widget {
+    background: var(--white);
+    padding: 1.5rem;
+    /* Reduced padding */
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    /* Reduced width */
+    max-width: 850px;
+    /* Reduced max-width */
+    z-index: 10;
+    margin: 0 auto;
+}
+
+.hero-title {
+    font-size: 1.5rem;
+    /* Reduced font size */
+    color: var(--dark);
+    margin-bottom: 1.2rem;
+    text-align: center;
+}
+
+.search-tabs {
+    display: inline-flex;
+    background: #F3F4F6;
+    padding: 0.3rem;
+    border-radius: 50px;
+    margin-bottom: 1.5rem;
+}
+
+.tab-btn {
+    padding: 0.6rem 1.5rem;
+    background: transparent;
+    border: 2px solid transparent;
+    font-weight: 600;
+    color: #6B7280;
+    cursor: pointer;
+    border-radius: 50px;
+    transition: all 0.3s;
+    font-size: 0.95rem;
+}
+
+.tab-btn.active {
+    background: var(--primary);
+    color: var(--white);
+    border-color: var(--primary);
+    box-shadow: 0 4px 10px rgba(255, 102, 0, 0.3);
+}
+
+.search-form-container form>div {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-wrapper select,
+.input-wrapper input {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    font-size: 1rem;
+    appearance: none;
+    background: #fff;
+}
+
+.input-wrapper select:focus,
+.input-wrapper input:focus {
+    border-color: var(--primary);
+    outline: none;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    background: var(--primary);
+    color: var(--white);
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s;
+    text-align: center;
+}
+
+.btn:hover {
+    background: #e65c00;
+}
+
+.btn-block {
+    width: 100%;
+}
+
+.btn-lg {
+    padding: 1rem;
+    margin-top: 1rem;
+    font-size: 1.1rem;
+}
+
+/* Section Genel */
+.section {
+    padding: 4rem 1rem;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 3rem;
+    color: var(--dark);
+}
+
+/* Kampanyalar */
+.campaign-slider {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.campaign-card {
+    background: var(--white);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s;
+}
+
+.campaign-card:hover {
+    transform: translateY(-5px);
+}
+
+.campaign-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.campaign-content {
+    padding: 1.5rem;
+}
+
+.campaign-link {
+    color: var(--primary);
+    font-weight: 600;
+    display: block;
+    margin-top: 1rem;
+}
+
+/* Araç Listeleme Konteyneri */
+.car-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 2rem 0;
+}
+
+.car-card {
+    background: var(--white);
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s;
+    border: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+}
+
+.car-card:hover {
+    border-color: var(--primary);
+    transform: translateY(-5px);
+}
+
+.car-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+}
+
+.car-type {
+    font-size: 0.75rem;
+    color: var(--primary);
+    background: rgba(255, 102, 0, 0.1);
+    padding: 0.2rem 0.8rem;
+    border-radius: 20px;
+    font-weight: 700;
+}
+
+.car-name {
+    font-size: 1.25rem;
+    margin-top: 0.5rem;
+    font-weight: 700;
+}
+
+.car-image {
+    width: 100%;
+    height: 180px;
+    /* Fixed height for consistency */
+    object-fit: contain;
+    /* Contain to show full car, or cover to fill */
+    margin-bottom: 1.5rem;
+}
+
+.car-features {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    color: #6B7280;
+    font-size: 0.9rem;
+}
+
+/* Bilgi Alanı */
+.info-section {
+    background: #2D3748;
+    color: var(--white);
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    text-align: center;
+}
+
+.info-icon {
+    font-size: 3rem;
+    color: var(--primary);
+    margin-bottom: 1rem;
+}
+
+.info-card h3 {
+    margin-bottom: 1rem;
+}
+
+.info-card p {
+    color: #CBD5E0;
+}
+
+/* Footer */
+footer {
+    background: #111827;
+    color: #9CA3AF;
+    padding: 4rem 1rem 1rem;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.footer-col h4 {
+    color: var(--white);
+    margin-bottom: 1.5rem;
+}
+
+.footer-links li {
+    margin-bottom: 0.8rem;
+}
+
+.footer-links a:hover {
+    color: var(--primary);
+}
+
+.app-downloads {
+    display: flex;
+    gap: 1rem;
+}
+
+.app-btn {
+    background: #374151;
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    font-size: 0.8rem;
+}
+
+.copyright {
+    text-align: center;
+    border-top: 1px solid #374151;
+    padding-top: 2rem;
+}
+
+/* Checkout & Form Stilleri */
+.checkout-steps {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.step {
+    font-size: 0.9rem;
+    color: #9CA3AF;
+    font-weight: 600;
+}
+
+.step.active {
+    color: var(--primary);
+}
+
+.step.completed {
+    color: #10B981;
+}
+
+.step-num {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    background: #E5E7EB;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 24px;
+    margin-right: 5px;
+    color: #fff;
+}
+
+.step.active .step-num {
+    background: var(--primary);
+}
+
+.step.completed .step-num {
+    background: #10B981;
+}
+
+.checkout-container {
+    display: flex;
+    gap: 2rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    align-items: flex-start;
+}
+
+.checkout-main {
+    flex: 1;
+}
+
+.checkout-sidebar {
+    width: 350px;
+    position: sticky;
+    top: 100px;
+}
+
+.checkout-card {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--border);
+    margin-bottom: 2rem;
+}
+
+.checkout-card h3 {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border);
+}
+
+.form-grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-input {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+.form-input:focus {
+    border-color: var(--primary);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255, 102, 0, 0.1);
+}
+
+.summary-card {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    border: 1px solid var(--border);
+}
+
+.summary-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+}
+
+.summary-car {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border);
+}
+
+.summary-car img {
+    width: 100%;
+    max-height: 280px;
+    object-fit: contain;
+    margin-bottom: 1rem;
+}
+
+.summary-details .detail-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.8rem;
+    font-size: 0.9rem;
+}
+
+.summary-details .detail-row.total {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--dark);
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 2px dashed var(--border);
+}
+
+/* Responsive Styles */
+
+/* NEW: Classes replacing inline styles */
+.listing-layout {
+    display: flex;
+    gap: 2rem;
+    align-items: start;
+    margin-top: 2rem;
+}
+
+.filter-sidebar {
+    width: 280px;
+    flex-shrink: 0;
+    background: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 1px solid #E5E7EB;
+    top: 100px;
+    position: sticky;
+}
+
+.search-form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.tabs-wrapper {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (max-width: 900px) {
+    .checkout-container {
+        flex-direction: column;
+    }
+
+    .checkout-sidebar {
+        width: 100%;
+        position: static;
+    }
+
+    /* Stack listing page */
+    .listing-layout {
+        flex-direction: column;
+    }
+
+    .filter-sidebar {
+        width: 100%;
+        position: static;
+        margin-bottom: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links,
+    .nav-actions {
+        display: none;
+    }
+
+    /* Checkout Steps - Mobile Optimization */
+    .checkout-steps {
+        gap: 0.5rem;
+        justify-content: center;
+    }
+
+    .step {
+        font-size: 0.75rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .step-num {
+        margin-right: 0;
+        margin-bottom: 4px;
+        width: 20px;
+        height: 20px;
+        line-height: 20px;
+        font-size: 0.8rem;
+    }
+
+    /* Search Form Stack */
+    .search-form-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    .form-grid-2 {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .checkout-card {
+        padding: 1.25rem;
+        /* Reduced padding for mobile */
+    }
+
+    /* Hero & Widget */
+    .hero {
+        padding-top: 8rem;
+        padding-bottom: 2rem;
+        height: auto;
+        min-height: auto;
+        align-items: center;
+        /* Center widget vertically if needed */
+    }
+
+    .search-widget {
+        width: 95%;
+        /* Increased width usage */
+        max-width: 100%;
+        margin: 0 auto;
+        padding: 1.25rem;
+        border-radius: 12px;
+    }
+
+    .hero-title {
+        font-size: 1.2rem;
+        text-align: center;
+        margin-bottom: 1rem;
+        line-height: 1.4;
+    }
+
+    /* Tab Optimizations */
+    .search-tabs {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        padding: 4px;
+        margin-bottom: 1rem;
+    }
+
+    .tab-btn {
+        flex: 1;
+        /* Match width */
+        padding: 0.6rem 0.5rem;
+        /* Reduced horizontal padding */
+        font-size: 0.85rem;
+        text-align: center;
+        white-space: nowrap;
+    }
+
+    /* Specific fix for the delivery toggle buttons which have long text */
+    #delivery-tabs .tab-btn {
+        font-size: 0.75rem;
+        /* Smaller font for long texts */
+        white-space: normal;
+        /* Allow wrap if really needed, or keep nowrap */
+        padding: 0.5rem;
+        line-height: 1.2;
+    }
+
+    .search-form-container .form-group {
+        margin-bottom: 0.8rem;
+    }
+
+    .btn-lg {
+        padding: 0.8rem;
+        font-size: 1rem;
+    }
+
+    /* Ensure tabs wrap better - actually we want them full width usually */
+    .tabs-wrapper {
+        flex-direction: column;
+        /* Stack top tabs (Cust Type vs Rental Type) */
+        gap: 0.8rem;
+        width: 100%;
+    }
+
+    .tabs-wrapper .search-tabs {
+        width: 100%;
+        /* Full width for each group */
+    }
+
+    .container {
+        padding: 0 1rem;
+    }
+
+    /* Navbar Adjustment */
+    .navbar {
+        padding: 0.8rem 1rem;
+    }
+
+    .logo img {
+        height: 32px;
+        /* Slightly smaller logo */
+    }
+
+    /* Car Cards */
+    .car-list {
+        grid-template-columns: 1fr;
+    }
+
+    .car-features {
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        justify-content: center;
+    }
+
+    .car-features span {
+        font-size: 0.8rem;
+    }
+}
+
+/* --- Admin Panel Styles --- */
+.bg-dark {
+    background-color: #111827;
+}
+
+.bg-body {
+    background-color: #f3f4f6;
+}
+
+.login-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.login-card {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 16px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.login-title {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #1F2937;
+}
+
+.login-subtitle {
+    color: #6B7280;
+    font-size: 0.9rem;
+    margin-bottom: 2rem;
+}
+
+/* Layout Refactor: Use Block flow for Fixed Sidebar */
+.admin-layout {
+    display: block;
+    /* Removed flex */
+    min-height: 100vh;
+    background: #f3f4f6;
+}
+
+.sidebar {
+    width: 260px;
+    background: #fff;
+    border-right: 1px solid #e5e7eb;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    overflow-y: auto;
+    z-index: 1000;
+}
+
+.sidebar-brand {
+    padding: 1.5rem;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #FF6600;
+    border-bottom: 1px solid #f3f4f6;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.sidebar-menu {
+    list-style: none;
+    padding: 1rem;
+}
+
+.sidebar-menu li {
+    margin-bottom: 0.5rem;
+}
+
+.sidebar-menu a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0.8rem 1rem;
+    border-radius: 8px;
+    color: #4B5563;
+    transition: all 0.2s;
+    font-weight: 500;
+}
+
+.sidebar-menu a:hover,
+.sidebar-menu a.active {
+    background: #FFF7ED;
+    color: #FF6600;
+}
+
+.admin-content {
+    /* Pushed by sidebar width */
+    margin-left: 260px;
+    padding: 2rem;
+    width: auto;
+    /* Removed min-height 100vh to prevent vertical pushing if flex is involved somewhere */
+    min-height: 100vh;
+    display: block;
+    /* Force block */
+}
+
+/* Ensure header is at top */
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    /* Changed center to flex-start */
+    margin-bottom: 2rem;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 1rem;
+    /* Small top padding */
+}
+
+/* Centered Form Card */
+.admin-form-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    border: 1px solid #e5e7eb;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+
+/* Specific Wrapper to center content in main area */
+#view-cars,
+#view-bank,
+#view-contact {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Fix for input widths */
+.admin-form-card .input-wrapper input {
+    width: 100%;
+}
+
+/* Admin Responsive */
+@media (max-width: 900px) {
+    .sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+        border-right: none;
+        border-bottom: 1px solid #e5e7eb;
+    }
+
+    .admin-content {
+        margin-left: 0;
+        padding: 1rem;
+        width: 100%;
+    }
+
+    .dashboard-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+}
+
+.modern-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.modern-table th,
+.modern-table td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid #f3f4f6;
+}
+
+.modern-table th {
+    background: #f9fafb;
+    font-weight: 600;
+    color: #374151;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.modern-table tr:last-child td {
+    border-bottom: none;
+}
+
+.tag {
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.tag-economic {
+    background: #ecfccb;
+    color: #3f6212;
+}
+
+.tag-comfort {
+    background: #dbeafe;
+    color: #1e40af;
+}
+
+.tag-prestige {
+    background: #fae8ff;
+    color: #86198f;
+}
+
+.tag-luxury {
+    background: #ffe4e6;
+    color: #9f1239;
+}
+
+/* Timer Design */
+.timer-container {
+    background: linear-gradient(to bottom, #ffffff, #fafafa);
+    border: 1px solid #e5e7eb;
+    border-top: 4px solid #FF6600;
+    border-radius: 12px;
+    padding: 2rem;
+    margin-top: 2rem;
+    text-align: center;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+    position: relative;
+}
+
+.timer-header {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #374151;
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.timer-header i {
+    color: #FF6600;
+    font-size: 1.2rem;
+}
+
+.timer-display {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 1.5rem;
+}
+
+.timer-box {
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 0.5rem 1rem;
+    min-width: 90px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.timer-digit {
+    font-size: 3rem;
+    font-weight: 800;
+    color: #1F2937;
+    line-height: 1;
+    font-variant-numeric: tabular-nums;
+    font-family: 'Outfit', sans-serif;
+}
+
+.timer-label {
+    font-size: 0.75rem;
+    color: #9CA3AF;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-top: 5px;
+    letter-spacing: 1px;
+}
+
+.timer-separator {
+    font-size: 2.5rem;
+    font-weight: 300;
+    color: #FF6600;
+    margin-top: -20px;
+    animation: blink 1s infinite;
+}
+
+.timer-warning {
+    font-size: 0.9rem;
+    color: #B91C1C;
+    background: #FEF2F2;
+    padding: 0.8rem;
+    border-radius: 8px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid #FECACA;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0.3;
+    }
+}
+
+/* WhatsApp Button */
+.whatsapp-float {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #25d366;
+    color: #FFF;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    z-index: 9999;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+    text-decoration: none;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1) translateY(-5px);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.4);
+    color: #fff;
+}
+
+/* WhatsApp Mobile Optimization */
+@media (max-width: 768px) {
+    .whatsapp-float {
+        width: 50px;
+        height: 50px;
+        bottom: 20px;
+        right: 20px;
+        font-size: 24px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    }
+}
+
+.tag-premium {
+    background: #4338ca;
+    color: #fff;
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.tag-van {
+    background: #059669;
+    color: #fff;
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+/* MOBİL UYUMLULUK VE LAYOUT FİKSLERİ (TÜM SAYFALAR İÇİN) */
+@media (max-width: 768px) {
+
+    /* Genel Container Düzeltmeleri */
+    .container {
+        width: 100% !important;
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+        box-sizing: border-box !important;
+        max-width: 100% !important;
+    }
+
+    /* Navbar Mobil */
+    .navbar {
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 10px !important;
+        padding: 10px !important;
+    }
+
+    .logo img {
+        height: 35px !important;
+        /* Mobilde biraz küçült */
+    }
+
+    /* Checkout Container Yapısı Mobil */
+    .checkout-container {
+        display: flex !important;
+        flex-direction: column !important;
+        padding: 10px 0 !important;
+        /* Yan boşlukları container'dan alıyoruz */
+        gap: 20px !important;
+        width: 100% !important;
+        margin: 0 !important;
+    }
+
+    /* Sol (Main) ve Sağ (Sidebar) Alanlar */
+    .checkout-main,
+    .checkout-sidebar {
+        width: 100% !important;
+        flex: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    /* Kartlar */
+    .checkout-card,
+    .delivery-selection-container,
+    /* Teslimat sayfası özel */
+    .delivery-card,
+    .summary-card,
+    .payment-info-card {
+        width: 100% !important;
+        box-sizing: border-box !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+
+    /* Teslimat Kartları Özel */
+    .delivery-card {
+        margin-bottom: 1rem !important;
+    }
+
+    .delivery-selection-container {
+        /* Teslimat sayfasındaki iç containerı sıfırla */
+        max-width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    /* Form Gridleri Tek Kolona Düşür */
+    .form-grid-2,
+    .search-form-grid {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 15px !important;
+    }
+
+    /* Inputlar */
+    .form-input,
+    .form-select,
+    select,
+    input[type="text"],
+    input[type="tel"],
+    textarea {
+        width: 100% !important;
+        box-sizing: border-box !important;
+        /* Taşmayı önler */
+    }
+
+    /* Adımlar (Steps) */
+    .checkout-steps {
+        width: 100% !important;
+        justify-content: space-between !important;
+        padding: 0 10px !important;
+        gap: 0 !important;
+        font-size: 0.75rem !important;
+    }
+
+    .step {
+        flex: 1;
+        text-align: center;
+    }
+
+    /* Footer */
+    footer {
+        padding: 2rem 1rem !important;
+        text-align: center;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr !important;
+        gap: 2rem !important;
+    }
+
+    /* WhatsApp Butonu Mobil */
+    .whatsapp-sticky-button {
+        bottom: 20px !important;
+        right: 20px !important;
+        width: 55px !important;
+        height: 55px !important;
+        padding: 0 !important;
+        border-radius: 50% !important;
+        justify-content: center !important;
+    }
+
+    .whatsapp-sticky-button span {
+        display: none !important;
+    }
+
+    .whatsapp-sticky-button i {
+        margin: 0 !important;
+        font-size: 28px !important;
+    }
+}
+
+/* Ucretsiz Text Fix */
+.ucretsiz-text {
+    background: rgba(16, 185, 129, 0.1);
+    color: #10B981;
+    font-size: 0.65rem;
+    padding: 7px;
+    font-weight: 600;
+    border-radius: 12px;
+    border: 1px solid rgba(16, 185, 129, 0.2);
+    white-space: nowrap;
+
+    /* Desktop Positioning - Mevcut konumunu korumaya çalışıyoruz ama daha esnek */
+    position: absolute;
+    right: 0;
+    top: -25px;
+    /* Butonların hemen altına/yanına */
+    margin-right: 15%;
+    /* Ayarlanabilir sağ boşluk */
+}
+
+@media (max-width: 768px) {
+    .ucretsiz-text {
+        position: static !important;
+        /* Absolute'u kaldır */
+        display: inline-block !important;
+        margin: 5px auto 0 !important;
+        /* Ortalama ve üst boşluk */
+        width: auto !important;
+        float: none !important;
+    }
+
+    /* Center text container specifically on mobile */
+    center>div {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* Update ucretsiz-text to be static and cleanly styled */
+.ucretsiz-text {
+    background: rgba(16, 185, 129, 0.1);
+    color: #10B981;
+    font-size: 0.65rem;
+    padding: 4px 8px;
+    font-weight: 600;
+    border-radius: 12px;
+    border: 1px solid rgba(16, 185, 129, 0.2);
+    white-space: nowrap;
+    margin-top: 5px;
+    /* Alttan boşluk */
+
+    /* Remove any positioning */
+    position: static !important;
+    right: auto !important;
+    top: auto !important;
+    margin-right: 0 !important;
+    display: inline-block;
+}
+
+/* Ensure no conflicts on mobile */
+@media (max-width: 768px) {
+    .ucretsiz-text {
+        position: static !important;
+        display: inline-block !important;
+        margin: 5px 0 0 0 !important;
+    }
+}
+
+/* Update ucretsiz-text styling for new structure */
+.ucretsiz-text {
+    background: rgba(16, 185, 129, 0.1);
+    color: #10B981;
+    font-size: 0.65rem;
+    padding: 4px 8px;
+    font-weight: 600;
+    border-radius: 12px;
+    border: 1px solid rgba(16, 185, 129, 0.2);
+    white-space: nowrap;
+    z-index: 10;
+}
+
+@media (max-width: 768px) {
+    .ucretsiz-text {
+        position: static !important;
+        display: inline-block !important;
+        margin-top: 5px !important;
+        /* Center alignment */
+        float: right;
+        /* veya flex ile hizala */
+        width: auto;
+    }
+
+    #delivery-tabs-container {
+        align-items: flex-end !important;
+        /* Mobilde sağa hizala veya ortala */
+    }
+
+    /* Konumlandırma düzeltmesi mobil */
+    #delivery-tabs-container>div:last-child {
+        height: auto !important;
+        text-align: right;
+        padding-right: 10px;
+    }
+
+    .ucretsiz-text {
+        position: static !important;
+        float: none !important;
+    }
+
+    #delivery-tabs-container {
+        align-items: center !important;
+    }
+}
+
+/* Revert ucretsiz-text styling for original position under button */
+.ucretsiz-text {
+    background: rgba(16, 185, 129, 0.1);
+    color: #10B981;
+    font-size: 0.65rem;
+    padding: 4px 8px;
+    font-weight: 600;
+    border-radius: 12px;
+    border: 1px solid rgba(16, 185, 129, 0.2);
+    white-space: nowrap;
+
+    /* Doğal akışta butonun altında kalsın */
+    position: static !important;
+    display: inline-block;
+    margin-top: 5px;
+
+    /* Diğer özellikler reset */
+    right: auto !important;
+    top: auto !important;
+    float: none !important;
+    z-index: auto;
+}
+
+/* Ensure consistent mobile behavior */
+@media (max-width: 768px) {
+    .ucretsiz-text {
+        position: static !important;
+        display: inline-block !important;
+        margin-top: 5px !important;
+        float: none !important;
+    }
+}

