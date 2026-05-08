@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Araç Detay | Profesyonel Kiralama</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="header">
+        <div class="header-container">
+            <div class="logo"><a href="index.html" style="color:white; text-decoration:none;">AVIS</a></div>
+            <nav class="nav-links">
+                <a href="index.html"><i class="fas fa-home"></i> Anasayfa</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="detail-header-banner">
+        <div class="banner-content">
+            <h1 id="detail-name">Araç Yükleniyor...</h1>
+            <p>Konforlu ve güvenli bir yolculuk için en iyi tercih.</p>
+        </div>
+    </div>
+
+    <main class="main-content detail-page">
+        <div class="detail-container">
+            <a href="index.html" class="btn-back"><i class="fas fa-arrow-left"></i> Araçlara Dön</a>
+            
+            <div class="detail-grid">
+                <!-- Sol Kolon: Galeri -->
+                <div class="detail-left">
+                    <div class="gallery-layout">
+                        <div class="gallery-main">
+                            <img id="main-img" src="" alt="Araç">
+                        </div>
+                        <div class="gallery-thumbs">
+                            <img class="thumb-img" id="thumb-1" src="" alt="Görsel 1" onclick="changeImage(this.src)">
+                            <img class="thumb-img" id="thumb-2" src="" alt="Görsel 2" onclick="changeImage(this.src)">
+                            <img class="thumb-img" id="thumb-3" src="" alt="Görsel 3" onclick="changeImage(this.src)">
+                            <img class="thumb-img" id="thumb-4" src="" alt="Görsel 4" onclick="changeImage(this.src)">
+                            <img class="thumb-img" id="thumb-5" src="" alt="Görsel 5" onclick="changeImage(this.src)">
+                        </div>
+                    </div>
+                    
+                    <div class="detail-description">
+                        <h3>Araç Hakkında Bilgi</h3>
+                        <p>Bu araç, segmentinin en çok tercih edilen modellerinden biridir. Gelişmiş güvenlik donanımları, geniş iç hacmi ve yakıt tasarrufu sağlayan motor teknolojisi ile hem şehir içi hem de şehirler arası yolculuklarınızda mükemmel konfor sunar. Kiralama bedeline kasko ve temel sigorta hizmetleri dahildir.</p>
+                        
+                        <div class="guarantees">
+                            <div class="guarantee-item"><i class="fas fa-shield-alt"></i> Tam Kasko Sigorta</div>
+                            <div class="guarantee-item"><i class="fas fa-headset"></i> 7/24 Yol Yardım</div>
+                            <div class="guarantee-item"><i class="fas fa-map-marked-alt"></i> Sınırsız Kilometre Opsiyonu</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sağ Kolon: Özellikler ve Satın Alma -->
+                <div class="detail-right">
+                    <div class="price-card">
+                        <span class="price-label">Günlük Kiralama Bedeli</span>
+                        <h2 class="detail-price" id="detail-price">0.00 TL</h2>
+                        <span class="price-tax">(KDV Hariç)</span>
+                        
+                        <div class="action-buttons-lg">
+                            <a href="https://wa.me/905436348331" class="btn btn-green-lg"><i class="fab fa-whatsapp"></i> WHATSAPP İLE KİRALA</a>
+                            <a href="tel:+905436348331" class="btn btn-red-lg"><i class="fas fa-phone-alt"></i> HEMEN ARA</a>
+                        </div>
+                    </div>
+
+                    <div class="features-card">
+                        <h3><i class="fas fa-list"></i> Teknik Özellikler</h3>
+                        <ul class="enriched-features-list">
+                            <li>
+                                <span class="f-icon"><i class="far fa-calendar-alt"></i></span>
+                                <span class="f-title">Model Yılı:</span>
+                                <span class="f-val" id="detail-year">2025</span>
+                            </li>
+                            <li>
+                                <span class="f-icon"><i class="fas fa-gas-pump"></i></span>
+                                <span class="f-title">Yakıt Tipi:</span>
+                                <span class="f-val" id="detail-fuel">-</span>
+                            </li>
+                            <li>
+                                <span class="f-icon"><i class="fas fa-cogs"></i></span>
+                                <span class="f-title">Vites Tipi:</span>
+                                <span class="f-val" id="detail-trans">-</span>
+                            </li>
+                            <li>
+                                <span class="f-icon"><i class="fas fa-car-side"></i></span>
+                                <span class="f-title">Kasa Tipi:</span>
+                                <span class="f-val" id="detail-type">-</span>
+                            </li>
+                            <li>
+                                <span class="f-icon"><i class="fas fa-suitcase"></i></span>
+                                <span class="f-title">Bagaj Kapasitesi:</span>
+                                <span class="f-val" id="detail-capacity">-</span>
+                            </li>
+                            <li>
+                                <span class="f-icon"><i class="fas fa-users"></i></span>
+                                <span class="f-title">Yolcu Sayısı:</span>
+                                <span class="f-val">5 Kişi</span>
+                            </li>
+                            <li>
+                                <span class="f-icon"><i class="fas fa-snowflake"></i></span>
+                                <span class="f-title">Klima:</span>
+                                <span class="f-val">Var (Dijital)</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2026 AVIS Araç Kiralama. Tüm hakları saklıdır.</p>
+    </footer>
+
+    <!-- Floating Buttons -->
+    <div class="floating-buttons">
+        <a href="https://wa.me/905436348331" class="float-btn float-wp"><i class="fab fa-whatsapp"></i></a>
+        <a href="tel:+905436348331" class="float-btn float-call"><i class="fas fa-phone-alt"></i></a>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        function changeImage(src) {
+            document.getElementById('main-img').src = src;
+            
+            // Seçili thumbnail'i işaretle
+            document.querySelectorAll('.thumb-img').forEach(img => {
+                if(img.src === src) {
+                    img.style.borderColor = '#d4002a';
+                    img.style.opacity = '1';
+                } else {
+                    img.style.borderColor = 'transparent';
+                    img.style.opacity = '0.6';
+                }
+            });
+        }
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const carId = urlParams.get('id');
+            
+            if(carId && typeof cars !== 'undefined') {
+                const car = cars.find(c => c.id == carId);
+                if(car) {
+                    document.title = car.name + " Kiralama | Profesyonel Filo";
+                    document.getElementById('detail-name').innerText = car.name;
+                    document.getElementById('detail-price').innerText = car.price + ' TL';
+                    document.getElementById('detail-fuel').innerText = car.fuel;
+                    document.getElementById('detail-trans').innerText = car.transmission;
+                    document.getElementById('detail-type').innerText = car.type;
+                    document.getElementById('detail-capacity').innerText = car.capacity;
+                    document.getElementById('detail-year').innerText = car.year || '2025';
+                    
+                    // Görseller
+                    const images = [
+                        `assets/${car.image}`,
+                        `assets/${car.id}_front.jpg`,
+                        `assets/${car.id}_right.jpg`,
+                        `assets/${car.id}_left.jpg`,
+                        `assets/${car.id}_interior.jpg`
+                    ];
+                    
+                    document.getElementById('main-img').src = images[0];
+                    document.getElementById('thumb-1').src = images[0];
+                    document.getElementById('thumb-1').style.borderColor = '#d4002a';
+                    document.getElementById('thumb-1').style.opacity = '1';
+                    
+                    document.getElementById('thumb-2').src = images[1];
+                    document.getElementById('thumb-3').src = images[2];
+                    document.getElementById('thumb-4').src = images[3];
+                    document.getElementById('thumb-5').src = images[4];
+                    
+                    document.querySelectorAll('.thumb-img').forEach(img => {
+                        img.onerror = function() {
+                            this.style.display = 'none'; // Resim yoksa gizle
+                        };
+                    });
+                }
+            }
+        });
+    </script>
+</body>
+</html>
