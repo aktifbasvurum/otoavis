@@ -103,9 +103,8 @@ document.addEventListener("DOMContentLoaded", () => {
                         <span>${car.capacity}</span>
                     </div>
                 </div>
-                <div class="action-buttons">
-                    <a href="https://wa.me/905011101269?text=Merhaba, ${car.name} aracı hakkında bilgi almak istiyorum." class="btn btn-red">WHATSAPP</a>
-                    <a href="https://wa.me/905011101269?text=Merhaba, ${car.name} aracı hakkında bilgi almak istiyorum." class="btn btn-green">WHATSAPP</a>
+                <div class="action-buttons" style="display:block;">
+                    <a href="https://wa.me/905011101269?text=Merhaba, ${car.name} arac%C4%B1 hakk%C4%B1nda bilgi almak istiyorum." class="btn btn-green" style="display:block; width:100%; text-align:center;">Hemen Kirala</a>
                 </div>
             `;
             grid.appendChild(card);
