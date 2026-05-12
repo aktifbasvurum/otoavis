@@ -104,8 +104,8 @@ document.addEventListener("DOMContentLoaded", () => {
                     </div>
                 </div>
                 <div class="action-buttons">
-                    <a href="tel:+905436348331" class="btn btn-red">HEMEN ARA</a>
-                    <a href="https://wa.me/905436348331?text=Merhaba, ${car.name} aracı hakkında bilgi almak istiyorum." class="btn btn-green">WHATSAPP</a>
+                    <a href="https://wa.me/905011101269?text=Merhaba, ${car.name} aracı hakkında bilgi almak istiyorum." class="btn btn-red">WHATSAPP</a>
+                    <a href="https://wa.me/905011101269?text=Merhaba, ${car.name} aracı hakkında bilgi almak istiyorum." class="btn btn-green">WHATSAPP</a>
                 </div>
             `;
             grid.appendChild(card);
